@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 — 文件8</title>
+<meta name="description" content="文件8（FileExplorer8）不收集、不上传、不分享任何用户数据。">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1d1d1f;
+    --muted: #6e6e73;
+    --line: #e5e5e7;
+    --accent: #0071e3;
+    --card: #f5f5f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #000000;
+      --fg: #f5f5f7;
+      --muted: #a1a1a6;
+      --line: #2c2c2e;
+      --accent: #2997ff;
+      --card: #1c1c1e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  h1 { font-size: 36px; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 10px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 36px; line-height: 1.9; }
+  nav { padding-bottom: 24px; border-bottom: 1px solid var(--line); margin-bottom: 36px; }
+  nav a { color: var(--accent); text-decoration: none; font-weight: 500; }
+  nav a:hover { text-decoration: underline; }
+  h2 { font-size: 24px; letter-spacing: -0.01em; margin: 44px 0 14px; }
+  h3 { font-size: 17px; margin: 26px 0 8px; }
+  ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  code {
+    font: 0.88em/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: var(--card); padding: 2px 6px; border-radius: 5px;
+    word-break: break-all;
+  }
+  .tldr {
+    background: var(--card); border-radius: 14px;
+    padding: 20px 24px; margin: 0 0 8px; font-size: 17px;
+  }
+  .tldr p { margin: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+  a { color: var(--accent); }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  details { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); }
+  summary { cursor: pointer; color: var(--accent); font-weight: 500; }
+
+  /* 窄屏：表格转成卡片式区块，否则三列挤成一团、路径串被压断 */
+  @media (max-width: 640px) {
+    .wrap { padding: 40px 18px 72px; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 21px; }
+    table, thead, tbody, tr, th, td { display: block; width: 100%; }
+    tr { padding: 14px 0; border-bottom: 1px solid var(--line); }
+    tr:last-child { border-bottom: none; }
+    th { padding: 0 0 4px; border: none; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+    td { padding: 3px 0; border: none; }
+    /* 表头行在卡片式布局下没有意义，藏掉 */
+    thead { display: none; }    code { display: inline-block; padding: 3px 7px; margin: 2px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>隐私政策</h1>
+<p class="meta">
+  文件8 / FileExplorer8<br>
+  最后更新：2026-11-17 · 适用版本：1.1.6 及以后 · 适用平台：macOS
+</p>
+
+<nav><a href="index.html">← 返回支持页</a></nav>
+
+<div class="tldr">
+  <p><strong>文件8 不收集、不上传、不分享任何用户数据。</strong>
+     没有账号体系，没有统计分析，没有广告 SDK，没有崩溃上报。
+     你在应用里看到的一切文件都留在你自己的机器上。</p>
+</div>
+
+<h2>一、我们不收集什么</h2>
+
+<p>以下数据<strong>一项都不收集</strong>：</p>
+<ul>
+  <li>你的文件与文件夹（内容、名称、大小、修改时间）</li>
+  <li>你的浏览历史、搜索记录、剪贴板内容</li>
+  <li>你连接的服务器地址、账号、密码、私钥</li>
+  <li>设备标识（序列号、硬件 UUID、广告标识符）</li>
+  <li>使用统计、崩溃日志、性能数据</li>
+  <li>你的位置、通讯录、日历、相册、麦克风、摄像头、屏幕内容</li>
+</ul>
+
+<p>应用内<strong>没有任何</strong>用于数据上报的网络请求。除你主动发起的 SSH/SFTP 连接外，
+应用不会向任何服务器发送任何字节。</p>
+
+<h2>二、数据存在哪里</h2>
+
+<p>所有配置与凭据都只存在于<strong>这台 Mac 上</strong>，分三处：</p>
+
+<table>
+  <thead>
+    <tr>
+    <th>位置</th><th>存什么</th><th>保护方式</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>应用沙盒容器<br><code>~/Library/Containers/<wbr>com.donghuazhu.FileExplorer8/</code></td>
+    <td>偏好设置、会话现场（窗口位置、各栏路径等）、快速访问书签</td>
+    <td>App Sandbox 容器内，仅本应用可访问</td>
+  </tr>
+    <tr>
+    <td>同上，<code>servers.json</code></td>
+    <td>SSH 服务器端点（主机、端口、用户名、显示名）</td>
+    <td><strong>AES-256-GCM 加密</strong>（swift-crypto）</td>
+  </tr>
+    <tr>
+    <td>系统钥匙串（Keychain）</td>
+    <td>SSH 密码、私钥口令</td>
+    <td>由 macOS 钥匙串保护</td>
+  </tr>
+  </tbody>
+</table>
+
+<p><strong>密码与口令不进文件。</strong> <code>servers.json</code> 里只有端点信息，没有秘密；
+密码与私钥口令存在系统钥匙串，删除某条连接时一并删除。</p>
+
+<p>需要说明的是，<code>servers.json</code> 的加密密钥随应用一同分发（编译进程序内，
+不单独落盘、也不在钥匙串里）。这道加密只是防止端点信息被随意翻看，
+<strong>不构成针对本机攻击者的保护</strong>——能读你磁盘的人也能读应用本体。
+真正需要保密的内容（密码、口令）始终只在钥匙串里。</p>
+
+<p>私钥文件本身<strong>永远留在你自己放的位置</strong>，应用只保存一个文件书签用于读取，
+不复制、不移动到别处。</p>
+
+<h2>三、网络访问</h2>
+
+<p>应用只有一个网络能力：<strong>SSH / SFTP 客户端</strong>。</p>
+<ul>
+  <li>只在你主动添加服务器并点击连接时才发起连接，目标是<strong>你自己填的地址</strong></li>
+  <li>连接用途是浏览与传输文件，协议为 SSH（SFTP 子系统）</li>
+  <li>主机密钥按 <code>known_hosts</code> 方式校验，指纹变化会提示你确认</li>
+  <li>传输内容经过 SSH 协议自身的加密（libssh2 内置 OpenSSL 实现）</li>
+</ul>
+
+<p><strong>我们不运营任何服务器</strong>，也没有任何中转或云同步服务。你的文件不经过我们。</p>
+
+<p>应用不检查更新、不加载远程广告、不请求任何第三方接口。</p>
+
+<h2>四、系统权限</h2>
+
+<p>应用开启 <strong>App Sandbox</strong>，只在你授予的范围内读写文件：</p>
+
+<table>
+  <thead>
+    <tr><th>权限</th><th>用途</th><th>何时出现</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>用户选择的文件</td>
+    <td>浏览与操作你指定的目录</td>
+    <td>首次进入沙盒外的目录时由系统弹窗</td>
+  </tr>
+    <tr>
+    <td>下载 / 文稿 / 音乐 / 图片 / 影片文件夹</td>
+    <td>免弹窗直接访问这几个标准位置</td>
+    <td>安装后即可用</td>
+  </tr>
+    <tr>
+    <td>网络访问（出站）</td>
+    <td>连接你自己添加的 SSH 服务器</td>
+    <td>仅在你点击连接时</td>
+  </tr>
+  </tbody>
+</table>
+
+<p>上表与应用包内实际的沙盒权限一一对应（<code>app-sandbox</code>、<code>files.user-selected</code>、
+<code>files.downloads</code>、<code>assets.music</code> / <code>assets.pictures</code> /
+<code>assets.movies</code>、<code>network.client</code>），没有多申请任何一项。</p>
+
+<p>应用<strong>不申请</strong>：通讯录、日历、提醒事项、照片库、摄像头、麦克风、屏幕录制、
+完全磁盘访问、辅助功能。若你在「系统设置 › 隐私与安全性」里看到这些项目下有文件8，
+那不是本应用申请的。</p>
+
+<p>你也可以随时在「系统设置 › 隐私与安全性 › 文件和文件夹」里撤销已授予的目录。</p>
+
+<h2>五、文件校验和功能</h2>
+
+<p>应用提供「计算校验和」（SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64），
+用于核对文件完整性。</p>
+
+<p>这项功能<strong>只读取你明确选中的文件</strong>，在内存中计算摘要并显示给你，不保存、不上传。
+摘要值不会离开你的机器，也不会进入任何日志。</p>
+
+<h2>六、删除你的数据</h2>
+
+<table>
+  <thead>
+    <tr><th>想删什么</th><th>怎么做</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>某条 SSH 连接的密码</td>
+    <td>应用内删除该连接，钥匙串里的密码与口令随之删除</td>
+  </tr>
+    <tr>
+    <td>全部偏好与会话</td>
+    <td>应用内「重置」功能，或删除 <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code></td>
+  </tr>
+    <tr>
+    <td>全部数据</td>
+    <td>卸载应用，再删除上面那个目录</td>
+  </tr>
+  </tbody>
+</table>
+
+<p>我们这边没有你的任何数据，因此不存在「向我们申请删除」的流程——
+也无需注销账号，本应用没有账号。</p>
+
+<h2>七、第三方组件</h2>
+
+<p>应用只包含两个开源依赖：</p>
+
+<table>
+  <thead>
+    <tr><th>组件</th><th>用途</th><th>说明</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td><a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a></td>
+    <td>SSH / SFTP 协议实现</td>
+    <td>内嵌 libssh2 与 OpenSSL 源码，纯本地运行，不含任何统计或联网上报代码</td>
+  </tr>
+    <tr>
+    <td><a href="https://github.com/apple/swift-crypto">swift-crypto</a></td>
+    <td>加密原语（Apple 官方）</td>
+    <td>AES-256-GCM、SHA-2、HMAC 等标准算法；用于本地配置加密、SSH 主机指纹校验与文件校验和计算，纯本地运算，不联网</td>
+  </tr>
+  </tbody>
+</table>
+
+<p>应用内<strong>没有</strong>广告 SDK、统计分析 SDK、崩溃收集 SDK、社交登录 SDK。</p>
+
+<h2>八、儿童隐私</h2>
+
+<p>本应用不面向儿童定向收集任何信息，也不收集任何人的信息。
+App Store 年龄分级为 4+。</p>
+
+<h2>九、政策变更</h2>
+
+<p>本政策如有修改，会更新本页顶部的「最后更新」日期，并随新版本发布。
+由于本应用不收集数据，实质性变更的可能性很低。</p>
+
+<h2>十、联系我们</h2>
+
+<ul>
+  <li>问题与反馈：<a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a></li>
+  <li>支持页面：<a href="index.html">文件8 支持</a></li>
+</ul>
+
+<details>
+<summary>English summary (for App Review reference)</summary>
+
+<p><strong>FileExplorer8 does not collect, transmit, or share any user data.</strong></p>
+
+<ul>
+  <li>No analytics, no ads, no crash reporting, no accounts.</li>
+  <li>All settings and credentials stay on the user's Mac. Passwords live in the macOS
+      Keychain; server endpoints in a local file encrypted with AES-256-GCM (the key ships
+      inside the app, so this obfuscates endpoints rather than protecting against local
+      attackers).</li>
+  <li>The only network capability is an SSH/SFTP client that connects <strong>only</strong>
+      to servers the user adds. We operate no servers and receive nothing.</li>
+  <li>The app runs in the App Sandbox and requests only user-selected file access,
+      standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound
+      network access.</li>
+  <li>Two open-source dependencies: <a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a>
+      (embedded libssh2 + OpenSSL) and Apple's
+      <a href="https://github.com/apple/swift-crypto">swift-crypto</a>; both run fully
+      locally with no telemetry.</li>
+</ul>
+
+<p>Contact: <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a></p>
+
+</details>
+
+<footer>
+  <p>文件8 / FileExplorer8 · <a href="index.html">支持</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">反馈</a></p>
+</footer>
+
+</div>
+</body>
+</html>
