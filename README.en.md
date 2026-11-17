@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/Support-blue" alt="Site"></a>
-  <a href="privacy.en.html"><img src="https://img.shields.io/badge/Privacy-green" alt="Privacy"></a>
+  <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.en.html"><img src="https://img.shields.io/badge/Privacy-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
 
@@ -109,7 +109,7 @@ Apart from SSH connections you start yourself, the app sends no bytes to any ser
 
 The app runs in the App Sandbox and only reads or writes within folders you grant. It does not request contacts, camera, microphone, screen recording or full disk access.
 
-[Read the full privacy policy](privacy.en.html)
+[Read the full privacy policy](https://rosesmall2010.github.io/FileExplorer8/privacy.en.html)
 
 ---
 
@@ -131,7 +131,7 @@ The app runs in the App Sandbox. Desktop, Downloads, Documents and external disk
 No. FileExplorer8 only requests user-selected file access, the standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound network access. It has no contacts, camera, microphone, screen-recording or full-disk access.
 
 **Where are SSH passwords stored?**
-In the macOS Keychain. Server endpoints live in the local sandbox container, encrypted with AES-256-GCM. You can also skip saving the password and get a one-time login prompt on every connection. See the <a href="privacy.html">privacy policy</a>.
+In the macOS Keychain. Server endpoints live in the local sandbox container, encrypted with AES-256-GCM. You can also skip saving the password and get a one-time login prompt on every connection. See the <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.en.html">privacy policy</a>.
 
 **Does it support Apple Silicon and Intel?**
 Both. The installer is a universal binary. macOS 15.0 or later is required.

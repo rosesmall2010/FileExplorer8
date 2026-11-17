@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%99%E0%B8%B1%E0%B8%9A%E0%B8%AA%E0%B8%99%E0%B8%B8%E0%B8%99-blue" alt="Site"></a>
-  <a href="privacy.th.html"><img src="https://img.shields.io/badge/%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%AA%E0%B9%88%E0%B8%A7%E0%B8%99%E0%B8%95%E0%B8%B1%E0%B8%A7-green" alt="Privacy"></a>
+  <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.th.html"><img src="https://img.shields.io/badge/%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%AA%E0%B9%88%E0%B8%A7%E0%B8%99%E0%B8%95%E0%B8%B1%E0%B8%A7-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
 
@@ -109,7 +109,7 @@ FileExplorer8 คือ**ตัวจัดการไฟล์**ที่ท�
 
 แอปทำงานใน App Sandbox และอ่านหรือเขียนเฉพาะในโฟลเดอร์ที่คุณอนุญาต ไม่ขอสิทธิ์รายชื่อผู้ติดต่อ กล้อง ไมโครโฟน การบันทึกหน้าจอ หรือดิสก์ทั้งหมด
 
-[อ่านนโยบายความเป็นส่วนตัวฉบับเต็ม](privacy.th.html)
+[อ่านนโยบายความเป็นส่วนตัวฉบับเต็ม](https://rosesmall2010.github.io/FileExplorer8/privacy.th.html)
 
 ---
 
@@ -131,7 +131,7 @@ FileExplorer8 คือ**ตัวจัดการไฟล์**ที่ท�
 ไม่ FileExplorer8 ขอเพียงการเข้าถึงไฟล์ที่คุณเลือก โฟลเดอร์มาตรฐาน (ดาวน์โหลด / เอกสาร / เพลง / รูปภาพ / ภาพยนตร์) และการเชื่อมต่อเครือข่ายขาออกเท่านั้น ไม่มีสิทธิ์เข้าถึงรายชื่อผู้ติดต่อ กล้อง ไมโครโฟน การบันทึกหน้าจอ หรือดิสก์ทั้งหมด
 
 **รหัสผ่าน SSH เก็บไว้ที่ไหน?**
-ในพวงกุญแจ (Keychain) ของ macOS ข้อมูลปลายทางการเชื่อมต่อเซิร์ฟเวอร์เก็บในคอนเทนเนอร์ sandbox ภายในเครื่อง เข้ารหัสด้วย AES-256-GCM คุณยังเลือกไม่บันทึกรหัสผ่านได้ โดยจะมีหน้าต่างเข้าสู่ระบบครั้งเดียวทุกครั้งที่เชื่อมต่อ ดู<a href="privacy.html">นโยบายความเป็นส่วนตัว</a>
+ในพวงกุญแจ (Keychain) ของ macOS ข้อมูลปลายทางการเชื่อมต่อเซิร์ฟเวอร์เก็บในคอนเทนเนอร์ sandbox ภายในเครื่อง เข้ารหัสด้วย AES-256-GCM คุณยังเลือกไม่บันทึกรหัสผ่านได้ โดยจะมีหน้าต่างเข้าสู่ระบบครั้งเดียวทุกครั้งที่เชื่อมต่อ ดู<a href="https://rosesmall2010.github.io/FileExplorer8/privacy.th.html">นโยบายความเป็นส่วนตัว</a>
 
 **รองรับ Apple Silicon และ Intel หรือไม่?**
 รองรับทั้งสอง ตัวติดตั้งเป็นไบนารีสากล ต้องใช้ macOS 15.0 ขึ้นไป

@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0-blue" alt="Site"></a>
-  <a href="privacy.ru.html"><img src="https://img.shields.io/badge/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C-green" alt="Privacy"></a>
+  <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.ru.html"><img src="https://img.shields.io/badge/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
 
@@ -109,7 +109,7 @@ FileExplorer8 — это **файловый менеджер**, работающ
 
 Приложение работает в App Sandbox и читает или записывает только в выданных вами папках. Оно не запрашивает контакты, камеру, микрофон, запись экрана и полный доступ к диску.
 
-[Прочитать полную политику конфиденциальности](privacy.ru.html)
+[Прочитать полную политику конфиденциальности](https://rosesmall2010.github.io/FileExplorer8/privacy.ru.html)
 
 ---
 
@@ -131,7 +131,7 @@ FileExplorer8 — это **файловый менеджер**, работающ
 Нет. FileExplorer8 запрашивает только доступ к выбранным вами файлам, стандартным папкам (Загрузки / Документы / Музыка / Изображения / Фильмы) и исходящий доступ в сеть. Доступа к контактам, камере, микрофону, записи экрана и всему диску нет.
 
 **Где хранятся пароли SSH?**
-В связке ключей macOS. Конечные точки серверов лежат в локальном контейнере песочницы и зашифрованы AES-256-GCM. Пароль можно не сохранять и вместо этого получать одноразовый запрос входа при каждом подключении. Подробнее в <a href="privacy.html">политике конфиденциальности</a>.
+В связке ключей macOS. Конечные точки серверов лежат в локальном контейнере песочницы и зашифрованы AES-256-GCM. Пароль можно не сохранять и вместо этого получать одноразовый запрос входа при каждом подключении. Подробнее в <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.ru.html">политике конфиденциальности</a>.
 
 **Работает ли на Apple Silicon и Intel?**
 На обоих. Установщик — универсальный двоичный файл. Требуется macOS 15.0 или новее.

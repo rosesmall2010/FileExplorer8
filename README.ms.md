@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/Sokongan-blue" alt="Site"></a>
-  <a href="privacy.ms.html"><img src="https://img.shields.io/badge/Privasi-green" alt="Privacy"></a>
+  <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.ms.html"><img src="https://img.shields.io/badge/Privasi-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
 
@@ -109,7 +109,7 @@ Selain sambungan SSH yang anda mulakan sendiri, aplikasi tidak menghantar satu b
 
 Aplikasi berjalan dalam App Sandbox dan hanya membaca atau menulis dalam folder yang anda berikan. Ia tidak meminta kenalan, kamera, mikrofon, rakaman skrin atau akses seluruh cakera.
 
-[Baca dasar privasi sepenuhnya](privacy.ms.html)
+[Baca dasar privasi sepenuhnya](https://rosesmall2010.github.io/FileExplorer8/privacy.ms.html)
 
 ---
 
@@ -131,7 +131,7 @@ Aplikasi berjalan dalam App Sandbox. Desktop, Muat Turun, Dokumen dan cakera lua
 Tidak. FileExplorer8 hanya meminta akses fail yang anda pilih, folder piawai (Muat Turun / Dokumen / Muzik / Gambar / Filem) dan akses rangkaian keluar. Tiada akses kepada kenalan, kamera, mikrofon, rakaman skrin atau keseluruhan cakera.
 
 **Di manakah kata laluan SSH disimpan?**
-Dalam Keychain macOS. Titik sambungan pelayan disimpan dalam bekas sandbox tempatan, disulitkan dengan AES-256-GCM. Anda juga boleh tidak menyimpan kata laluan dan menerima kotak log masuk sekali guna bagi setiap sambungan. Lihat <a href="privacy.html">dasar privasi</a>.
+Dalam Keychain macOS. Titik sambungan pelayan disimpan dalam bekas sandbox tempatan, disulitkan dengan AES-256-GCM. Anda juga boleh tidak menyimpan kata laluan dan menerima kotak log masuk sekali guna bagi setiap sambungan. Lihat <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.ms.html">dasar privasi</a>.
 
 **Adakah ia menyokong Apple Silicon dan Intel?**
 Kedua-duanya. Pemasang ialah binari universal. macOS 15.0 atau lebih baru diperlukan.

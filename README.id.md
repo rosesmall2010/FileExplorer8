@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/Dukungan-blue" alt="Site"></a>
-  <a href="privacy.id.html"><img src="https://img.shields.io/badge/Privasi-green" alt="Privacy"></a>
+  <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.id.html"><img src="https://img.shields.io/badge/Privasi-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
 
@@ -109,7 +109,7 @@ Selain koneksi SSH yang Anda mulai sendiri, aplikasi tidak mengirim satu bita pu
 
 Aplikasi berjalan di App Sandbox dan hanya membaca atau menulis di folder yang Anda berikan. Ia tidak meminta kontak, kamera, mikrofon, perekaman layar, atau akses seluruh disk.
 
-[Baca kebijakan privasi selengkapnya](privacy.id.html)
+[Baca kebijakan privasi selengkapnya](https://rosesmall2010.github.io/FileExplorer8/privacy.id.html)
 
 ---
 
@@ -131,7 +131,7 @@ Aplikasi berjalan di App Sandbox. Desktop, Unduhan, Dokumen, dan disk eksternal 
 Tidak. FileExplorer8 hanya meminta akses berkas yang Anda pilih, folder standar (Unduhan / Dokumen / Musik / Gambar / Film), dan akses jaringan keluar. Tidak ada akses kontak, kamera, mikrofon, perekaman layar, atau seluruh disk.
 
 **Di mana sandi SSH disimpan?**
-Di Keychain macOS. Titik koneksi server disimpan di kontainer sandbox lokal, dienkripsi dengan AES-256-GCM. Anda juga bisa tidak menyimpan sandi dan menerima kotak masuk sekali pakai pada setiap koneksi. Lihat <a href="privacy.html">kebijakan privasi</a>.
+Di Keychain macOS. Titik koneksi server disimpan di kontainer sandbox lokal, dienkripsi dengan AES-256-GCM. Anda juga bisa tidak menyimpan sandi dan menerima kotak masuk sekali pakai pada setiap koneksi. Lihat <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.id.html">kebijakan privasi</a>.
 
 **Apakah mendukung Apple Silicon dan Intel?**
 Keduanya. Pemasangnya adalah biner universal. Diperlukan macOS 15.0 atau lebih baru.

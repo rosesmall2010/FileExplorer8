@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/Suporte-blue" alt="Site"></a>
-  <a href="privacy.pt-BR.html"><img src="https://img.shields.io/badge/Privacidade-green" alt="Privacy"></a>
+  <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.pt-BR.html"><img src="https://img.shields.io/badge/Privacidade-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
 
@@ -109,7 +109,7 @@ Fora as conexões SSH que você mesmo inicia, o app não envia um único byte a 
 
 O app roda no App Sandbox e só lê ou grava nas pastas que você concede. Não solicita contatos, câmera, microfone, gravação de tela nem acesso total ao disco.
 
-[Ler a política de privacidade completa](privacy.pt-BR.html)
+[Ler a política de privacidade completa](https://rosesmall2010.github.io/FileExplorer8/privacy.pt-BR.html)
 
 ---
 
@@ -131,7 +131,7 @@ O app roda no App Sandbox. Mesa, Downloads, Documentos e discos externos ficam f
 Não. O FileExplorer8 pede apenas acesso aos arquivos que você seleciona, às pastas padrão (Downloads / Documentos / Música / Imagens / Filmes) e acesso de rede de saída. Não tem acesso a contatos, câmera, microfone, gravação de tela nem ao disco inteiro.
 
 **Onde ficam as senhas SSH?**
-No Keychain do macOS. Os endpoints dos servidores ficam no contêiner local do sandbox, cifrados com AES-256-GCM. Você também pode não salvar a senha e receber um pedido de login único a cada conexão. Veja a <a href="privacy.html">política de privacidade</a>.
+No Keychain do macOS. Os endpoints dos servidores ficam no contêiner local do sandbox, cifrados com AES-256-GCM. Você também pode não salvar a senha e receber um pedido de login único a cada conexão. Veja a <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.pt-BR.html">política de privacidade</a>.
 
 **Funciona em Apple Silicon e Intel?**
 Nos dois. O instalador é um binário universal. É necessário macOS 15.0 ou superior.

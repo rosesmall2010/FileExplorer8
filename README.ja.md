@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88-blue" alt="Site"></a>
-  <a href="privacy.ja.html"><img src="https://img.shields.io/badge/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC-green" alt="Privacy"></a>
+  <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.ja.html"><img src="https://img.shields.io/badge/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
 
@@ -109,7 +109,7 @@ SSH / SFTP を内蔵。パスワードまたは任意の場所にある秘密鍵
 
 アプリは App Sandbox を有効にし、許可したフォルダの範囲内でのみ読み書きします。連絡先、カメラ、マイク、画面収録、フルディスクアクセスは要求しません。
 
-[プライバシーポリシーを読む](privacy.ja.html)
+[プライバシーポリシーを読む](https://rosesmall2010.github.io/FileExplorer8/privacy.ja.html)
 
 ---
 
@@ -131,7 +131,7 @@ App Sandbox を有効にしているためです。デスクトップ、ダウ�
 いいえ。FileExplorer8 が要求するのは、ユーザが選択したファイルへのアクセス、標準フォルダ（ダウンロード／書類／ミュージック／ピクチャ／ムービー）、および外向きのネットワークアクセスだけです。連絡先、カメラ、マイク、画面収録、フルディスクアクセスの権限はありません。
 
 **SSH のパスワードはどこに保存されますか？**
-macOS のキーチェーンです。サーバーのエンドポイント情報はローカルのサンドボックスコンテナ内に AES-256-GCM で暗号化して保存されます。パスワードを保存せず、接続のたびに一度だけログインを尋ねる設定にもできます。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。
+macOS のキーチェーンです。サーバーのエンドポイント情報はローカルのサンドボックスコンテナ内に AES-256-GCM で暗号化して保存されます。パスワードを保存せず、接続のたびに一度だけログインを尋ねる設定にもできます。詳しくは<a href="https://rosesmall2010.github.io/FileExplorer8/privacy.ja.html">プライバシーポリシー</a>をご覧ください。
 
 **Apple Silicon と Intel の両方に対応していますか？**
 はい。インストーラはユニバーサルバイナリです。macOS 15.0 以降が必要です。

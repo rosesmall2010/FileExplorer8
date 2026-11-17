@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/H%E1%BB%97%20tr%E1%BB%A3-blue" alt="Site"></a>
-  <a href="privacy.vi.html"><img src="https://img.shields.io/badge/Quy%E1%BB%81n%20ri%C3%AAng%20t%C6%B0-green" alt="Privacy"></a>
+  <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.vi.html"><img src="https://img.shields.io/badge/Quy%E1%BB%81n%20ri%C3%AAng%20t%C6%B0-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
 
@@ -109,7 +109,7 @@ Ngoài các kết nối SSH do bạn tự khởi tạo, ứng dụng không gử
 
 Ứng dụng chạy trong App Sandbox và chỉ đọc hoặc ghi trong các thư mục bạn cấp. Không yêu cầu danh bạ, camera, micro, ghi màn hình hay truy cập toàn bộ ổ đĩa.
 
-[Đọc toàn bộ chính sách quyền riêng tư](privacy.vi.html)
+[Đọc toàn bộ chính sách quyền riêng tư](https://rosesmall2010.github.io/FileExplorer8/privacy.vi.html)
 
 ---
 
@@ -131,7 +131,7 @@ Số phiên bản nằm trong “FileExplorer8 › Giới thiệu FileExplorer8�
 Không. FileExplorer8 chỉ yêu cầu truy cập tệp do người dùng chọn, các thư mục chuẩn (Tải về / Tài liệu / Nhạc / Ảnh / Phim) và truy cập mạng ra ngoài. Không có quyền với danh bạ, camera, micro, ghi màn hình hay toàn bộ ổ đĩa.
 
 **Mật khẩu SSH được lưu ở đâu?**
-Trong Chuỗi khoá của macOS. Thông tin điểm kết nối máy chủ nằm trong vùng chứa cục bộ của hộp cát, mã hoá bằng AES-256-GCM. Bạn cũng có thể không lưu mật khẩu và nhận hộp đăng nhập một lần cho mỗi lần kết nối. Xem <a href="privacy.html">chính sách quyền riêng tư</a>.
+Trong Chuỗi khoá của macOS. Thông tin điểm kết nối máy chủ nằm trong vùng chứa cục bộ của hộp cát, mã hoá bằng AES-256-GCM. Bạn cũng có thể không lưu mật khẩu và nhận hộp đăng nhập một lần cho mỗi lần kết nối. Xem <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.vi.html">chính sách quyền riêng tư</a>.
 
 **Có chạy trên Apple Silicon và Intel không?**
 Có cả hai. Bộ cài là tệp nhị phân phổ dụng. Yêu cầu macOS 15.0 trở lên.
