@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/%E6%94%AF%E6%8F%B4%E9%A0%81-blue" alt="Site"></a>
-  <a href="privacy.zh-Hant.html"><img src="https://img.shields.io/badge/%E9%9A%B1%E7%A7%81%E6%94%BF%E7%AD%96-green" alt="Privacy"></a>
+  <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.zh-Hant.html"><img src="https://img.shields.io/badge/%E9%9A%B1%E7%A7%81%E6%94%BF%E7%AD%96-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
 
@@ -109,7 +109,7 @@
 
 應用程式開啟 App Sandbox，只在你授予的目錄範圍內讀寫，不申請通訊錄、相機、麥克風、螢幕錄製或完全磁碟存取。
 
-[詳見隱私政策](privacy.zh-Hant.html)
+[詳見隱私政策](https://rosesmall2010.github.io/FileExplorer8/privacy.zh-Hant.html)
 
 ---
 
@@ -131,7 +131,7 @@
 不會。文件8 只申請了使用者選擇的檔案存取、標準資料夾（下載 / 文件 / 音樂 / 圖片 / 影片）與對外網路存取，沒有通訊錄、相機、麥克風、螢幕錄製或完全磁碟存取權限。
 
 **SSH 密碼存在哪裡？**
-存在 macOS 系統鑰匙圈裡。伺服器端點資訊存在本機沙盒容器內（AES-256-GCM 加密）。密碼可以不儲存，改為每次連線時彈出一次性登入框。詳見<a href="privacy.html">隱私政策</a>。
+存在 macOS 系統鑰匙圈裡。伺服器端點資訊存在本機沙盒容器內（AES-256-GCM 加密）。密碼可以不儲存，改為每次連線時彈出一次性登入框。詳見<a href="https://rosesmall2010.github.io/FileExplorer8/privacy.zh-Hant.html">隱私政策</a>。
 
 **支援 Apple Silicon 和 Intel 嗎？**
 兩者都支援，安裝包是通用二進位。系統要求 macOS 15.0 或更高版本。

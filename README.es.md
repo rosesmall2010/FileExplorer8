@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/Soporte-blue" alt="Site"></a>
-  <a href="privacy.es.html"><img src="https://img.shields.io/badge/Privacidad-green" alt="Privacy"></a>
+  <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.es.html"><img src="https://img.shields.io/badge/Privacidad-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
 
@@ -109,7 +109,7 @@ Aparte de las conexiones SSH que usted inicia, la app no envía ni un byte a nin
 
 La app se ejecuta en el App Sandbox y solo lee o escribe en las carpetas que usted concede. No solicita contactos, cámara, micrófono, grabación de pantalla ni acceso completo al disco.
 
-[Leer la política de privacidad completa](privacy.es.html)
+[Leer la política de privacidad completa](https://rosesmall2010.github.io/FileExplorer8/privacy.es.html)
 
 ---
 
@@ -131,7 +131,7 @@ La app se ejecuta en el App Sandbox. El Escritorio, Descargas, Documentos y los 
 No. FileExplorer8 solo solicita acceso a los archivos que usted selecciona, a las carpetas estándar (Descargas / Documentos / Música / Imágenes / Películas) y acceso de red saliente. No tiene acceso a contactos, cámara, micrófono, grabación de pantalla ni al disco completo.
 
 **¿Dónde se guardan las contraseñas SSH?**
-En el llavero de macOS. Los puntos de conexión de los servidores están en el contenedor local del sandbox, cifrados con AES-256-GCM. También puede no guardar la contraseña y recibir una solicitud de inicio de sesión única en cada conexión. Vea la <a href="privacy.html">política de privacidad</a>.
+En el llavero de macOS. Los puntos de conexión de los servidores están en el contenedor local del sandbox, cifrados con AES-256-GCM. También puede no guardar la contraseña y recibir una solicitud de inicio de sesión única en cada conexión. Vea la <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.es.html">política de privacidad</a>.
 
 **¿Funciona en Apple Silicon e Intel?**
 En ambos. El instalador es un binario universal. Se requiere macOS 15.0 o posterior.

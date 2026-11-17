@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/Support-blue" alt="Site"></a>
-  <a href="privacy.de.html"><img src="https://img.shields.io/badge/Datenschutz-green" alt="Privacy"></a>
+  <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.de.html"><img src="https://img.shields.io/badge/Datenschutz-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
 
@@ -109,7 +109,7 @@ Außer von Ihnen gestarteten SSH-Verbindungen sendet die App kein Byte an einen 
 
 Die App läuft in der App Sandbox und liest oder schreibt nur in Ordnern, die Sie freigeben. Kontakte, Kamera, Mikrofon, Bildschirmaufnahme oder vollständiger Festplattenzugriff werden nicht verlangt.
 
-[Vollständige Datenschutzerklärung lesen](privacy.de.html)
+[Vollständige Datenschutzerklärung lesen](https://rosesmall2010.github.io/FileExplorer8/privacy.de.html)
 
 ---
 
@@ -131,7 +131,7 @@ Die App läuft in der App Sandbox. Schreibtisch, Downloads, Dokumente und extern
 Nein. FileExplorer8 fordert nur Zugriff auf vom Benutzer gewählte Dateien, auf die Standardordner (Downloads / Dokumente / Musik / Bilder / Filme) und auf ausgehende Netzwerkverbindungen an. Es gibt keinen Zugriff auf Kontakte, Kamera, Mikrofon, Bildschirmaufnahme oder das gesamte Laufwerk.
 
 **Wo werden SSH-Passwörter gespeichert?**
-Im macOS-Schlüsselbund. Server-Endpunkte liegen im lokalen Sandbox-Container, verschlüsselt mit AES-256-GCM. Sie können das Passwort auch nicht speichern und stattdessen bei jeder Verbindung einmal abfragen lassen. Details in der <a href="privacy.html">Datenschutzerklärung</a>.
+Im macOS-Schlüsselbund. Server-Endpunkte liegen im lokalen Sandbox-Container, verschlüsselt mit AES-256-GCM. Sie können das Passwort auch nicht speichern und stattdessen bei jeder Verbindung einmal abfragen lassen. Details in der <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.de.html">Datenschutzerklärung</a>.
 
 **Läuft die App auf Apple Silicon und Intel?**
 Auf beiden. Das Installationspaket ist ein Universal Binary. Erforderlich ist macOS 15.0 oder neuer.

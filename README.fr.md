@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/Assistance-blue" alt="Site"></a>
-  <a href="privacy.fr.html"><img src="https://img.shields.io/badge/Confidentialit%C3%A9-green" alt="Privacy"></a>
+  <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.fr.html"><img src="https://img.shields.io/badge/Confidentialit%C3%A9-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
 
@@ -109,7 +109,7 @@ Hormis les connexions SSH que vous lancez vous-même, l'app n'envoie pas un octe
 
 L'app tourne dans le bac à sable et ne lit ou n'écrit que dans les dossiers que vous accordez. Elle ne demande ni contacts, ni caméra, ni micro, ni enregistrement d'écran, ni accès complet au disque.
 
-[Lire la politique de confidentialité complète](privacy.fr.html)
+[Lire la politique de confidentialité complète](https://rosesmall2010.github.io/FileExplorer8/privacy.fr.html)
 
 ---
 
@@ -131,7 +131,7 @@ L'app tourne dans le bac à sable (App Sandbox). Le Bureau, Téléchargements, D
 Non. FileExplorer8 ne demande que l'accès aux fichiers que vous sélectionnez, aux dossiers standard (Téléchargements / Documents / Musique / Images / Vidéos) et à l'accès réseau sortant. Aucun accès aux contacts, à la caméra, au micro, à l'enregistrement d'écran ni au disque entier.
 
 **Où sont stockés les mots de passe SSH ?**
-Dans le trousseau macOS. Les points de connexion des serveurs sont dans le conteneur local du bac à sable, chiffrés en AES-256-GCM. Vous pouvez aussi ne pas enregistrer le mot de passe et obtenir une demande de connexion unique à chaque fois. Voir la <a href="privacy.html">politique de confidentialité</a>.
+Dans le trousseau macOS. Les points de connexion des serveurs sont dans le conteneur local du bac à sable, chiffrés en AES-256-GCM. Vous pouvez aussi ne pas enregistrer le mot de passe et obtenir une demande de connexion unique à chaque fois. Voir la <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.fr.html">politique de confidentialité</a>.
 
 **L'app fonctionne-t-elle sur Apple Silicon et Intel ?**
 Oui, sur les deux. L'installateur est un binaire universel. macOS 15.0 ou ultérieur est requis.

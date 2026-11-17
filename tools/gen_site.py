@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import json
 import pathlib
+import re
 from urllib.parse import quote
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -54,6 +55,30 @@ def html_name(base: str, code: str) -> str:
 
 def readme_name(code: str) -> str:
     return "README.md" if code == "zh-Hans" else f"README.{code}.md"
+
+
+def page_url(code: str, base: str) -> str:
+    """README 里的站内链接必须是绝对地址。
+
+    GitHub 在仓库页把 .html 当纯文本展示，相对链接点开就是源码页；
+    只有指向 Pages 的绝对地址才会被浏览器渲染成网页。
+    """
+    return SITE + html_name(base, code)
+
+
+def absolutize(text: str, code: str) -> str:
+    """把文案里写死的站内相对链接改写成 Pages 绝对地址。
+
+    同时处理 HTML 的 href="x.html" 与 Markdown 的 (x.html) 两种写法，
+    并把不带语言后缀的文件名映射成当前语言版本。
+    """
+
+    def to_url(name: str) -> str:
+        base = name[: -len(".html")]
+        return SITE + html_name(base, code)
+
+    text = re.sub(r'href="([\w-]+)\.html"', lambda m: f'href="{to_url(m.group(1) + ".html")}"', text)
+    return re.sub(r"\]\(([\w-]+)\.html\)", lambda m: f"]({to_url(m.group(1) + '.html')})", text)
 
 
 def langbar(code: str, base: str) -> str:
@@ -231,7 +256,7 @@ def render_readme(code: str, d: dict) -> str:
     faq = "\n".join(f"**{q}**\n{a}\n" for q, a in idx["faq"])
     reqs = "\n".join(f"- {x}" for x in r["req"])
 
-    return f"""<p align="center">
+    return absolutize(f"""<p align="center">
   <img src="images/icon-1024.png" width="128" alt="{d['appName']}">
 </p>
 
@@ -243,7 +268,7 @@ def render_readme(code: str, d: dict) -> str:
 
 <p align="center">
   <a href="{SITE}"><img src="https://img.shields.io/badge/{quote(r["badgeSite"])}-blue" alt="Site"></a>
-  <a href="{html_name("privacy", code)}"><img src="https://img.shields.io/badge/{quote(r["badgePrivacy"])}-green" alt="Privacy"></a>
+  <a href="{page_url(code, "privacy")}"><img src="https://img.shields.io/badge/{quote(r["badgePrivacy"])}-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-{VERSION}-lightgrey" alt="Version">
 </p>
 
@@ -270,7 +295,7 @@ def render_readme(code: str, d: dict) -> str:
 
 {r["privacyP"]}
 
-[{r["seePrivacy"]}]({html_name("privacy", code)})
+[{r["seePrivacy"]}]({page_url(code, "privacy")})
 
 ---
 
@@ -290,7 +315,7 @@ def render_readme(code: str, d: dict) -> str:
 ---
 
 <p align="center"><sub>{r["trademark"]}</sub></p>
-"""
+""", code)
 
 
 def main() -> int:

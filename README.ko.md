@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/%EC%A7%80%EC%9B%90-blue" alt="Site"></a>
-  <a href="privacy.ko.html"><img src="https://img.shields.io/badge/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4-green" alt="Privacy"></a>
+  <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.ko.html"><img src="https://img.shields.io/badge/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4-green" alt="Privacy"></a>
   <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
 
@@ -109,7 +109,7 @@ SSH / SFTP 내장. 비밀번호나 임의 경로의 개인 키로 연결하고 �
 
 앱은 App Sandbox를 켜고 허용한 폴더 범위에서만 읽고 씁니다. 연락처, 카메라, 마이크, 화면 기록, 전체 디스크 접근은 요청하지 않습니다.
 
-[개인정보 처리방침 전문 보기](privacy.ko.html)
+[개인정보 처리방침 전문 보기](https://rosesmall2010.github.io/FileExplorer8/privacy.ko.html)
 
 ---
 
@@ -131,7 +131,7 @@ App Sandbox를 켜 두었기 때문입니다. 데스크탑, 다운로드, 문서
 아니요. FileExplorer8이 요청하는 것은 사용자가 선택한 파일 접근, 표준 폴더(다운로드 / 문서 / 음악 / 사진 / 동영상), 그리고 외부 네트워크 접근뿐입니다. 연락처, 카메라, 마이크, 화면 기록, 전체 디스크 접근 권한은 없습니다.
 
 **SSH 비밀번호는 어디에 저장되나요?**
-macOS 키체인에 저장됩니다. 서버 엔드포인트 정보는 로컬 샌드박스 컨테이너 안에 AES-256-GCM으로 암호화되어 있습니다. 비밀번호를 저장하지 않고 연결할 때마다 한 번씩 로그인하도록 할 수도 있습니다. 자세한 내용은 <a href="privacy.html">개인정보 처리방침</a>을 보세요.
+macOS 키체인에 저장됩니다. 서버 엔드포인트 정보는 로컬 샌드박스 컨테이너 안에 AES-256-GCM으로 암호화되어 있습니다. 비밀번호를 저장하지 않고 연결할 때마다 한 번씩 로그인하도록 할 수도 있습니다. 자세한 내용은 <a href="https://rosesmall2010.github.io/FileExplorer8/privacy.ko.html">개인정보 처리방침</a>을 보세요.
 
 **Apple Silicon과 Intel을 모두 지원하나요?**
 둘 다 지원합니다. 설치 파일은 유니버설 바이너리입니다. macOS 15.0 이상이 필요합니다.
