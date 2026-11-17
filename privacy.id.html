@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kebijakan privasi — FileExplorer8</title>
+<meta name="description" content="FileExplorer8 tidak mengumpulkan, mengirim, atau membagikan data pengguna apa pun.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<h1>Kebijakan privasi</h1>
+<p class="meta">
+  FileExplorer8<br>
+  Terakhir diperbarui: 17/11/2026 · Berlaku untuk: 1.1.6 dan setelahnya · Platform: macOS
+</p>
+
+<div class="lang"><a href="privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="privacy.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="privacy.en.html" hreflang="en" lang="en">English</a><a href="privacy.ja.html" hreflang="ja" lang="ja">日本語</a><a href="privacy.ko.html" hreflang="ko" lang="ko">한국어</a><a href="privacy.de.html" hreflang="de" lang="de">Deutsch</a><a href="privacy.fr.html" hreflang="fr" lang="fr">Français</a><a href="privacy.es.html" hreflang="es" lang="es">Español</a><a href="privacy.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="privacy.ru.html" hreflang="ru" lang="ru">Русский</a><a href="privacy.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><span aria-current="page">Bahasa Indonesia</span><a href="privacy.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="privacy.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main"><a href="index.id.html">← Kembali ke dukungan</a></nav>
+
+<div class="tldr">
+  <p><strong>FileExplorer8 tidak mengumpulkan, mengirim, atau membagikan data pengguna apa pun.</strong> Tanpa akun, tanpa analitik, tanpa SDK iklan, tanpa laporan kerusakan. Semua yang Anda lihat di aplikasi tetap di Mac Anda.</p>
+</div>
+
+<h2>1. Yang tidak kami kumpulkan</h2>
+
+<p>Tidak satu pun dari berikut dikumpulkan — <strong>tidak satu butir</strong>:</p>
+<ul><li>Berkas dan folder Anda (isi, nama, ukuran, tanggal modifikasi)</li><li>Riwayat penjelajahan dan pencarian, isi papan klip</li><li>Alamat server, akun, sandi, dan kunci privat yang Anda hubungi</li><li>Pengenal perangkat (nomor seri, UUID perangkat keras, pengenal iklan)</li><li>Statistik penggunaan, log kerusakan, data kinerja</li><li>Lokasi, kontak, kalender, pustaka foto, mikrofon, kamera, isi layar Anda</li></ul>
+<p>Tidak ada <strong>satu pun</strong> permintaan jaringan di aplikasi untuk mengirim data. Selain koneksi SSH/SFTP yang Anda mulai sendiri, aplikasi tidak mengirim satu bita pun ke server mana pun.</p>
+
+<h2>2. Di mana data disimpan</h2>
+
+<p>Semua pengaturan dan kredensial hanya ada di <strong>Mac ini</strong>, di tiga tempat:</p>
+<table><thead><tr><th>Lokasi</th><th>Isinya</th><th>Perlindungan</th></tr></thead><tbody><tr><td>Kontainer sandbox<br><code>~/Library/Containers/<wbr>com.donghuazhu.FileExplorer8/</code></td><td>Preferensi, status sesi (posisi jendela, jalur panel), penanda akses cepat</td><td>Di dalam kontainer App Sandbox, hanya aplikasi ini yang bisa mengakses</td></tr><tr><td>Sama, <code>servers.json</code></td><td>Titik koneksi server SSH (host, port, nama pengguna, nama tampilan)</td><td><strong>AES-256-GCM</strong> (swift-crypto)</td></tr><tr><td>Keychain sistem</td><td>Sandi SSH dan frasa sandi kunci privat</td><td>Dilindungi Keychain macOS</td></tr></tbody></table>
+<p><strong>Sandi tidak pernah masuk ke berkas.</strong> <code>servers.json</code> hanya berisi titik koneksi, tanpa rahasia. Sandi dan frasa sandi ada di Keychain dan terhapus bersama koneksinya.</p>
+<p>Agar jelas: kunci enkripsi <code>servers.json</code> dikirim bersama aplikasi (dikompilasi ke dalam biner — tidak ditulis terpisah ke disk, juga tidak di Keychain). Enkripsi ini hanya mencegah titik koneksi dibaca sembarangan; ia <strong>bukan perlindungan terhadap penyerang lokal</strong>, sebab siapa yang bisa membaca disk Anda juga bisa membaca biner aplikasinya. Yang benar-benar perlu dirahasiakan — sandi dan frasa sandi — hanya ada di Keychain.</p>
+<p>Berkas kunci privat Anda <strong>tetap di tempat Anda meletakkannya</strong>. Aplikasi hanya menyimpan penanda baca; tidak pernah menyalin atau memindahkannya.</p>
+
+<h2>3. Akses jaringan</h2>
+
+<p>Aplikasi punya tepat satu kemampuan jaringan: <strong>klien SSH / SFTP</strong>.</p>
+<ul><li>Koneksi hanya dibuat setelah Anda menambahkan server dan menekan hubungkan, menuju <strong>alamat yang Anda masukkan</strong></li><li>Digunakan untuk menjelajah dan memindahkan berkas lewat SSH (subsistem SFTP)</li><li>Kunci host diperiksa dengan cara <code>known_hosts</code>; sidik jari yang berubah akan meminta konfirmasi Anda</li><li>Data yang dipindahkan dienkripsi oleh SSH itu sendiri (OpenSSL sebagaimana tertanam di libssh2)</li></ul>
+<p><strong>Kami tidak mengoperasikan server apa pun</strong> dan tidak ada relai atau sinkronisasi awan. Berkas Anda tidak pernah melewati kami.</p>
+<p>Aplikasi tidak memeriksa pembaruan, tidak memuat iklan jarak jauh, dan tidak memanggil API pihak ketiga.</p>
+
+<h2>4. Izin sistem</h2>
+
+<p>Aplikasi berjalan di <strong>App Sandbox</strong> dan hanya membaca atau menulis dalam batas yang Anda berikan:</p>
+<table><thead><tr><th>Izin</th><th>Kegunaan</th><th>Kapan muncul</th></tr></thead><tbody><tr><td>Berkas yang dipilih pengguna</td><td>Menjelajah dan bertindak pada folder yang Anda tunjuk</td><td>Sistem bertanya saat pertama kali masuk folder di luar sandbox</td></tr><tr><td>Folder Unduhan / Dokumen / Musik / Gambar / Film</td><td>Mengakses lokasi standar ini tanpa pertanyaan</td><td>Tersedia langsung setelah pemasangan</td></tr><tr><td>Akses jaringan (keluar)</td><td>Menghubungi server SSH yang Anda tambahkan</td><td>Hanya saat Anda menekan hubungkan</td></tr></tbody></table>
+<p>Tabel di atas bersesuaian satu-satu dengan hak sandbox di paket aplikasi (<code>app-sandbox</code>, <code>files.user-selected</code>, <code>files.downloads</code>, <code>assets.music</code> / <code>assets.pictures</code> / <code>assets.movies</code>, <code>network.client</code>). Tidak ada yang diminta lebih.</p>
+<p>Aplikasi <strong>tidak</strong> meminta: kontak, kalender, pengingat, pustaka foto, kamera, mikrofon, perekaman layar, akses seluruh disk, atau aksesibilitas. Jika Anda melihat FileExplorer8 di salah satu butir itu pada Pengaturan Sistem › Privasi & Keamanan, itu bukan dari aplikasi ini.</p>
+<p>Anda dapat mencabut folder yang telah diberikan kapan saja di Pengaturan Sistem › Privasi & Keamanan › Berkas dan Folder.</p>
+
+<h2>5. Checksum</h2>
+
+<p>Aplikasi dapat menghitung checksum (SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64) untuk memeriksa keutuhan berkas.</p>
+<p>Fitur ini <strong>hanya membaca berkas yang Anda pilih secara eksplisit</strong>, menghitung ringkasannya di memori, lalu menampilkannya. Tidak disimpan, tidak dikirim. Ringkasan tidak pernah keluar dari Mac Anda dan tidak masuk ke log mana pun.</p>
+
+<h2>6. Menghapus data Anda</h2>
+
+<table><thead><tr><th>Yang dihapus</th><th>Caranya</th></tr></thead><tbody><tr><td>Sandi satu koneksi SSH</td><td>Hapus koneksi itu di aplikasi; sandi dan frasa sandi di Keychain ikut terhapus</td></tr><tr><td>Semua preferensi dan sesi</td><td>Gunakan Atur Ulang di aplikasi, atau hapus <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code></td></tr><tr><td>Semua data</td><td>Copot pemasangan aplikasi, lalu hapus folder tersebut</td></tr></tbody></table>
+<p>Kami tidak menyimpan data apa pun tentang Anda, jadi tidak ada proses “minta penghapusan kepada kami” — dan tidak ada akun untuk ditutup, karena aplikasi ini tanpa akun.</p>
+
+<h2>7. Komponen pihak ketiga</h2>
+
+<p>Aplikasi hanya memuat dua dependensi sumber terbuka:</p>
+<table><thead><tr><th>Komponen</th><th>Kegunaan</th><th>Catatan</th></tr></thead><tbody><tr><td><a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a></td><td>Implementasi protokol SSH / SFTP</td><td>Menyertakan sumber libssh2 dan OpenSSL; berjalan sepenuhnya lokal, tanpa kode analitik atau pengiriman</td></tr><tr><td><a href="https://github.com/apple/swift-crypto">swift-crypto</a></td><td>Primitif kriptografi (dari Apple)</td><td>AES-256-GCM, SHA-2, HMAC dan algoritme standar lain; dipakai untuk enkripsi pengaturan lokal, verifikasi sidik jari host SSH, dan checksum. Sepenuhnya lokal, tidak pernah ke jaringan</td></tr></tbody></table>
+<p>Tidak ada SDK iklan, SDK analitik, SDK pengumpul kerusakan, atau SDK login sosial di aplikasi.</p>
+
+<h2>8. Privasi anak</h2>
+
+<p>Aplikasi ini tidak mengumpulkan informasi dari anak maupun dari siapa pun. Peringkat usia di App Store adalah 4+.</p>
+
+<h2>9. Perubahan kebijakan</h2>
+
+<p>Bila kebijakan ini berubah, tanggal “Terakhir diperbarui” di atas halaman diperbarui dan perubahannya menyertai versi baru. Karena aplikasi tidak mengumpulkan data, perubahan mendasar kecil kemungkinannya.</p>
+
+<h2>10. Kontak</h2>
+
+<ul><li>Pertanyaan dan laporan: <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a></li><li>Halaman dukungan: <a href="index.html">dukungan FileExplorer8</a></li></ul>
+<details>
+<summary>English summary (for App Review reference)</summary>
+
+<p><strong>FileExplorer8 does not collect, transmit, or share any user data.</strong></p>
+<ul><li>No analytics, no ads, no crash reporting, no accounts.</li><li>All settings and credentials stay on the user's Mac. Passwords live in the macOS Keychain; server endpoints in a local file encrypted with AES-256-GCM (the key ships inside the app, so this obfuscates endpoints rather than protecting against local attackers).</li><li>The only network capability is an SSH/SFTP client that connects <strong>only</strong> to servers the user adds. We operate no servers and receive nothing.</li><li>The app runs in the App Sandbox and requests only user-selected file access, standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound network access.</li><li>Two open-source dependencies: <a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a> (embedded libssh2 + OpenSSL) and Apple's <a href="https://github.com/apple/swift-crypto">swift-crypto</a>; both run fully locally with no telemetry.</li></ul>
+
+</details>
+
+<footer>
+  <p>FileExplorer8 · <a href="index.id.html">Dukungan</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Laporkan masalah</a></p>
+</footer>
+</div>
+</body>
+</html>

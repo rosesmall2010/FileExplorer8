@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보 처리방침 — FileExplorer8</title>
+<meta name="description" content="FileExplorer8은 사용자 데이터를 수집, 전송, 공유하지 않습니다.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<h1>개인정보 처리방침</h1>
+<p class="meta">
+  FileExplorer8<br>
+  최종 수정: 2026-11-17 · 적용 버전: 1.1.6 이상 · 적용 플랫폼: macOS
+</p>
+
+<div class="lang"><a href="privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="privacy.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="privacy.en.html" hreflang="en" lang="en">English</a><a href="privacy.ja.html" hreflang="ja" lang="ja">日本語</a><span aria-current="page">한국어</span><a href="privacy.de.html" hreflang="de" lang="de">Deutsch</a><a href="privacy.fr.html" hreflang="fr" lang="fr">Français</a><a href="privacy.es.html" hreflang="es" lang="es">Español</a><a href="privacy.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="privacy.ru.html" hreflang="ru" lang="ru">Русский</a><a href="privacy.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="privacy.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="privacy.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="privacy.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main"><a href="index.ko.html">← 지원 페이지로</a></nav>
+
+<div class="tldr">
+  <p><strong>FileExplorer8은 사용자 데이터를 수집, 전송, 공유하지 않습니다.</strong> 계정도, 통계도, 광고 SDK도, 충돌 보고도 없습니다. 앱에서 다루는 모든 파일은 사용자의 Mac에만 남습니다.</p>
+</div>
+
+<h2>1. 수집하지 않는 것</h2>
+
+<p>다음 데이터는 <strong>하나도 수집하지 않습니다</strong>:</p>
+<ul><li>파일과 폴더(내용, 이름, 크기, 수정 시각)</li><li>방문 기록, 검색 기록, 클립보드 내용</li><li>연결하는 서버 주소, 계정, 비밀번호, 개인 키</li><li>기기 식별자(일련번호, 하드웨어 UUID, 광고 식별자)</li><li>사용 통계, 충돌 로그, 성능 데이터</li><li>위치, 연락처, 캘린더, 사진 보관함, 마이크, 카메라, 화면 내용</li></ul>
+<p>데이터를 보내는 네트워크 요청은 앱 안에 <strong>전혀 없습니다</strong>. 직접 시작한 SSH/SFTP 연결을 제외하면 앱은 어떤 서버로도 단 1바이트도 보내지 않습니다.</p>
+
+<h2>2. 데이터가 있는 곳</h2>
+
+<p>설정과 자격 증명은 모두 <strong>이 Mac 안에만</strong> 세 곳으로 나뉘어 있습니다:</p>
+<table><thead><tr><th>위치</th><th>저장 내용</th><th>보호 방식</th></tr></thead><tbody><tr><td>앱 샌드박스 컨테이너<br><code>~/Library/Containers/<wbr>com.donghuazhu.FileExplorer8/</code></td><td>환경설정, 세션 상태(창 위치, 각 패널 경로 등), 빠른 접근 북마크</td><td>App Sandbox 컨테이너 안이며 이 앱만 접근 가능</td></tr><tr><td>같은 위치, <code>servers.json</code></td><td>SSH 서버 엔드포인트(호스트, 포트, 사용자 이름, 표시 이름)</td><td><strong>AES-256-GCM 암호화</strong>(swift-crypto)</td></tr><tr><td>시스템 키체인</td><td>SSH 비밀번호, 개인 키 암호</td><td>macOS 키체인이 보호</td></tr></tbody></table>
+<p><strong>비밀번호는 파일에 들어가지 않습니다.</strong> <code>servers.json</code>에는 엔드포인트 정보만 있고 비밀은 없습니다. 비밀번호와 개인 키 암호는 시스템 키체인에 저장되며 연결을 삭제하면 함께 삭제됩니다.</p>
+<p>분명히 밝혀 둡니다. <code>servers.json</code>의 암호화 키는 앱과 함께 배포됩니다(바이너리에 컴파일되어 있으며, 별도 파일로도 키체인에도 저장되지 않습니다). 이 암호화는 엔드포인트 정보를 쉽게 들여다보지 못하게 하는 수준이며, <strong>로컬 공격자에 대한 보호는 아닙니다</strong>. 디스크를 읽을 수 있는 사람은 앱 본체도 읽을 수 있기 때문입니다. 정말로 감춰야 하는 것(비밀번호, 암호)은 언제나 키체인에만 있습니다.</p>
+<p>개인 키 파일 자체는 <strong>사용자가 둔 위치에 그대로 남습니다</strong>. 앱은 읽기용 파일 북마크만 저장하고 복사하거나 옮기지 않습니다.</p>
+
+<h2>3. 네트워크 접근</h2>
+
+<p>앱의 네트워크 기능은 <strong>SSH / SFTP 클라이언트</strong> 하나뿐입니다.</p>
+<ul><li>직접 서버를 추가하고 연결을 클릭할 때만 연결하며 대상은 <strong>사용자가 입력한 주소</strong>입니다</li><li>용도는 파일 탐색과 전송이며 프로토콜은 SSH(SFTP 서브시스템)입니다</li><li>호스트 키는 <code>known_hosts</code> 방식으로 검증하고 지문이 바뀌면 확인을 요청합니다</li><li>전송 내용은 SSH 자체의 암호화(libssh2에 내장된 OpenSSL)로 보호됩니다</li></ul>
+<p><strong>당사는 어떤 서버도 운영하지 않습니다</strong>. 중계나 클라우드 동기화 서비스도 없습니다. 사용자의 파일은 당사를 거치지 않습니다.</p>
+<p>앱은 업데이트를 확인하지 않고, 원격 광고를 불러오지 않으며, 어떤 타사 API도 호출하지 않습니다.</p>
+
+<h2>4. 시스템 권한</h2>
+
+<p>앱은 <strong>App Sandbox</strong>를 켜고 사용자가 허용한 범위에서만 파일을 읽고 씁니다:</p>
+<table><thead><tr><th>권한</th><th>용도</th><th>표시 시점</th></tr></thead><tbody><tr><td>사용자가 선택한 파일</td><td>지정한 폴더 탐색과 조작</td><td>샌드박스 밖 폴더에 처음 들어갈 때 시스템이 확인</td></tr><tr><td>다운로드 / 문서 / 음악 / 사진 / 동영상 폴더</td><td>확인 없이 이 표준 위치에 접근</td><td>설치 직후부터 사용 가능</td></tr><tr><td>네트워크 접근(외부)</td><td>사용자가 추가한 SSH 서버 연결</td><td>연결을 클릭할 때만</td></tr></tbody></table>
+<p>위 표는 앱 번들의 실제 샌드박스 권한과 하나씩 대응합니다(<code>app-sandbox</code>, <code>files.user-selected</code>, <code>files.downloads</code>, <code>assets.music</code> / <code>assets.pictures</code> / <code>assets.movies</code>, <code>network.client</code>). 더 요청한 항목은 없습니다.</p>
+<p>앱은 다음을 <strong>요청하지 않습니다</strong>: 연락처, 캘린더, 미리 알림, 사진 보관함, 카메라, 마이크, 화면 기록, 전체 디스크 접근, 손쉬운 사용. 시스템 설정 › 개인정보 보호 및 보안의 해당 항목에 FileExplorer8이 보여도 이 앱이 요청한 것이 아닙니다.</p>
+<p>허용한 폴더는 시스템 설정 › 개인정보 보호 및 보안 › 파일 및 폴더에서 언제든지 취소할 수 있습니다.</p>
+
+<h2>5. 체크섬 기능</h2>
+
+<p>앱은 파일 무결성 확인을 위해 체크섬(SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64)을 계산할 수 있습니다.</p>
+<p>이 기능은 <strong>명시적으로 선택한 파일만 읽고</strong> 메모리에서 다이제스트를 계산해 보여 줍니다. 저장하지도 전송하지도 않습니다. 다이제스트는 Mac 밖으로 나가지 않고 로그에도 남지 않습니다.</p>
+
+<h2>6. 데이터 삭제</h2>
+
+<table><thead><tr><th>삭제할 대상</th><th>방법</th></tr></thead><tbody><tr><td>특정 SSH 연결의 비밀번호</td><td>앱에서 해당 연결을 삭제하면 키체인의 비밀번호와 암호도 삭제됩니다</td></tr><tr><td>모든 환경설정과 세션</td><td>앱의 “재설정” 기능을 쓰거나 <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> 삭제</td></tr><tr><td>모든 데이터</td><td>앱을 제거한 뒤 위 폴더 삭제</td></tr></tbody></table>
+<p>당사는 사용자에 대한 어떤 데이터도 가지고 있지 않으므로 “당사에 삭제를 요청하는” 절차가 없습니다. 계정도 없으므로 탈퇴도 필요 없습니다.</p>
+
+<h2>7. 서드파티 구성 요소</h2>
+
+<p>앱에 포함된 오픈소스 의존성은 두 개뿐입니다:</p>
+<table><thead><tr><th>구성 요소</th><th>용도</th><th>설명</th></tr></thead><tbody><tr><td><a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a></td><td>SSH / SFTP 프로토콜 구현</td><td>libssh2와 OpenSSL 소스를 포함하며 완전히 로컬에서 동작합니다. 통계나 전송 코드는 없습니다</td></tr><tr><td><a href="https://github.com/apple/swift-crypto">swift-crypto</a></td><td>암호 기본 요소(Apple 제공)</td><td>AES-256-GCM, SHA-2, HMAC 등 표준 알고리즘. 로컬 설정 암호화, SSH 호스트 지문 검증, 체크섬 계산에 사용하며 모두 로컬 연산이고 네트워크를 쓰지 않습니다</td></tr></tbody></table>
+<p>앱 안에 광고 SDK, 통계 SDK, 충돌 수집 SDK, 소셜 로그인 SDK는 <strong>없습니다</strong>.</p>
+
+<h2>8. 아동 개인정보</h2>
+
+<p>이 앱은 아동에게서도 누구에게서도 정보를 수집하지 않습니다. App Store 연령 등급은 4+입니다.</p>
+
+<h2>9. 방침 변경</h2>
+
+<p>이 방침을 고치면 페이지 위쪽의 “최종 수정” 날짜를 갱신하고 새 버전과 함께 배포합니다. 데이터를 수집하지 않으므로 실질적인 변경 가능성은 낮습니다.</p>
+
+<h2>10. 문의</h2>
+
+<ul><li>질문과 신고: <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a></li><li>지원 페이지: <a href="index.html">FileExplorer8 지원</a></li></ul>
+<details>
+<summary>English summary (for App Review reference)</summary>
+
+<p><strong>FileExplorer8 does not collect, transmit, or share any user data.</strong></p>
+<ul><li>No analytics, no ads, no crash reporting, no accounts.</li><li>All settings and credentials stay on the user's Mac. Passwords live in the macOS Keychain; server endpoints in a local file encrypted with AES-256-GCM (the key ships inside the app, so this obfuscates endpoints rather than protecting against local attackers).</li><li>The only network capability is an SSH/SFTP client that connects <strong>only</strong> to servers the user adds. We operate no servers and receive nothing.</li><li>The app runs in the App Sandbox and requests only user-selected file access, standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound network access.</li><li>Two open-source dependencies: <a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a> (embedded libssh2 + OpenSSL) and Apple's <a href="https://github.com/apple/swift-crypto">swift-crypto</a>; both run fully locally with no telemetry.</li></ul>
+
+</details>
+
+<footer>
+  <p>FileExplorer8 · <a href="index.ko.html">지원</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">문제 신고</a></p>
+</footer>
+</div>
+</body>
+</html>

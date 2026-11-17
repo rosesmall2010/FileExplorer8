@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FileExplorer8 — Sokongan & privasi</title>
+<meta name="description" content="FileExplorer8 ialah pengurus fail asli macOS dengan tiga mod: pengurus fail, dua anak tetingkap dan empat anak tetingkap. Sokongan dan dasar privasi ada di sini.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>FileExplorer8</h1>
+  <p class="lead">Pengurus fail asli macOS · Pengurus fail / dua anak tetingkap / empat anak tetingkap dalam satu tetingkap</p>
+</header>
+
+<div class="lang"><a href="index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="index.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="index.en.html" hreflang="en" lang="en">English</a><a href="index.ja.html" hreflang="ja" lang="ja">日本語</a><a href="index.ko.html" hreflang="ko" lang="ko">한국어</a><a href="index.de.html" hreflang="de" lang="de">Deutsch</a><a href="index.fr.html" hreflang="fr" lang="fr">Français</a><a href="index.es.html" hreflang="es" lang="es">Español</a><a href="index.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="index.ru.html" hreflang="ru" lang="ru">Русский</a><a href="index.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="index.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><span aria-current="page">Bahasa Melayu</span><a href="index.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main">
+  <a href="#support">Sokongan</a>
+  <a href="#features">Ciri</a>
+  <a href="privacy.ms.html">Privasi</a>
+  <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Laporkan masalah</a>
+</nav>
+
+<h2 id="support">Sokongan</h2>
+
+<div class="card">
+<p><strong>Terhenti, ada idea, atau jumpa pepijat?</strong></p>
+  <p>Buka isu di <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a> dan sertakan versi macOS, versi FileExplorer8 serta langkah untuk menghasilkan semula masalah. Tangkapan skrin sangat membantu.</p>
+  <p>Nombor versi ada di “FileExplorer8 › Perihal FileExplorer8”.</p>
+</div>
+
+<h3>Soalan lazim</h3>
+
+<p><strong>Mengapa ia meminta kebenaran apabila membuka sesetengah folder?</strong><br>Aplikasi berjalan dalam App Sandbox. Desktop, Muat Turun, Dokumen dan cakera luaran berada di luar sandbox, jadi macOS bertanya kali pertama anda masuk ke folder tersebut. Itu reka bentuk keselamatan sistem, bukan kecacatan. Pilih “Benarkan akses ke folder ini” dan folder itu akan diingati — satu laluan hanya ditanya sekali bagi setiap kali jalan.</p>
+<p><strong>Adakah ia membaca kenalan, kamera atau skrin saya?</strong><br>Tidak. FileExplorer8 hanya meminta akses fail yang anda pilih, folder piawai (Muat Turun / Dokumen / Muzik / Gambar / Filem) dan akses rangkaian keluar. Tiada akses kepada kenalan, kamera, mikrofon, rakaman skrin atau keseluruhan cakera.</p>
+<p><strong>Di manakah kata laluan SSH disimpan?</strong><br>Dalam Keychain macOS. Titik sambungan pelayan disimpan dalam bekas sandbox tempatan, disulitkan dengan AES-256-GCM. Anda juga boleh tidak menyimpan kata laluan dan menerima kotak log masuk sekali guna bagi setiap sambungan. Lihat <a href="privacy.html">dasar privasi</a>.</p>
+<p><strong>Adakah ia menyokong Apple Silicon dan Intel?</strong><br>Kedua-duanya. Pemasang ialah binari universal. macOS 15.0 atau lebih baru diperlukan.</p>
+<p><strong>Bagaimana hendak membersihkan sisa data selepas menyahpasang?</strong><br>Padam aplikasi, kemudian padam <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> untuk mengosongkan keutamaan, keadaan sesi dan titik sambungan pelayan (aplikasi dalam sandbox menyimpan data dalam bekas ini, bukan di lokasi kongsi sistem). Kata laluan SSH ada dalam Keychain dan terpadam bersama sambungannya.</p>
+
+<h2 id="features">Ciri</h2>
+
+<p>FileExplorer8 menggabungkan tiga model interaksi ke dalam satu tetingkap. Tekan <code>⇧⌘D</code> untuk berputar; setiap mod menyimpan keadaannya sendiri — laluan, tab, susunan, lebar lajur, pilihan.</p>
+
+<ul>
+  <li><strong>Pengurus fail</strong>: Menjelajah dan menyusun. Pokok sisi, bar laluan, tab penuh, enam susun atur paparan.</li>
+  <li><strong>Dua anak tetingkap</strong>: Model sumber / destinasi dengan sembilan butang bar tindakan untuk pemindahan pukal.</li>
+  <li><strong>Empat anak tetingkap</strong>: Grid 2×2 untuk melihat empat folder serentak dan mengagihkan ke beberapa destinasi.</li>
+  <li><strong>Cuba dahulu sebelum menulis</strong>: Salin, pindah dan timpa semuanya bermula dengan keputusan percubaan. Langkah ini tidak menulis satu bait pun.</li>
+  <li><strong>Buat asal tiga peringkat</strong>: Pemindahan dalam volum sama, penamaan semula, padam ke Tong Sampah serta mampat dan ekstrak ZIP dijamin boleh dibuat asal.</li>
+  <li><strong>Pratonton</strong>: <code>Ruang</code> untuk Paparan Pantas, kod sumber dengan penyerlahan sintaks, PDF melalui PDFKit, fail SSH jauh sehingga 10 MB.</li>
+  <li><strong>Folder SSH jauh</strong>: Sambung dengan kata laluan atau kunci peribadi; folder jauh berkelakuan seperti folder tempatan.</li>
+  <li><strong>14 bahasa</strong>: Cina ringkas dan tradisional, Inggeris, Jepun, Korea, Jerman, Perancis, Sepanyol, Portugis Brazil, Rusia, Vietnam, Indonesia, Melayu, Thai.</li>
+</ul>
+
+<div class="shots">
+  <a href="images/01-explorer.png" target="_blank" rel="noopener">
+    <img src="images/readme/01-explorer.png" alt="Pengurus fail: paparan grid dengan panel butiran" loading="lazy">
+  </a>
+  <a href="images/02-dual-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/02-dual-pane.png" alt="Dua anak tetingkap: sumber dan destinasi" loading="lazy">
+  </a>
+  <a href="images/03-quad-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/03-quad-pane.png" alt="Empat anak tetingkap: susun atur 2×2" loading="lazy">
+  </a>
+</div>
+<p class="caption">Klik imej untuk melihat saiz asal (2560×1600)</p>
+
+<footer>
+  <p>FileExplorer8 · <a href="privacy.ms.html">Privasi</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Laporkan masalah</a></p>
+  <p>macOS ialah tanda dagangan Apple Inc. Aplikasi ini tidak bergabung dengan Apple Inc.</p>
+</footer>
+</div>
+</body>
+</html>

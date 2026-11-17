@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chính sách quyền riêng tư — FileExplorer8</title>
+<meta name="description" content="FileExplorer8 không thu thập, không truyền và không chia sẻ dữ liệu người dùng.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<h1>Chính sách quyền riêng tư</h1>
+<p class="meta">
+  FileExplorer8<br>
+  Cập nhật lần cuối: 17/11/2026 · Áp dụng cho: 1.1.6 trở lên · Nền tảng: macOS
+</p>
+
+<div class="lang"><a href="privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="privacy.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="privacy.en.html" hreflang="en" lang="en">English</a><a href="privacy.ja.html" hreflang="ja" lang="ja">日本語</a><a href="privacy.ko.html" hreflang="ko" lang="ko">한국어</a><a href="privacy.de.html" hreflang="de" lang="de">Deutsch</a><a href="privacy.fr.html" hreflang="fr" lang="fr">Français</a><a href="privacy.es.html" hreflang="es" lang="es">Español</a><a href="privacy.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="privacy.ru.html" hreflang="ru" lang="ru">Русский</a><span aria-current="page">Tiếng Việt</span><a href="privacy.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="privacy.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="privacy.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main"><a href="index.vi.html">← Quay lại trang hỗ trợ</a></nav>
+
+<div class="tldr">
+  <p><strong>FileExplorer8 không thu thập, không truyền và không chia sẻ dữ liệu người dùng.</strong> Không tài khoản, không phân tích, không SDK quảng cáo, không báo cáo sự cố. Mọi thứ bạn thấy trong ứng dụng đều ở lại trên máy Mac của bạn.</p>
+</div>
+
+<h2>1. Những gì chúng tôi không thu thập</h2>
+
+<p>Không có mục nào sau đây được thu thập — <strong>không một mục nào</strong>:</p>
+<ul><li>Tệp và thư mục của bạn (nội dung, tên, kích thước, ngày sửa)</li><li>Lịch sử duyệt và tìm kiếm, nội dung bộ nhớ tạm</li><li>Địa chỉ máy chủ, tài khoản, mật khẩu và khoá riêng tư mà bạn kết nối</li><li>Mã nhận dạng thiết bị (số sê-ri, UUID phần cứng, mã nhận dạng quảng cáo)</li><li>Số liệu sử dụng, nhật ký sự cố, dữ liệu hiệu năng</li><li>Vị trí, danh bạ, lịch, thư viện ảnh, micro, camera, nội dung màn hình</li></ul>
+<p>Không có <strong>bất kỳ</strong> yêu cầu mạng nào trong ứng dụng để gửi dữ liệu. Ngoài các kết nối SSH/SFTP do bạn tự khởi tạo, ứng dụng không gửi một byte nào tới máy chủ nào.</p>
+
+<h2>2. Dữ liệu nằm ở đâu</h2>
+
+<p>Mọi cài đặt và thông tin đăng nhập chỉ tồn tại <strong>trên máy Mac này</strong>, ở ba nơi:</p>
+<table><thead><tr><th>Vị trí</th><th>Lưu gì</th><th>Bảo vệ</th></tr></thead><tbody><tr><td>Vùng chứa hộp cát<br><code>~/Library/Containers/<wbr>com.donghuazhu.FileExplorer8/</code></td><td>Tuỳ chọn, trạng thái phiên (vị trí cửa sổ, đường dẫn các khung), dấu trang truy cập nhanh</td><td>Trong vùng chứa App Sandbox, chỉ ứng dụng này truy cập được</td></tr><tr><td>Như trên, <code>servers.json</code></td><td>Điểm kết nối máy chủ SSH (máy, cổng, tên người dùng, tên hiển thị)</td><td><strong>Mã hoá AES-256-GCM</strong> (swift-crypto)</td></tr><tr><td>Chuỗi khoá hệ thống</td><td>Mật khẩu SSH, cụm mật khẩu khoá riêng tư</td><td>Được Chuỗi khoá macOS bảo vệ</td></tr></tbody></table>
+<p><strong>Mật khẩu không bao giờ vào tệp.</strong> <code>servers.json</code> chỉ có thông tin điểm kết nối, không có bí mật. Mật khẩu và cụm mật khẩu nằm trong Chuỗi khoá và bị xoá cùng kết nối.</p>
+<p>Nói rõ: khoá mã hoá của <code>servers.json</code> được phát hành kèm ứng dụng (biên dịch vào tệp nhị phân — không ghi riêng ra đĩa, cũng không trong Chuỗi khoá). Lớp mã hoá này chỉ ngăn người khác xem điểm kết nối một cách tuỳ tiện; nó <strong>không bảo vệ trước kẻ tấn công cục bộ</strong>, vì ai đọc được đĩa của bạn cũng đọc được cả tệp nhị phân của ứng dụng. Những gì thật sự cần giữ kín — mật khẩu và cụm mật khẩu — chỉ nằm trong Chuỗi khoá.</p>
+<p>Các tệp khoá riêng tư <strong>vẫn ở đúng nơi bạn đặt</strong>. Ứng dụng chỉ lưu một dấu trang để đọc, không bao giờ sao chép hay di chuyển chúng.</p>
+
+<h2>3. Truy cập mạng</h2>
+
+<p>Ứng dụng có đúng một khả năng mạng: <strong>máy khách SSH / SFTP</strong>.</p>
+<ul><li>Chỉ kết nối sau khi bạn thêm máy chủ và nhấn kết nối, tới <strong>địa chỉ do bạn nhập</strong></li><li>Mục đích là duyệt và truyền tệp qua SSH (hệ thống con SFTP)</li><li>Khoá máy chủ được kiểm tra theo kiểu <code>known_hosts</code>; dấu vân tay thay đổi sẽ yêu cầu bạn xác nhận</li><li>Dữ liệu truyền được chính SSH mã hoá (OpenSSL như nhúng trong libssh2)</li></ul>
+<p><strong>Chúng tôi không vận hành máy chủ nào</strong>, không có trung chuyển hay đồng bộ đám mây. Tệp của bạn không bao giờ đi qua chúng tôi.</p>
+<p>Ứng dụng không kiểm tra cập nhật, không tải quảng cáo từ xa, không gọi bất kỳ API bên thứ ba nào.</p>
+
+<h2>4. Quyền hệ thống</h2>
+
+<p>Ứng dụng chạy trong <strong>App Sandbox</strong> và chỉ đọc hoặc ghi trong phạm vi bạn cấp:</p>
+<table><thead><tr><th>Quyền</th><th>Mục đích</th><th>Khi nào xuất hiện</th></tr></thead><tbody><tr><td>Tệp do người dùng chọn</td><td>Duyệt và thao tác trên thư mục bạn chỉ định</td><td>Hệ thống hỏi khi lần đầu vào thư mục ngoài hộp cát</td></tr><tr><td>Thư mục Tải về / Tài liệu / Nhạc / Ảnh / Phim</td><td>Truy cập các vị trí chuẩn này mà không bị hỏi</td><td>Có ngay sau khi cài</td></tr><tr><td>Truy cập mạng (ra ngoài)</td><td>Kết nối tới máy chủ SSH bạn thêm</td><td>Chỉ khi bạn nhấn kết nối</td></tr></tbody></table>
+<p>Bảng trên tương ứng một-một với các quyền hộp cát trong gói ứng dụng (<code>app-sandbox</code>, <code>files.user-selected</code>, <code>files.downloads</code>, <code>assets.music</code> / <code>assets.pictures</code> / <code>assets.movies</code>, <code>network.client</code>). Không yêu cầu thêm gì.</p>
+<p>Ứng dụng <strong>không</strong> yêu cầu: danh bạ, lịch, nhắc nhở, thư viện ảnh, camera, micro, ghi màn hình, truy cập toàn bộ ổ đĩa hay trợ năng. Nếu bạn thấy FileExplorer8 trong các mục đó ở Cài đặt Hệ thống › Quyền riêng tư & Bảo mật, thì không phải ứng dụng này yêu cầu.</p>
+<p>Bạn có thể thu hồi thư mục đã cấp bất cứ lúc nào trong Cài đặt Hệ thống › Quyền riêng tư & Bảo mật › Tệp và thư mục.</p>
+
+<h2>5. Tổng kiểm tra</h2>
+
+<p>Ứng dụng tính được tổng kiểm tra (SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64) để đối chiếu tính toàn vẹn của tệp.</p>
+<p>Tính năng này <strong>chỉ đọc những tệp bạn chọn rõ ràng</strong>, tính bản tóm lược trong bộ nhớ và hiển thị cho bạn. Không lưu, không gửi. Bản tóm lược không rời khỏi máy bạn và không vào bất kỳ nhật ký nào.</p>
+
+<h2>6. Xoá dữ liệu của bạn</h2>
+
+<table><thead><tr><th>Muốn xoá</th><th>Cách làm</th></tr></thead><tbody><tr><td>Mật khẩu của một kết nối SSH</td><td>Xoá kết nối đó trong ứng dụng; mật khẩu và cụm mật khẩu trong Chuỗi khoá sẽ đi theo</td></tr><tr><td>Toàn bộ tuỳ chọn và phiên</td><td>Dùng Đặt lại trong ứng dụng, hoặc xoá <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code></td></tr><tr><td>Toàn bộ dữ liệu</td><td>Gỡ cài đặt ứng dụng, rồi xoá thư mục trên</td></tr></tbody></table>
+<p>Chúng tôi không giữ dữ liệu nào của bạn, nên không có quy trình “yêu cầu chúng tôi xoá” — cũng không có tài khoản để đóng, vì ứng dụng không có tài khoản.</p>
+
+<h2>7. Thành phần bên thứ ba</h2>
+
+<p>Ứng dụng chỉ gồm hai phụ thuộc mã nguồn mở:</p>
+<table><thead><tr><th>Thành phần</th><th>Mục đích</th><th>Ghi chú</th></tr></thead><tbody><tr><td><a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a></td><td>Cài đặt giao thức SSH / SFTP</td><td>Nhúng mã nguồn libssh2 và OpenSSL; chạy hoàn toàn cục bộ, không có mã phân tích hay gửi dữ liệu</td></tr><tr><td><a href="https://github.com/apple/swift-crypto">swift-crypto</a></td><td>Nguyên thuỷ mật mã (của Apple)</td><td>AES-256-GCM, SHA-2, HMAC và các thuật toán chuẩn khác; dùng để mã hoá cài đặt cục bộ, kiểm tra dấu vân tay máy chủ SSH và tính tổng kiểm tra. Hoàn toàn cục bộ, không lên mạng</td></tr></tbody></table>
+<p>Không có SDK quảng cáo, SDK phân tích, SDK thu thập sự cố hay SDK đăng nhập mạng xã hội trong ứng dụng.</p>
+
+<h2>8. Quyền riêng tư của trẻ em</h2>
+
+<p>Ứng dụng không thu thập thông tin của trẻ em, cũng không của bất kỳ ai. Xếp hạng độ tuổi trên App Store là 4+.</p>
+
+<h2>9. Thay đổi chính sách</h2>
+
+<p>Nếu chính sách thay đổi, ngày “Cập nhật lần cuối” ở đầu trang sẽ được sửa và thay đổi đi kèm một phiên bản mới. Vì ứng dụng không thu thập dữ liệu, thay đổi thực chất khó xảy ra.</p>
+
+<h2>10. Liên hệ</h2>
+
+<ul><li>Câu hỏi và báo lỗi: <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a></li><li>Trang hỗ trợ: <a href="index.html">hỗ trợ FileExplorer8</a></li></ul>
+<details>
+<summary>English summary (for App Review reference)</summary>
+
+<p><strong>FileExplorer8 does not collect, transmit, or share any user data.</strong></p>
+<ul><li>No analytics, no ads, no crash reporting, no accounts.</li><li>All settings and credentials stay on the user's Mac. Passwords live in the macOS Keychain; server endpoints in a local file encrypted with AES-256-GCM (the key ships inside the app, so this obfuscates endpoints rather than protecting against local attackers).</li><li>The only network capability is an SSH/SFTP client that connects <strong>only</strong> to servers the user adds. We operate no servers and receive nothing.</li><li>The app runs in the App Sandbox and requests only user-selected file access, standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound network access.</li><li>Two open-source dependencies: <a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a> (embedded libssh2 + OpenSSL) and Apple's <a href="https://github.com/apple/swift-crypto">swift-crypto</a>; both run fully locally with no telemetry.</li></ul>
+
+</details>
+
+<footer>
+  <p>FileExplorer8 · <a href="index.vi.html">Hỗ trợ</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Báo lỗi</a></p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dasar privasi — FileExplorer8</title>
+<meta name="description" content="FileExplorer8 tidak mengumpul, menghantar atau berkongsi sebarang data pengguna.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<h1>Dasar privasi</h1>
+<p class="meta">
+  FileExplorer8<br>
+  Kemas kini terakhir: 17/11/2026 · Berkuat kuasa untuk: 1.1.6 dan seterusnya · Platform: macOS
+</p>
+
+<div class="lang"><a href="privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="privacy.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="privacy.en.html" hreflang="en" lang="en">English</a><a href="privacy.ja.html" hreflang="ja" lang="ja">日本語</a><a href="privacy.ko.html" hreflang="ko" lang="ko">한국어</a><a href="privacy.de.html" hreflang="de" lang="de">Deutsch</a><a href="privacy.fr.html" hreflang="fr" lang="fr">Français</a><a href="privacy.es.html" hreflang="es" lang="es">Español</a><a href="privacy.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="privacy.ru.html" hreflang="ru" lang="ru">Русский</a><a href="privacy.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="privacy.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><span aria-current="page">Bahasa Melayu</span><a href="privacy.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main"><a href="index.ms.html">← Kembali ke sokongan</a></nav>
+
+<div class="tldr">
+  <p><strong>FileExplorer8 tidak mengumpul, menghantar atau berkongsi sebarang data pengguna.</strong> Tiada akaun, tiada analitik, tiada SDK iklan, tiada laporan ranap. Semua yang anda lihat dalam aplikasi kekal pada Mac anda.</p>
+</div>
+
+<h2>1. Apa yang tidak kami kumpul</h2>
+
+<p>Tiada satu pun daripada yang berikut dikumpul — <strong>tidak satu butiran</strong>:</p>
+<ul><li>Fail dan folder anda (kandungan, nama, saiz, tarikh ubah suai)</li><li>Sejarah pelayaran dan carian, kandungan papan keratan</li><li>Alamat pelayan, akaun, kata laluan dan kunci peribadi yang anda sambungi</li><li>Pengecam peranti (nombor sirí, UUID perkakasan, pengecam pengiklanan)</li><li>Statistik penggunaan, log ranap, data prestasi</li><li>Lokasi, kenalan, kalendar, pustaka foto, mikrofon, kamera, kandungan skrin anda</li></ul>
+<p>Tiada <strong>satu pun</strong> permintaan rangkaian dalam aplikasi untuk menghantar data. Selain sambungan SSH/SFTP yang anda mulakan sendiri, aplikasi tidak menghantar satu bait pun ke mana-mana pelayan.</p>
+
+<h2>2. Di mana data disimpan</h2>
+
+<p>Semua tetapan dan kelayakan hanya wujud pada <strong>Mac ini</strong>, di tiga tempat:</p>
+<table><thead><tr><th>Lokasi</th><th>Kandungan</th><th>Perlindungan</th></tr></thead><tbody><tr><td>Bekas sandbox<br><code>~/Library/Containers/<wbr>com.donghuazhu.FileExplorer8/</code></td><td>Keutamaan, keadaan sesi (kedudukan tetingkap, laluan panel), penanda akses pantas</td><td>Dalam bekas App Sandbox, hanya aplikasi ini boleh mengakses</td></tr><tr><td>Sama, <code>servers.json</code></td><td>Titik sambungan pelayan SSH (hos, port, nama pengguna, nama paparan)</td><td><strong>AES-256-GCM</strong> (swift-crypto)</td></tr><tr><td>Keychain sistem</td><td>Kata laluan SSH dan frasa laluan kunci peribadi</td><td>Dilindungi Keychain macOS</td></tr></tbody></table>
+<p><strong>Kata laluan tidak pernah masuk ke fail.</strong> <code>servers.json</code> hanya mengandungi titik sambungan, tanpa rahsia. Kata laluan dan frasa laluan berada dalam Keychain dan terpadam bersama sambungannya.</p>
+<p>Untuk jelas: kunci penyulitan <code>servers.json</code> diedarkan bersama aplikasi (dikompil ke dalam binari — tidak ditulis berasingan ke cakera, juga tidak dalam Keychain). Penyulitan ini hanya menghalang titik sambungan dibaca sewenang-wenangnya; ia <strong>bukan perlindungan terhadap penyerang setempat</strong>, kerana sesiapa yang boleh membaca cakera anda juga boleh membaca binari aplikasinya. Yang benar-benar perlu dirahsiakan — kata laluan dan frasa laluan — hanya berada dalam Keychain.</p>
+<p>Fail kunci peribadi anda <strong>kekal di tempat anda meletakkannya</strong>. Aplikasi hanya menyimpan penanda baca; ia tidak pernah menyalin atau memindahkannya.</p>
+
+<h2>3. Akses rangkaian</h2>
+
+<p>Aplikasi mempunyai tepat satu keupayaan rangkaian: <strong>klien SSH / SFTP</strong>.</p>
+<ul><li>Sambungan hanya dibuat selepas anda menambah pelayan dan menekan sambung, menuju <strong>alamat yang anda masukkan</strong></li><li>Ia digunakan untuk menjelajah dan memindahkan fail melalui SSH (subsistem SFTP)</li><li>Kunci hos disahkan secara <code>known_hosts</code>; cap jari yang berubah akan meminta pengesahan anda</li><li>Data yang dipindahkan disulitkan oleh SSH itu sendiri (OpenSSL seperti terbenam dalam libssh2)</li></ul>
+<p><strong>Kami tidak mengendalikan sebarang pelayan</strong> dan tiada geganti atau penyegerakan awan. Fail anda tidak pernah melalui kami.</p>
+<p>Aplikasi tidak menyemak kemas kini, tidak memuatkan iklan jauh, dan tidak memanggil mana-mana API pihak ketiga.</p>
+
+<h2>4. Kebenaran sistem</h2>
+
+<p>Aplikasi berjalan dalam <strong>App Sandbox</strong> dan hanya membaca atau menulis dalam lingkungan yang anda berikan:</p>
+<table><thead><tr><th>Kebenaran</th><th>Tujuan</th><th>Bila ia muncul</th></tr></thead><tbody><tr><td>Fail dipilih pengguna</td><td>Menjelajah dan bertindak pada folder yang anda tetapkan</td><td>Sistem bertanya ketika pertama kali masuk folder di luar sandbox</td></tr><tr><td>Folder Muat Turun / Dokumen / Muzik / Gambar / Filem</td><td>Mengakses lokasi piawai ini tanpa pertanyaan</td><td>Tersedia sejurus selepas pemasangan</td></tr><tr><td>Akses rangkaian (keluar)</td><td>Menyambung ke pelayan SSH yang anda tambah</td><td>Hanya apabila anda menekan sambung</td></tr></tbody></table>
+<p>Jadual di atas sepadan satu-satu dengan kebenaran sandbox dalam pek aplikasi (<code>app-sandbox</code>, <code>files.user-selected</code>, <code>files.downloads</code>, <code>assets.music</code> / <code>assets.pictures</code> / <code>assets.movies</code>, <code>network.client</code>). Tiada yang diminta lebih.</p>
+<p>Aplikasi <strong>tidak</strong> meminta: kenalan, kalendar, peringatan, pustaka foto, kamera, mikrofon, rakaman skrin, akses seluruh cakera atau kebolehcapaian. Jika anda melihat FileExplorer8 di bawah mana-mana butiran itu dalam Tetapan Sistem › Privasi & Keselamatan, ia bukan daripada aplikasi ini.</p>
+<p>Anda boleh menarik balik folder yang telah diberikan pada bila-bila masa dalam Tetapan Sistem › Privasi & Keselamatan › Fail dan Folder.</p>
+
+<h2>5. Jumlah semak</h2>
+
+<p>Aplikasi boleh mengira jumlah semak (SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64) untuk menyemak keutuhan fail.</p>
+<p>Ciri ini <strong>hanya membaca fail yang anda pilih secara jelas</strong>, mengira ringkasan dalam memori dan memaparkannya. Tiada disimpan, tiada dihantar. Ringkasan tidak pernah keluar dari Mac anda dan tidak masuk ke mana-mana log.</p>
+
+<h2>6. Memadam data anda</h2>
+
+<table><thead><tr><th>Yang dipadam</th><th>Caranya</th></tr></thead><tbody><tr><td>Kata laluan satu sambungan SSH</td><td>Padam sambungan itu dalam aplikasi; kata laluan dan frasa laluan dalam Keychain turut terpadam</td></tr><tr><td>Semua keutamaan dan sesi</td><td>Gunakan Set Semula dalam aplikasi, atau padam <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code></td></tr><tr><td>Semua data</td><td>Nyahpasang aplikasi, kemudian padam folder tersebut</td></tr></tbody></table>
+<p>Kami tidak menyimpan sebarang data tentang anda, jadi tiada proses “minta pemadaman daripada kami” — dan tiada akaun untuk ditutup, kerana aplikasi ini tanpa akaun.</p>
+
+<h2>7. Komponen pihak ketiga</h2>
+
+<p>Aplikasi hanya mengandungi dua tanggungan sumber terbuka:</p>
+<table><thead><tr><th>Komponen</th><th>Tujuan</th><th>Nota</th></tr></thead><tbody><tr><td><a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a></td><td>Pelaksanaan protokol SSH / SFTP</td><td>Membenamkan sumber libssh2 dan OpenSSL; berjalan sepenuhnya setempat, tanpa kod analitik atau penghantaran</td></tr><tr><td><a href="https://github.com/apple/swift-crypto">swift-crypto</a></td><td>Primitif kriptografi (daripada Apple)</td><td>AES-256-GCM, SHA-2, HMAC dan algoritma piawai lain; digunakan untuk penyulitan tetapan setempat, pengesahan cap jari hos SSH dan jumlah semak. Sepenuhnya setempat, tidak pernah ke rangkaian</td></tr></tbody></table>
+<p>Tiada SDK iklan, SDK analitik, SDK pengumpul ranap atau SDK log masuk sosial dalam aplikasi.</p>
+
+<h2>8. Privasi kanak-kanak</h2>
+
+<p>Aplikasi ini tidak mengumpul maklumat daripada kanak-kanak mahupun daripada sesiapa. Penarafan umur di App Store ialah 4+.</p>
+
+<h2>9. Perubahan dasar</h2>
+
+<p>Jika dasar ini berubah, tarikh “Kemas kini terakhir” di atas halaman akan disemak dan perubahan itu menyertai versi baharu. Oleh sebab aplikasi tidak mengumpul data, perubahan besar tidak dijangka.</p>
+
+<h2>10. Hubungi</h2>
+
+<ul><li>Soalan dan laporan: <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a></li><li>Halaman sokongan: <a href="index.html">sokongan FileExplorer8</a></li></ul>
+<details>
+<summary>English summary (for App Review reference)</summary>
+
+<p><strong>FileExplorer8 does not collect, transmit, or share any user data.</strong></p>
+<ul><li>No analytics, no ads, no crash reporting, no accounts.</li><li>All settings and credentials stay on the user's Mac. Passwords live in the macOS Keychain; server endpoints in a local file encrypted with AES-256-GCM (the key ships inside the app, so this obfuscates endpoints rather than protecting against local attackers).</li><li>The only network capability is an SSH/SFTP client that connects <strong>only</strong> to servers the user adds. We operate no servers and receive nothing.</li><li>The app runs in the App Sandbox and requests only user-selected file access, standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound network access.</li><li>Two open-source dependencies: <a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a> (embedded libssh2 + OpenSSL) and Apple's <a href="https://github.com/apple/swift-crypto">swift-crypto</a>; both run fully locally with no telemetry.</li></ul>
+
+</details>
+
+<footer>
+  <p>FileExplorer8 · <a href="index.ms.html">Sokongan</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Laporkan masalah</a></p>
+</footer>
+</div>
+</body>
+</html>

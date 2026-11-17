@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FileExplorer8 — การสนับสนุนและความเป็นส่วนตัว</title>
+<meta name="description" content="FileExplorer8 คือโปรแกรมจัดการไฟล์สำหรับ macOS โดยตรง มีสามโหมด: ตัวจัดการไฟล์ สองบานหน้าต่าง และสี่บานหน้าต่าง หน้านี้มีข้อมูลการสนับสนุนและนโยบายความเป็นส่วนตัว">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>FileExplorer8</h1>
+  <p class="lead">โปรแกรมจัดการไฟล์สำหรับ macOS โดยตรง · ตัวจัดการไฟล์ / สองบานหน้าต่าง / สี่บานหน้าต่าง ในหน้าต่างเดียว</p>
+</header>
+
+<div class="lang"><a href="index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="index.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="index.en.html" hreflang="en" lang="en">English</a><a href="index.ja.html" hreflang="ja" lang="ja">日本語</a><a href="index.ko.html" hreflang="ko" lang="ko">한국어</a><a href="index.de.html" hreflang="de" lang="de">Deutsch</a><a href="index.fr.html" hreflang="fr" lang="fr">Français</a><a href="index.es.html" hreflang="es" lang="es">Español</a><a href="index.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="index.ru.html" hreflang="ru" lang="ru">Русский</a><a href="index.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="index.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="index.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><span aria-current="page">ไทย</span></div>
+
+<nav class="main">
+  <a href="#support">การสนับสนุน</a>
+  <a href="#features">คุณสมบัติ</a>
+  <a href="privacy.th.html">ความเป็นส่วนตัว</a>
+  <a href="https://github.com/rosesmall2010/FileExplorer8/issues">รายงานปัญหา</a>
+</nav>
+
+<h2 id="support">การสนับสนุน</h2>
+
+<div class="card">
+<p><strong>ติดขัด มีข้อเสนอ หรือพบข้อบกพร่อง?</strong></p>
+  <p>เปิด issue ที่ <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a> พร้อมระบุเวอร์ชัน macOS เวอร์ชัน FileExplorer8 และขั้นตอนที่ทำให้เกิดปัญหา หากแนบภาพหน้าจอด้วยจะช่วยได้มาก</p>
+  <p>หมายเลขเวอร์ชันดูได้ที่ “FileExplorer8 › เกี่ยวกับ FileExplorer8”</p>
+</div>
+
+<h3>คำถามที่พบบ่อย</h3>
+
+<p><strong>ทำไมเปิดบางโฟลเดอร์แล้วมีหน้าต่างขออนุญาต?</strong><br>แอปทำงานใน App Sandbox โฟลเดอร์เดสก์ท็อป ดาวน์โหลด เอกสาร และดิสก์ภายนอกอยู่นอก sandbox macOS จึงต้องถามเมื่อคุณเข้าสู่โฟลเดอร์เหล่านั้นครั้งแรก นี่คือการออกแบบความปลอดภัยของระบบ ไม่ใช่ข้อบกพร่อง เมื่อเลือก “อนุญาตให้เข้าถึงโฟลเดอร์นี้” ระบบจะจำโฟลเดอร์ไว้ โดยถามเพียงครั้งเดียวต่อเส้นทางต่อการเปิดโปรแกรมหนึ่งครั้ง</p>
+<p><strong>แอปอ่านรายชื่อผู้ติดต่อ กล้อง หรือหน้าจอของฉันหรือไม่?</strong><br>ไม่ FileExplorer8 ขอเพียงการเข้าถึงไฟล์ที่คุณเลือก โฟลเดอร์มาตรฐาน (ดาวน์โหลด / เอกสาร / เพลง / รูปภาพ / ภาพยนตร์) และการเชื่อมต่อเครือข่ายขาออกเท่านั้น ไม่มีสิทธิ์เข้าถึงรายชื่อผู้ติดต่อ กล้อง ไมโครโฟน การบันทึกหน้าจอ หรือดิสก์ทั้งหมด</p>
+<p><strong>รหัสผ่าน SSH เก็บไว้ที่ไหน?</strong><br>ในพวงกุญแจ (Keychain) ของ macOS ข้อมูลปลายทางการเชื่อมต่อเซิร์ฟเวอร์เก็บในคอนเทนเนอร์ sandbox ภายในเครื่อง เข้ารหัสด้วย AES-256-GCM คุณยังเลือกไม่บันทึกรหัสผ่านได้ โดยจะมีหน้าต่างเข้าสู่ระบบครั้งเดียวทุกครั้งที่เชื่อมต่อ ดู<a href="privacy.html">นโยบายความเป็นส่วนตัว</a></p>
+<p><strong>รองรับ Apple Silicon และ Intel หรือไม่?</strong><br>รองรับทั้งสอง ตัวติดตั้งเป็นไบนารีสากล ต้องใช้ macOS 15.0 ขึ้นไป</p>
+<p><strong>จะล้างข้อมูลที่เหลือหลังถอนการติดตั้งอย่างไร?</strong><br>ลบแอป แล้วลบ <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> เพื่อล้างการตั้งค่า สถานะเซสชัน และข้อมูลปลายทางการเชื่อมต่อเซิร์ฟเวอร์ (แอปใน sandbox เก็บข้อมูลไว้ในคอนเทนเนอร์นี้ ไม่ได้อยู่ในตำแหน่งที่ใช้ร่วมกันของระบบ) รหัสผ่าน SSH อยู่ในพวงกุญแจและจะถูกลบไปพร้อมกับการเชื่อมต่อนั้น</p>
+
+<h2 id="features">คุณสมบัติ</h2>
+
+<p>FileExplorer8 รวมสามรูปแบบการใช้งานไว้ในหน้าต่างเดียว กด <code>⇧⌘D</code> เพื่อสลับวน แต่ละโหมดจำสถานะของตนเอง ทั้งเส้นทาง แท็บ การเรียงลำดับ ความกว้างคอลัมน์ และรายการที่เลือก</p>
+
+<ul>
+  <li><strong>ตัวจัดการไฟล์</strong>: สำรวจและจัดระเบียบ มีแผนผังด้านข้าง แถบเส้นทาง แท็บเต็มรูปแบบ และหกรูปแบบการแสดงผล</li>
+  <li><strong>สองบานหน้าต่าง</strong>: รูปแบบต้นทาง / ปลายทาง พร้อมปุ่มบนแถบคำสั่งเก้าปุ่มสำหรับย้ายข้อมูลจำนวนมาก</li>
+  <li><strong>สี่บานหน้าต่าง</strong>: ตาราง 2×2 ดูสี่โฟลเดอร์พร้อมกันและกระจายไปยังหลายปลายทาง</li>
+  <li><strong>ทดลองก่อนเขียน</strong>: การคัดลอก ย้าย และเขียนทับจะเริ่มด้วยผลการทดลองก่อน ขั้นตอนนี้ไม่เขียนแม้แต่ไบต์เดียว</li>
+  <li><strong>เลิกทำสามระดับ</strong>: การย้ายภายในโวลุ่มเดียวกัน การเปลี่ยนชื่อ การลบลงถังขยะ และการบีบอัดหรือแตกไฟล์ ZIP รับประกันว่าเลิกทำได้</li>
+  <li><strong>ตัวอย่าง</strong>: <code>Space</code> เพื่อดูตัวอย่างเร็ว ซอร์สโค้ดมีไฮไลต์ไวยากรณ์ PDF ผ่าน PDFKit และไฟล์ SSH ระยะไกลไม่เกิน 10 MB</li>
+  <li><strong>โฟลเดอร์ SSH ระยะไกล</strong>: เชื่อมต่อด้วยรหัสผ่านหรือคีย์ส่วนตัว โฟลเดอร์ระยะไกลใช้งานเหมือนโฟลเดอร์ภายในเครื่อง</li>
+  <li><strong>14 ภาษา</strong>: จีนตัวย่อและตัวเต็ม อังกฤษ ญี่ปุ่น เกาหลี เยอรมัน ฝรั่งเศส สเปน โปรตุเกสบราซิล รัสเซีย เวียดนาม อินโดนีเซีย มาเลย์ ไทย</li>
+</ul>
+
+<div class="shots">
+  <a href="images/01-explorer.png" target="_blank" rel="noopener">
+    <img src="images/readme/01-explorer.png" alt="ตัวจัดการไฟล์: มุมมองตารางพร้อมแผงรายละเอียด" loading="lazy">
+  </a>
+  <a href="images/02-dual-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/02-dual-pane.png" alt="สองบานหน้าต่าง: ต้นทางและปลายทาง" loading="lazy">
+  </a>
+  <a href="images/03-quad-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/03-quad-pane.png" alt="สี่บานหน้าต่าง: เลย์เอาต์ 2×2" loading="lazy">
+  </a>
+</div>
+<p class="caption">คลิกรูปเพื่อดูขนาดจริง (2560×1600)</p>
+
+<footer>
+  <p>FileExplorer8 · <a href="privacy.th.html">ความเป็นส่วนตัว</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">รายงานปัญหา</a></p>
+  <p>macOS เป็นเครื่องหมายการค้าของ Apple Inc. แอปนี้ไม่เกี่ยวข้องกับ Apple Inc.</p>
+</footer>
+</div>
+</body>
+</html>

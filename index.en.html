@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FileExplorer8 — Support & Privacy</title>
+<meta name="description" content="FileExplorer8 is a native macOS file manager with three modes: file manager, dual-pane, and quad-pane. Support and privacy policy live here.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>FileExplorer8</h1>
+  <p class="lead">Native macOS file manager · File manager / dual-pane / quad-pane, one window</p>
+</header>
+
+<div class="lang"><a href="index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="index.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><span aria-current="page">English</span><a href="index.ja.html" hreflang="ja" lang="ja">日本語</a><a href="index.ko.html" hreflang="ko" lang="ko">한국어</a><a href="index.de.html" hreflang="de" lang="de">Deutsch</a><a href="index.fr.html" hreflang="fr" lang="fr">Français</a><a href="index.es.html" hreflang="es" lang="es">Español</a><a href="index.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="index.ru.html" hreflang="ru" lang="ru">Русский</a><a href="index.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="index.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="index.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="index.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main">
+  <a href="#support">Support</a>
+  <a href="#features">Features</a>
+  <a href="privacy.en.html">Privacy</a>
+  <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Report an issue</a>
+</nav>
+
+<h2 id="support">Support</h2>
+
+<div class="card">
+<p><strong>Stuck, got an idea, or found a bug?</strong></p>
+  <p>Open an issue on <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a> and include your macOS version, your FileExplorer8 version, and the steps that reproduce the problem. A screenshot helps a lot.</p>
+  <p>The version number is in “FileExplorer8 › About FileExplorer8”.</p>
+</div>
+
+<h3>Frequently asked</h3>
+
+<p><strong>Why does it ask for permission when I open some folders?</strong><br>The app runs in the App Sandbox. Desktop, Downloads, Documents and external disks live outside the sandbox, so macOS prompts you the first time you enter such a folder. That is the system's security design, not a defect. Choose “Grant access to this folder” and the folder is remembered — you are only asked once per path per run.</p>
+<p><strong>Does it read my contacts, camera, or screen?</strong><br>No. FileExplorer8 only requests user-selected file access, the standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound network access. It has no contacts, camera, microphone, screen-recording or full-disk access.</p>
+<p><strong>Where are SSH passwords stored?</strong><br>In the macOS Keychain. Server endpoints live in the local sandbox container, encrypted with AES-256-GCM. You can also skip saving the password and get a one-time login prompt on every connection. See the <a href="privacy.html">privacy policy</a>.</p>
+<p><strong>Does it support Apple Silicon and Intel?</strong><br>Both. The installer is a universal binary. macOS 15.0 or later is required.</p>
+<p><strong>How do I clean up leftovers after uninstalling?</strong><br>Delete the app, then delete <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> to clear preferences, session state and server endpoints (sandboxed apps keep their data in that container, not in shared system locations). SSH passwords live in the Keychain and are removed along with their connections.</p>
+
+<h2 id="features">Features</h2>
+
+<p>FileExplorer8 packs three interaction models into one window. Press <code>⇧⌘D</code> to cycle through them; each mode keeps its own state — path, tabs, sorting, column widths, selection.</p>
+
+<ul>
+  <li><strong>File manager</strong>: Explore and tidy up. Sidebar tree, path bar, full tabs, six view layouts.</li>
+  <li><strong>Dual-pane</strong>: Source / destination model with nine action-bar buttons for bulk transfer.</li>
+  <li><strong>Quad-pane</strong>: A 2×2 grid to watch four folders at once and fan out to several targets.</li>
+  <li><strong>Dry-run first</strong>: Copy, move and overwrite each start with a dry-run verdict. That step writes zero bytes.</li>
+  <li><strong>Three-tier undo</strong>: Same-volume moves, renames, trash deletes and ZIP pack/unpack are guaranteed undoable.</li>
+  <li><strong>Preview</strong>: <code>Space</code> for Quick Look, syntax-highlighted source code, PDFs via PDFKit, and remote SSH files up to 10 MB.</li>
+  <li><strong>Remote SSH folders</strong>: Connect with a password or a private key; remote folders behave like local ones.</li>
+  <li><strong>14 languages</strong>: Simplified Chinese, Traditional Chinese, English, Japanese, Korean, German, French, Spanish, Brazilian Portuguese, Russian, Vietnamese, Indonesian, Malay, Thai.</li>
+</ul>
+
+<div class="shots">
+  <a href="images/01-explorer.png" target="_blank" rel="noopener">
+    <img src="images/readme/01-explorer.png" alt="File manager: grid view with the details pane" loading="lazy">
+  </a>
+  <a href="images/02-dual-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/02-dual-pane.png" alt="Dual-pane: source and destination" loading="lazy">
+  </a>
+  <a href="images/03-quad-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/03-quad-pane.png" alt="Quad-pane: 2×2 layout" loading="lazy">
+  </a>
+</div>
+<p class="caption">Click an image to see it full size (2560×1600)</p>
+
+<footer>
+  <p>FileExplorer8 · <a href="privacy.en.html">Privacy</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Report an issue</a></p>
+  <p>macOS is a trademark of Apple Inc. This app is not affiliated with Apple Inc.</p>
+</footer>
+</div>
+</body>
+</html>

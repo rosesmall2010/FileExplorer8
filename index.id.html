@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FileExplorer8 — Dukungan & privasi</title>
+<meta name="description" content="FileExplorer8 adalah pengelola berkas asli macOS dengan tiga mode: pengelola berkas, dua panel, dan empat panel. Dukungan dan kebijakan privasi ada di sini.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>FileExplorer8</h1>
+  <p class="lead">Pengelola berkas asli macOS · Pengelola berkas / dua panel / empat panel dalam satu jendela</p>
+</header>
+
+<div class="lang"><a href="index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="index.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="index.en.html" hreflang="en" lang="en">English</a><a href="index.ja.html" hreflang="ja" lang="ja">日本語</a><a href="index.ko.html" hreflang="ko" lang="ko">한국어</a><a href="index.de.html" hreflang="de" lang="de">Deutsch</a><a href="index.fr.html" hreflang="fr" lang="fr">Français</a><a href="index.es.html" hreflang="es" lang="es">Español</a><a href="index.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="index.ru.html" hreflang="ru" lang="ru">Русский</a><a href="index.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><span aria-current="page">Bahasa Indonesia</span><a href="index.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="index.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main">
+  <a href="#support">Dukungan</a>
+  <a href="#features">Fitur</a>
+  <a href="privacy.id.html">Privasi</a>
+  <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Laporkan masalah</a>
+</nav>
+
+<h2 id="support">Dukungan</h2>
+
+<div class="card">
+<p><strong>Terjebak, punya ide, atau menemukan bug?</strong></p>
+  <p>Buka issue di <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a> dan sertakan versi macOS, versi FileExplorer8, serta langkah mereproduksinya. Tangkapan layar sangat membantu.</p>
+  <p>Nomor versi ada di “FileExplorer8 › Tentang FileExplorer8”.</p>
+</div>
+
+<h3>Pertanyaan umum</h3>
+
+<p><strong>Mengapa muncul permintaan izin saat membuka beberapa folder?</strong><br>Aplikasi berjalan di App Sandbox. Desktop, Unduhan, Dokumen, dan disk eksternal berada di luar sandbox, jadi macOS meminta izin saat pertama kali masuk ke folder tersebut. Itu rancangan keamanan sistem, bukan cacat. Pilih “Izinkan akses ke folder ini” dan folder akan diingat — satu jalur hanya ditanyai sekali per sesi jalan.</p>
+<p><strong>Apakah aplikasi membaca kontak, kamera, atau layar saya?</strong><br>Tidak. FileExplorer8 hanya meminta akses berkas yang Anda pilih, folder standar (Unduhan / Dokumen / Musik / Gambar / Film), dan akses jaringan keluar. Tidak ada akses kontak, kamera, mikrofon, perekaman layar, atau seluruh disk.</p>
+<p><strong>Di mana sandi SSH disimpan?</strong><br>Di Keychain macOS. Titik koneksi server disimpan di kontainer sandbox lokal, dienkripsi dengan AES-256-GCM. Anda juga bisa tidak menyimpan sandi dan menerima kotak masuk sekali pakai pada setiap koneksi. Lihat <a href="privacy.html">kebijakan privasi</a>.</p>
+<p><strong>Apakah mendukung Apple Silicon dan Intel?</strong><br>Keduanya. Pemasangnya adalah biner universal. Diperlukan macOS 15.0 atau lebih baru.</p>
+<p><strong>Bagaimana membersihkan sisa data setelah menghapus aplikasi?</strong><br>Hapus aplikasi, lalu hapus <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> untuk membersihkan preferensi, status sesi, dan titik koneksi server (aplikasi dalam sandbox menyimpan data di kontainer ini, bukan di lokasi bersama sistem). Sandi SSH ada di Keychain dan terhapus bersama koneksinya.</p>
+
+<h2 id="features">Fitur</h2>
+
+<p>FileExplorer8 menggabungkan tiga model interaksi ke dalam satu jendela. Tekan <code>⇧⌘D</code> untuk bergilir; tiap mode menyimpan statusnya sendiri — jalur, tab, pengurutan, lebar kolom, pilihan.</p>
+
+<ul>
+  <li><strong>Pengelola berkas</strong>: Menjelajah dan merapikan. Pohon samping, bilah jalur, tab lengkap, enam tata letak tampilan.</li>
+  <li><strong>Dua panel</strong>: Model sumber / tujuan dengan sembilan tombol bilah tindakan untuk pemindahan massal.</li>
+  <li><strong>Empat panel</strong>: Kisi 2×2 untuk melihat empat folder sekaligus dan membagi ke beberapa tujuan.</li>
+  <li><strong>Uji coba sebelum menulis</strong>: Menyalin, memindahkan, dan menimpa selalu dimulai dengan hasil uji coba. Langkah ini tidak menulis satu bita pun.</li>
+  <li><strong>Urungkan tiga tingkat</strong>: Pemindahan dalam volume sama, penggantian nama, hapus ke Tempat Sampah, serta pemadatan dan ekstraksi ZIP dijamin dapat diurungkan.</li>
+  <li><strong>Pratinjau</strong>: <code>Spasi</code> untuk Pratinjau Cepat, kode sumber dengan penyorotan sintaks, PDF lewat PDFKit, berkas SSH jarak jauh hingga 10 MB.</li>
+  <li><strong>Folder SSH jarak jauh</strong>: Terhubung dengan sandi atau kunci privat; folder jarak jauh diperlakukan seperti folder lokal.</li>
+  <li><strong>14 bahasa</strong>: Tionghoa sederhana dan tradisional, Inggris, Jepang, Korea, Jerman, Prancis, Spanyol, Portugis Brasil, Rusia, Vietnam, Indonesia, Melayu, Thai.</li>
+</ul>
+
+<div class="shots">
+  <a href="images/01-explorer.png" target="_blank" rel="noopener">
+    <img src="images/readme/01-explorer.png" alt="Pengelola berkas: tampilan kisi dengan panel detail" loading="lazy">
+  </a>
+  <a href="images/02-dual-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/02-dual-pane.png" alt="Dua panel: sumber dan tujuan" loading="lazy">
+  </a>
+  <a href="images/03-quad-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/03-quad-pane.png" alt="Empat panel: tata letak 2×2" loading="lazy">
+  </a>
+</div>
+<p class="caption">Klik gambar untuk melihat ukuran aslinya (2560×1600)</p>
+
+<footer>
+  <p>FileExplorer8 · <a href="privacy.id.html">Privasi</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Laporkan masalah</a></p>
+  <p>macOS adalah merek dagang Apple Inc. Aplikasi ini tidak berafiliasi dengan Apple Inc.</p>
+</footer>
+</div>
+</body>
+</html>

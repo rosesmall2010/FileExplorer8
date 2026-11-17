@@ -1,0 +1,276 @@
+{
+  "htmlLang": "id",
+  "appName": "FileExplorer8",
+
+  "index": {
+    "title": "FileExplorer8 — Dukungan & privasi",
+    "desc": "FileExplorer8 adalah pengelola berkas asli macOS dengan tiga mode: pengelola berkas, dua panel, dan empat panel. Dukungan dan kebijakan privasi ada di sini.",
+    "lead": "Pengelola berkas asli macOS · Pengelola berkas / dua panel / empat panel dalam satu jendela",
+    "nav": ["Dukungan", "Fitur", "Privasi", "Laporkan masalah"],
+    "supportH": "Dukungan",
+    "supportCard": "<p><strong>Terjebak, punya ide, atau menemukan bug?</strong></p>\n  <p>Buka issue di <a href=\"https://github.com/rosesmall2010/FileExplorer8/issues\">GitHub Issues</a> dan sertakan versi macOS, versi FileExplorer8, serta langkah mereproduksinya. Tangkapan layar sangat membantu.</p>\n  <p>Nomor versi ada di “FileExplorer8 › Tentang FileExplorer8”.</p>",
+    "faqH": "Pertanyaan umum",
+    "faq": [
+      ["Mengapa muncul permintaan izin saat membuka beberapa folder?", "Aplikasi berjalan di App Sandbox. Desktop, Unduhan, Dokumen, dan disk eksternal berada di luar sandbox, jadi macOS meminta izin saat pertama kali masuk ke folder tersebut. Itu rancangan keamanan sistem, bukan cacat. Pilih “Izinkan akses ke folder ini” dan folder akan diingat — satu jalur hanya ditanyai sekali per sesi jalan."],
+      ["Apakah aplikasi membaca kontak, kamera, atau layar saya?", "Tidak. FileExplorer8 hanya meminta akses berkas yang Anda pilih, folder standar (Unduhan / Dokumen / Musik / Gambar / Film), dan akses jaringan keluar. Tidak ada akses kontak, kamera, mikrofon, perekaman layar, atau seluruh disk."],
+      ["Di mana sandi SSH disimpan?", "Di Keychain macOS. Titik koneksi server disimpan di kontainer sandbox lokal, dienkripsi dengan AES-256-GCM. Anda juga bisa tidak menyimpan sandi dan menerima kotak masuk sekali pakai pada setiap koneksi. Lihat <a href=\"privacy.html\">kebijakan privasi</a>."],
+      ["Apakah mendukung Apple Silicon dan Intel?", "Keduanya. Pemasangnya adalah biner universal. Diperlukan macOS 15.0 atau lebih baru."],
+      ["Bagaimana membersihkan sisa data setelah menghapus aplikasi?", "Hapus aplikasi, lalu hapus <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> untuk membersihkan preferensi, status sesi, dan titik koneksi server (aplikasi dalam sandbox menyimpan data di kontainer ini, bukan di lokasi bersama sistem). Sandi SSH ada di Keychain dan terhapus bersama koneksinya."]
+    ],
+    "featuresH": "Fitur",
+    "featuresIntro": "FileExplorer8 menggabungkan tiga model interaksi ke dalam satu jendela. Tekan <code>⇧⌘D</code> untuk bergilir; tiap mode menyimpan statusnya sendiri — jalur, tab, pengurutan, lebar kolom, pilihan.",
+    "features": [
+      ["Pengelola berkas", "Menjelajah dan merapikan. Pohon samping, bilah jalur, tab lengkap, enam tata letak tampilan."],
+      ["Dua panel", "Model sumber / tujuan dengan sembilan tombol bilah tindakan untuk pemindahan massal."],
+      ["Empat panel", "Kisi 2×2 untuk melihat empat folder sekaligus dan membagi ke beberapa tujuan."],
+      ["Uji coba sebelum menulis", "Menyalin, memindahkan, dan menimpa selalu dimulai dengan hasil uji coba. Langkah ini tidak menulis satu bita pun."],
+      ["Urungkan tiga tingkat", "Pemindahan dalam volume sama, penggantian nama, hapus ke Tempat Sampah, serta pemadatan dan ekstraksi ZIP dijamin dapat diurungkan."],
+      ["Pratinjau", "<code>Spasi</code> untuk Pratinjau Cepat, kode sumber dengan penyorotan sintaks, PDF lewat PDFKit, berkas SSH jarak jauh hingga 10 MB."],
+      ["Folder SSH jarak jauh", "Terhubung dengan sandi atau kunci privat; folder jarak jauh diperlakukan seperti folder lokal."],
+      ["14 bahasa", "Tionghoa sederhana dan tradisional, Inggris, Jepang, Korea, Jerman, Prancis, Spanyol, Portugis Brasil, Rusia, Vietnam, Indonesia, Melayu, Thai."]
+    ],
+    "shots": [
+      ["01-explorer.png", "Pengelola berkas: tampilan kisi dengan panel detail"],
+      ["02-dual-pane.png", "Dua panel: sumber dan tujuan"],
+      ["03-quad-pane.png", "Empat panel: tata letak 2×2"]
+    ],
+    "shotHint": "Klik gambar untuk melihat ukuran aslinya (2560×1600)",
+    "trademark": "macOS adalah merek dagang Apple Inc. Aplikasi ini tidak berafiliasi dengan Apple Inc."
+  },
+
+  "privacy": {
+    "title": "Kebijakan privasi — FileExplorer8",
+    "desc": "FileExplorer8 tidak mengumpulkan, mengirim, atau membagikan data pengguna apa pun.",
+    "h1": "Kebijakan privasi",
+    "updated": "Terakhir diperbarui: 17/11/2026",
+    "version": "Berlaku untuk: 1.1.6 dan setelahnya",
+    "platform": "Platform: macOS",
+    "back": "← Kembali ke dukungan",
+    "tldr": "<strong>FileExplorer8 tidak mengumpulkan, mengirim, atau membagikan data pengguna apa pun.</strong> Tanpa akun, tanpa analitik, tanpa SDK iklan, tanpa laporan kerusakan. Semua yang Anda lihat di aplikasi tetap di Mac Anda.",
+    "sections": [
+      {
+        "h2": "1. Yang tidak kami kumpulkan",
+        "blocks": [
+          { "p": "Tidak satu pun dari berikut dikumpulkan — <strong>tidak satu butir</strong>:" },
+          { "ul": [
+            "Berkas dan folder Anda (isi, nama, ukuran, tanggal modifikasi)",
+            "Riwayat penjelajahan dan pencarian, isi papan klip",
+            "Alamat server, akun, sandi, dan kunci privat yang Anda hubungi",
+            "Pengenal perangkat (nomor seri, UUID perangkat keras, pengenal iklan)",
+            "Statistik penggunaan, log kerusakan, data kinerja",
+            "Lokasi, kontak, kalender, pustaka foto, mikrofon, kamera, isi layar Anda"
+          ] },
+          { "p": "Tidak ada <strong>satu pun</strong> permintaan jaringan di aplikasi untuk mengirim data. Selain koneksi SSH/SFTP yang Anda mulai sendiri, aplikasi tidak mengirim satu bita pun ke server mana pun." }
+        ]
+      },
+      {
+        "h2": "2. Di mana data disimpan",
+        "blocks": [
+          { "p": "Semua pengaturan dan kredensial hanya ada di <strong>Mac ini</strong>, di tiga tempat:" },
+          { "table": {
+            "head": ["Lokasi", "Isinya", "Perlindungan"],
+            "rows": [
+              ["Kontainer sandbox<br><code>~/Library/Containers/<wbr>com.donghuazhu.FileExplorer8/</code>", "Preferensi, status sesi (posisi jendela, jalur panel), penanda akses cepat", "Di dalam kontainer App Sandbox, hanya aplikasi ini yang bisa mengakses"],
+              ["Sama, <code>servers.json</code>", "Titik koneksi server SSH (host, port, nama pengguna, nama tampilan)", "<strong>AES-256-GCM</strong> (swift-crypto)"],
+              ["Keychain sistem", "Sandi SSH dan frasa sandi kunci privat", "Dilindungi Keychain macOS"]
+            ]
+          } },
+          { "p": "<strong>Sandi tidak pernah masuk ke berkas.</strong> <code>servers.json</code> hanya berisi titik koneksi, tanpa rahasia. Sandi dan frasa sandi ada di Keychain dan terhapus bersama koneksinya." },
+          { "p": "Agar jelas: kunci enkripsi <code>servers.json</code> dikirim bersama aplikasi (dikompilasi ke dalam biner — tidak ditulis terpisah ke disk, juga tidak di Keychain). Enkripsi ini hanya mencegah titik koneksi dibaca sembarangan; ia <strong>bukan perlindungan terhadap penyerang lokal</strong>, sebab siapa yang bisa membaca disk Anda juga bisa membaca biner aplikasinya. Yang benar-benar perlu dirahasiakan — sandi dan frasa sandi — hanya ada di Keychain." },
+          { "p": "Berkas kunci privat Anda <strong>tetap di tempat Anda meletakkannya</strong>. Aplikasi hanya menyimpan penanda baca; tidak pernah menyalin atau memindahkannya." }
+        ]
+      },
+      {
+        "h2": "3. Akses jaringan",
+        "blocks": [
+          { "p": "Aplikasi punya tepat satu kemampuan jaringan: <strong>klien SSH / SFTP</strong>." },
+          { "ul": [
+            "Koneksi hanya dibuat setelah Anda menambahkan server dan menekan hubungkan, menuju <strong>alamat yang Anda masukkan</strong>",
+            "Digunakan untuk menjelajah dan memindahkan berkas lewat SSH (subsistem SFTP)",
+            "Kunci host diperiksa dengan cara <code>known_hosts</code>; sidik jari yang berubah akan meminta konfirmasi Anda",
+            "Data yang dipindahkan dienkripsi oleh SSH itu sendiri (OpenSSL sebagaimana tertanam di libssh2)"
+          ] },
+          { "p": "<strong>Kami tidak mengoperasikan server apa pun</strong> dan tidak ada relai atau sinkronisasi awan. Berkas Anda tidak pernah melewati kami." },
+          { "p": "Aplikasi tidak memeriksa pembaruan, tidak memuat iklan jarak jauh, dan tidak memanggil API pihak ketiga." }
+        ]
+      },
+      {
+        "h2": "4. Izin sistem",
+        "blocks": [
+          { "p": "Aplikasi berjalan di <strong>App Sandbox</strong> dan hanya membaca atau menulis dalam batas yang Anda berikan:" },
+          { "table": {
+            "head": ["Izin", "Kegunaan", "Kapan muncul"],
+            "rows": [
+              ["Berkas yang dipilih pengguna", "Menjelajah dan bertindak pada folder yang Anda tunjuk", "Sistem bertanya saat pertama kali masuk folder di luar sandbox"],
+              ["Folder Unduhan / Dokumen / Musik / Gambar / Film", "Mengakses lokasi standar ini tanpa pertanyaan", "Tersedia langsung setelah pemasangan"],
+              ["Akses jaringan (keluar)", "Menghubungi server SSH yang Anda tambahkan", "Hanya saat Anda menekan hubungkan"]
+            ]
+          } },
+          { "p": "Tabel di atas bersesuaian satu-satu dengan hak sandbox di paket aplikasi (<code>app-sandbox</code>, <code>files.user-selected</code>, <code>files.downloads</code>, <code>assets.music</code> / <code>assets.pictures</code> / <code>assets.movies</code>, <code>network.client</code>). Tidak ada yang diminta lebih." },
+          { "p": "Aplikasi <strong>tidak</strong> meminta: kontak, kalender, pengingat, pustaka foto, kamera, mikrofon, perekaman layar, akses seluruh disk, atau aksesibilitas. Jika Anda melihat FileExplorer8 di salah satu butir itu pada Pengaturan Sistem › Privasi & Keamanan, itu bukan dari aplikasi ini." },
+          { "p": "Anda dapat mencabut folder yang telah diberikan kapan saja di Pengaturan Sistem › Privasi & Keamanan › Berkas dan Folder." }
+        ]
+      },
+      {
+        "h2": "5. Checksum",
+        "blocks": [
+          { "p": "Aplikasi dapat menghitung checksum (SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64) untuk memeriksa keutuhan berkas." },
+          { "p": "Fitur ini <strong>hanya membaca berkas yang Anda pilih secara eksplisit</strong>, menghitung ringkasannya di memori, lalu menampilkannya. Tidak disimpan, tidak dikirim. Ringkasan tidak pernah keluar dari Mac Anda dan tidak masuk ke log mana pun." }
+        ]
+      },
+      {
+        "h2": "6. Menghapus data Anda",
+        "blocks": [
+          { "table": {
+            "head": ["Yang dihapus", "Caranya"],
+            "rows": [
+              ["Sandi satu koneksi SSH", "Hapus koneksi itu di aplikasi; sandi dan frasa sandi di Keychain ikut terhapus"],
+              ["Semua preferensi dan sesi", "Gunakan Atur Ulang di aplikasi, atau hapus <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code>"],
+              ["Semua data", "Copot pemasangan aplikasi, lalu hapus folder tersebut"]
+            ]
+          } },
+          { "p": "Kami tidak menyimpan data apa pun tentang Anda, jadi tidak ada proses “minta penghapusan kepada kami” — dan tidak ada akun untuk ditutup, karena aplikasi ini tanpa akun." }
+        ]
+      },
+      {
+        "h2": "7. Komponen pihak ketiga",
+        "blocks": [
+          { "p": "Aplikasi hanya memuat dua dependensi sumber terbuka:" },
+          { "table": {
+            "head": ["Komponen", "Kegunaan", "Catatan"],
+            "rows": [
+              ["<a href=\"https://github.com/RuiNelson/SwiftSFTP\">SwiftSFTP</a>", "Implementasi protokol SSH / SFTP", "Menyertakan sumber libssh2 dan OpenSSL; berjalan sepenuhnya lokal, tanpa kode analitik atau pengiriman"],
+              ["<a href=\"https://github.com/apple/swift-crypto\">swift-crypto</a>", "Primitif kriptografi (dari Apple)", "AES-256-GCM, SHA-2, HMAC dan algoritme standar lain; dipakai untuk enkripsi pengaturan lokal, verifikasi sidik jari host SSH, dan checksum. Sepenuhnya lokal, tidak pernah ke jaringan"]
+            ]
+          } },
+          { "p": "Tidak ada SDK iklan, SDK analitik, SDK pengumpul kerusakan, atau SDK login sosial di aplikasi." }
+        ]
+      },
+      {
+        "h2": "8. Privasi anak",
+        "blocks": [
+          { "p": "Aplikasi ini tidak mengumpulkan informasi dari anak maupun dari siapa pun. Peringkat usia di App Store adalah 4+." }
+        ]
+      },
+      {
+        "h2": "9. Perubahan kebijakan",
+        "blocks": [
+          { "p": "Bila kebijakan ini berubah, tanggal “Terakhir diperbarui” di atas halaman diperbarui dan perubahannya menyertai versi baru. Karena aplikasi tidak mengumpulkan data, perubahan mendasar kecil kemungkinannya." }
+        ]
+      },
+      {
+        "h2": "10. Kontak",
+        "blocks": [
+          { "ul": [
+            "Pertanyaan dan laporan: <a href=\"https://github.com/rosesmall2010/FileExplorer8/issues\">GitHub Issues</a>",
+            "Halaman dukungan: <a href=\"index.html\">dukungan FileExplorer8</a>"
+          ] }
+        ]
+      }
+    ],
+    "summary": {
+      "h": "English summary (for App Review reference)",
+      "blocks": [
+        { "p": "<strong>FileExplorer8 does not collect, transmit, or share any user data.</strong>" },
+        { "ul": [
+          "No analytics, no ads, no crash reporting, no accounts.",
+          "All settings and credentials stay on the user's Mac. Passwords live in the macOS Keychain; server endpoints in a local file encrypted with AES-256-GCM (the key ships inside the app, so this obfuscates endpoints rather than protecting against local attackers).",
+          "The only network capability is an SSH/SFTP client that connects <strong>only</strong> to servers the user adds. We operate no servers and receive nothing.",
+          "The app runs in the App Sandbox and requests only user-selected file access, standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound network access.",
+          "Two open-source dependencies: <a href=\"https://github.com/RuiNelson/SwiftSFTP\">SwiftSFTP</a> (embedded libssh2 + OpenSSL) and Apple's <a href=\"https://github.com/apple/swift-crypto\">swift-crypto</a>; both run fully locally with no telemetry."
+        ] }
+      ]
+    }
+  },
+
+  "readme": {
+    "tagline": "Pengelola berkas asli macOS · Pengelola berkas / dua panel / empat panel dalam satu jendela",
+    "subtitle": "Satu inti operasi berkas, tiga model interaksi · Uji coba sebelum menulis · Urungkan tiga tingkat · Tetap lancar pada puluhan ribu entri",
+    "badgeSite": "Dukungan",
+    "badgePrivacy": "Privasi",
+    "aboutH": "Apa ini",
+    "about": [
+      "FileExplorer8 adalah **pengelola berkas** yang berjalan asli di macOS. Ia menggabungkan tiga model interaksi — pengelola berkas, dua panel, dan empat panel — ke dalam satu jendela, bergilir dengan `⇧⌘D`. Tiap mode menyimpan statusnya sendiri: jalur, tab, pengurutan, lebar kolom, pilihan. Bolak-balik tidak ada yang hilang.",
+      "Ini bukan pengganti Finder, dan bukan pula kulit lain untuk Finder. Ia mengisi kekosongan Finder: **pemindahan massal dengan kedua tangan di papan tuts**.",
+      "Acuannya adalah pengelola berkas dua panel klasik: tidak menetapkan aplikasi pembuka bawaan, tidak membuat ekstensi Finder, tidak membaca atau menulis preferensi Finder. Satu-satunya yang dipakai bersama adalah sistem berkasnya sendiri. Karena itu ia bisa hidup berdampingan dengan Finder tanpa saling mengganggu."
+    ],
+    "shotsH": "Tangkapan layar",
+    "featuresH": "Fitur",
+    "featureGroups": [
+      {
+        "h3": "Uji coba sebelum setiap penulisan",
+        "p": [
+          "Sebelum menyalin, memindahkan, atau menimpa, aplikasi menjalankan uji coba: apakah tujuan bisa ditulisi, cukup ruang, nama mana yang bentrok — semuanya ditampilkan lebih dulu. **Langkah ini tidak menulis satu bita pun.**",
+          "Empat strategi bentrok: ganti (cadangkan dulu, bisa diurungkan), pertahankan keduanya, lewati, tanya satu per satu. Dengan lima bentrok atau kurang, Anda bisa memutuskan satu per satu.",
+          "Kemajuan menampilkan kecepatan nyata, terkirim / total / sisa, dan berakhir dengan rekap lengkap: berapa berhasil, dilewati, gagal — tiap kegagalan disebutkan namanya beserta alasannya."
+        ]
+      },
+      {
+        "h3": "Urungkan tiga tingkat",
+        "p": [
+          "Pemindahan dalam volume sama, penggantian nama, hapus ke Tempat Sampah, serta pemadatan dan ekstraksi ZIP **dijamin 100% dapat diurungkan**. Menyalin dan memindahkan antarvolume dilakukan sebaik mungkin. Yang tidak dapat diurungkan meminta konfirmasi sebelum berjalan."
+        ]
+      },
+      {
+        "h3": "Enam tampilan dan pratinjau sungguhan",
+        "p": [
+          "Ikon sangat besar / besar / sedang / kecil, daftar, dan detail. Ikon dipilih pada ukuran piksel sebenarnya (256 / 128 / 64 / 32) sehingga tetap tajam di layar Retina.",
+          "Tekan `Spasi` untuk pratinjau, lalu `←` / `→` atau `PgUp` / `PgDn` untuk berpindah:"
+        ],
+        "ul": [
+          "Teks dan kode sumber tampil dalam mode baca-saja berhuruf monospace, dengan penyorotan sintaks lebih dari 50 bahasa dan nomor baris",
+          "PDF tampil melalui PDFKit",
+          "Gambar diperkecil atau diperbesar agar pas di panel dengan rasio tetap",
+          "Format kaya diserahkan ke Pratinjau Cepat sistem",
+          "Yang tidak bisa ditampilkan mendapat kartu informasi"
+        ]
+      },
+      {
+        "h3": "Pemadatan dan ekstraksi",
+        "p": [
+          "**Buat ZIP**: ZIP64, tingkat pemadatan dapat diatur, format yang sudah padat dilewati otomatis, pilihan mengikuti tautan simbolik, dan hasilnya dapat diurungkan.",
+          "**Klik ganda untuk mengekstrak**, sama seperti Finder: satu folder tingkat atas tunggal tidak dibuat bersarang, saat bentrok seluruh arsip diganti nama, hanya `__MACOSX` yang dibersihkan, dan bit izin Unix dipulihkan."
+        ]
+      },
+      {
+        "h3": "Folder SSH jarak jauh",
+        "p": [
+          "SSH / SFTP bawaan: hubungkan dengan sandi atau kunci privat di jalur mana pun, lalu jelajahi, salin, hapus, ganti nama, dan urungkan di sisi jarak jauh persis seperti lokal — lewat saluran penulisan yang sama.",
+          "Bilah tab menandai koneksi dengan ikon disk jaringan dan status merah atau hijau, serta menyambung ulang dengan satu klik setelah terputus. **Sandi boleh tidak disimpan**, diganti kotak masuk sekali pakai per koneksi. Berkas jarak jauh hingga 10 MB tampil seketika."
+        ]
+      },
+      {
+        "h3": "Detail",
+        "ul": [
+          "Tujuh tag warna Finder, bisa ditumpuk; saat semua dilepas, tag teks buatan sendiri tetap dipertahankan",
+          "Palet perintah `⌘K`, diurutkan menurut kecocokan → terakhir dipakai → abjad",
+          "Trio jalur: salin jalur, salin jalur folder induk, salin nama berkas, plus “Buka di Terminal”",
+          "Checksum: SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64",
+          "Volume ditemukan otomatis: flashdisk, disk eksternal, image disk yang terpasang; keluarkan dengan satu klik",
+          "Pemulihan sesi: posisi jendela, tab, lebar kolom, pengurutan, dan rasio dua panel diingat; penulisan yang mengantre dilanjutkan setelah aplikasi sempat berhenti mendadak",
+          "Salin-tempel dua arah dengan Finder, seret-lepas berjalan di ketiga arah",
+          "Pergantian bahasa ada di menu Bahasa tingkat satu — satu langkah, langsung berlaku"
+        ]
+      },
+      {
+        "h3": "14 bahasa",
+        "p": [
+          "Tionghoa sederhana, Tionghoa tradisional, Inggris, Jepang, Korea, Jerman, Prancis, Spanyol, Portugis Brasil, Rusia, Vietnam, Indonesia, Melayu, Thai.",
+          "Thai mendapat aturan pengurutan sendiri — vokal di depan, tanda nada, dan urutan aksara semuanya bukan urutan titik kode, jadi mengurutkan menurut titik kode akan kacau."
+        ]
+      }
+    ],
+    "privacyH": "Privasi",
+    "privacyP": "**Tidak ada data yang dikumpulkan.** Tanpa akun, tanpa analitik, tanpa SDK iklan, tanpa laporan kerusakan.\n\nSelain koneksi SSH yang Anda mulai sendiri, aplikasi tidak mengirim satu bita pun ke server mana pun. Berkas, riwayat, dan kredensial server Anda tetap di Mac Anda: sandi dan frasa sandi di Keychain sistem, berkas kunci privat di tempat Anda meletakkannya.\n\nAplikasi berjalan di App Sandbox dan hanya membaca atau menulis di folder yang Anda berikan. Ia tidak meminta kontak, kamera, mikrofon, perekaman layar, atau akses seluruh disk.",
+    "seePrivacy": "Baca kebijakan privasi selengkapnya",
+    "supportH": "Dukungan",
+    "supportP": "Terjebak, punya ide, atau menemukan bug?\n\n- Lihat [halaman dukungan](https://rosesmall2010.github.io/FileExplorer8/) untuk pertanyaan umum\n- Atau buka [issue](https://github.com/rosesmall2010/FileExplorer8/issues) dengan versi macOS, versi FileExplorer8, dan langkah mereproduksi\n\nNomor versi ada di “FileExplorer8 › Tentang FileExplorer8”.",
+    "faqH": "Pertanyaan umum",
+    "reqH": "Persyaratan sistem",
+    "req": [
+      "macOS 15.0 atau lebih baru",
+      "Apple Silicon atau Intel (biner universal)"
+    ],
+    "trademark": "macOS adalah merek dagang Apple Inc. Aplikasi ini tidak berafiliasi dengan Apple Inc."
+  }
+}

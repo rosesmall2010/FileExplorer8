@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FileExplorer8 — Suporte e privacidade</title>
+<meta name="description" content="O FileExplorer8 é um gerenciador de arquivos nativo do macOS com três modos: gerenciador de arquivos, dois painéis e quatro painéis. Aqui ficam o suporte e a política de privacidade.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>FileExplorer8</h1>
+  <p class="lead">Gerenciador de arquivos nativo do macOS · Gerenciador / dois painéis / quatro painéis numa só janela</p>
+</header>
+
+<div class="lang"><a href="index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="index.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="index.en.html" hreflang="en" lang="en">English</a><a href="index.ja.html" hreflang="ja" lang="ja">日本語</a><a href="index.ko.html" hreflang="ko" lang="ko">한국어</a><a href="index.de.html" hreflang="de" lang="de">Deutsch</a><a href="index.fr.html" hreflang="fr" lang="fr">Français</a><a href="index.es.html" hreflang="es" lang="es">Español</a><span aria-current="page">Português (Brasil)</span><a href="index.ru.html" hreflang="ru" lang="ru">Русский</a><a href="index.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="index.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="index.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="index.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main">
+  <a href="#support">Suporte</a>
+  <a href="#features">Recursos</a>
+  <a href="privacy.pt-BR.html">Privacidade</a>
+  <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Relatar um problema</a>
+</nav>
+
+<h2 id="support">Suporte</h2>
+
+<div class="card">
+<p><strong>Travou, tem uma ideia ou achou um bug?</strong></p>
+  <p>Abra uma issue no <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a> com a sua versão do macOS, a versão do FileExplorer8 e os passos para reproduzir. Uma captura de tela ajuda muito.</p>
+  <p>A versão aparece em “FileExplorer8 › Sobre o FileExplorer8”.</p>
+</div>
+
+<h3>Perguntas frequentes</h3>
+
+<p><strong>Por que ele pede permissão ao abrir algumas pastas?</strong><br>O app roda no App Sandbox. Mesa, Downloads, Documentos e discos externos ficam fora do sandbox, então o macOS pergunta na primeira vez que você entra numa dessas pastas. É o desenho de segurança do sistema, não um defeito. Escolha “Permitir acesso a esta pasta” e a pasta fica lembrada: só se pergunta uma vez por caminho e por execução.</p>
+<p><strong>Ele lê meus contatos, a câmera ou a tela?</strong><br>Não. O FileExplorer8 pede apenas acesso aos arquivos que você seleciona, às pastas padrão (Downloads / Documentos / Música / Imagens / Filmes) e acesso de rede de saída. Não tem acesso a contatos, câmera, microfone, gravação de tela nem ao disco inteiro.</p>
+<p><strong>Onde ficam as senhas SSH?</strong><br>No Keychain do macOS. Os endpoints dos servidores ficam no contêiner local do sandbox, cifrados com AES-256-GCM. Você também pode não salvar a senha e receber um pedido de login único a cada conexão. Veja a <a href="privacy.html">política de privacidade</a>.</p>
+<p><strong>Funciona em Apple Silicon e Intel?</strong><br>Nos dois. O instalador é um binário universal. É necessário macOS 15.0 ou superior.</p>
+<p><strong>Como limpo os restos depois de desinstalar?</strong><br>Apague o app e depois apague <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> para apagar preferências, estado de sessão e endpoints (apps em sandbox guardam os dados nesse contêiner, não em locais compartilhados do sistema). As senhas SSH ficam no Keychain e são removidas junto com a conexão.</p>
+
+<h2 id="features">Recursos</h2>
+
+<p>O FileExplorer8 reúne três modelos de interação numa única janela. Pressione <code>⇧⌘D</code> para alternar; cada modo guarda o próprio estado: caminho, abas, ordenação, largura das colunas e seleção.</p>
+
+<ul>
+  <li><strong>Gerenciador de arquivos</strong>: Explorar e organizar. Árvore lateral, barra de caminho, abas completas e seis layouts de visualização.</li>
+  <li><strong>Dois painéis</strong>: Modelo origem / destino com nove botões na barra de ações para transferências em massa.</li>
+  <li><strong>Quatro painéis</strong>: Uma grade 2×2 para ver quatro pastas ao mesmo tempo e distribuir para vários destinos.</li>
+  <li><strong>Simulação antes de escrever</strong>: Copiar, mover e sobrescrever começam com um veredito simulado. Essa etapa não escreve um único byte.</li>
+  <li><strong>Desfazer em três níveis</strong>: Mover no mesmo volume, renomear, apagar na lixeira e compactar ou extrair ZIP são garantidamente reversíveis.</li>
+  <li><strong>Prévia</strong>: <code>Espaço</code> para Visualização Rápida, código com realce de sintaxe, PDF via PDFKit e arquivos remotos SSH de até 10 MB.</li>
+  <li><strong>Pastas remotas SSH</strong>: Conexão por senha ou chave privada; pastas remotas funcionam como as locais.</li>
+  <li><strong>14 idiomas</strong>: Chinês simplificado e tradicional, inglês, japonês, coreano, alemão, francês, espanhol, português do Brasil, russo, vietnamita, indonésio, malaio, tailandês.</li>
+</ul>
+
+<div class="shots">
+  <a href="images/01-explorer.png" target="_blank" rel="noopener">
+    <img src="images/readme/01-explorer.png" alt="Gerenciador de arquivos: visualização em grade com painel de detalhes" loading="lazy">
+  </a>
+  <a href="images/02-dual-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/02-dual-pane.png" alt="Dois painéis: origem e destino" loading="lazy">
+  </a>
+  <a href="images/03-quad-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/03-quad-pane.png" alt="Quatro painéis: layout 2×2" loading="lazy">
+  </a>
+</div>
+<p class="caption">Clique numa imagem para vê-la em tamanho real (2560×1600)</p>
+
+<footer>
+  <p>FileExplorer8 · <a href="privacy.pt-BR.html">Privacidade</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Relatar um problema</a></p>
+  <p>macOS é uma marca da Apple Inc. Este app não é afiliado à Apple Inc.</p>
+</footer>
+</div>
+</body>
+</html>

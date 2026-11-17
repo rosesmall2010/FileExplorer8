@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隱私政策 — 文件8</title>
+<meta name="description" content="文件8 不蒐集、不上傳、不分享任何使用者資料。">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<h1>隱私政策</h1>
+<p class="meta">
+  文件8<br>
+  最後更新：2026-11-17 · 適用版本：1.1.6 及以後 · 適用平台：macOS
+</p>
+
+<div class="lang"><a href="privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><span aria-current="page">繁體中文</span><a href="privacy.en.html" hreflang="en" lang="en">English</a><a href="privacy.ja.html" hreflang="ja" lang="ja">日本語</a><a href="privacy.ko.html" hreflang="ko" lang="ko">한국어</a><a href="privacy.de.html" hreflang="de" lang="de">Deutsch</a><a href="privacy.fr.html" hreflang="fr" lang="fr">Français</a><a href="privacy.es.html" hreflang="es" lang="es">Español</a><a href="privacy.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="privacy.ru.html" hreflang="ru" lang="ru">Русский</a><a href="privacy.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="privacy.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="privacy.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="privacy.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main"><a href="index.zh-Hant.html">← 返回支援頁</a></nav>
+
+<div class="tldr">
+  <p><strong>文件8 不蒐集、不上傳、不分享任何使用者資料。</strong>沒有帳號系統，沒有統計分析，沒有廣告 SDK，沒有當機回報。你在應用程式裡看到的一切檔案都留在你自己的機器上。</p>
+</div>
+
+<h2>一、我們不蒐集什麼</h2>
+
+<p>以下資料<strong>一項都不蒐集</strong>：</p>
+<ul><li>你的檔案與資料夾（內容、名稱、大小、修改時間）</li><li>你的瀏覽歷史、搜尋記錄、剪貼簿內容</li><li>你連線的伺服器位址、帳號、密碼、私鑰</li><li>裝置識別碼（序號、硬體 UUID、廣告識別碼）</li><li>使用統計、當機記錄、效能資料</li><li>你的位置、通訊錄、行事曆、相簿、麥克風、相機、螢幕內容</li></ul>
+<p>應用程式內<strong>沒有任何</strong>用於資料回報的網路請求。除你主動發起的 SSH/SFTP 連線外，應用程式不會向任何伺服器傳送任何位元組。</p>
+
+<h2>二、資料存在哪裡</h2>
+
+<p>所有設定與憑證都只存在於<strong>這台 Mac 上</strong>，分三處：</p>
+<table><thead><tr><th>位置</th><th>存什麼</th><th>保護方式</th></tr></thead><tbody><tr><td>應用程式沙盒容器<br><code>~/Library/Containers/<wbr>com.donghuazhu.FileExplorer8/</code></td><td>偏好設定、工作階段現場（視窗位置、各欄路徑等）、快速存取書籤</td><td>App Sandbox 容器內，僅本應用程式可存取</td></tr><tr><td>同上，<code>servers.json</code></td><td>SSH 伺服器端點（主機、連接埠、使用者名稱、顯示名稱）</td><td><strong>AES-256-GCM 加密</strong>（swift-crypto）</td></tr><tr><td>系統鑰匙圈（Keychain）</td><td>SSH 密碼、私鑰通行碼</td><td>由 macOS 鑰匙圈保護</td></tr></tbody></table>
+<p><strong>密碼與通行碼不進檔案。</strong> <code>servers.json</code> 裡只有端點資訊，沒有秘密；密碼與私鑰通行碼存在系統鑰匙圈，刪除某條連線時一併刪除。</p>
+<p>需要說明的是，<code>servers.json</code> 的加密金鑰隨應用程式一同散佈（編譯進程式內，不單獨落盤、也不在鑰匙圈裡）。這道加密只是防止端點資訊被隨意翻看，<strong>不構成針對本機攻擊者的保護</strong>——能讀你磁碟的人也能讀應用程式本體。真正需要保密的內容（密碼、通行碼）始終只在鑰匙圈裡。</p>
+<p>私鑰檔案本身<strong>永遠留在你自己放的位置</strong>，應用程式只儲存一個檔案書籤用於讀取，不複製、不搬移到別處。</p>
+
+<h2>三、網路存取</h2>
+
+<p>應用程式只有一個網路能力：<strong>SSH / SFTP 用戶端</strong>。</p>
+<ul><li>只在你主動新增伺服器並點擊連線時才發起連線，目標是<strong>你自己填的位址</strong></li><li>連線用途是瀏覽與傳輸檔案，協定為 SSH（SFTP 子系統）</li><li>主機金鑰按 <code>known_hosts</code> 方式驗證，指紋變化會提示你確認</li><li>傳輸內容經過 SSH 協定本身的加密（libssh2 內建 OpenSSL 實作）</li></ul>
+<p><strong>我們不營運任何伺服器</strong>，也沒有任何中轉或雲端同步服務。你的檔案不經過我們。</p>
+<p>應用程式不檢查更新、不載入遠端廣告、不請求任何第三方介面。</p>
+
+<h2>四、系統權限</h2>
+
+<p>應用程式開啟 <strong>App Sandbox</strong>，只在你授予的範圍內讀寫檔案：</p>
+<table><thead><tr><th>權限</th><th>用途</th><th>何時出現</th></tr></thead><tbody><tr><td>使用者選擇的檔案</td><td>瀏覽與操作你指定的目錄</td><td>首次進入沙盒外的目錄時由系統彈窗</td></tr><tr><td>下載 / 文件 / 音樂 / 圖片 / 影片資料夾</td><td>免彈窗直接存取這幾個標準位置</td><td>安裝後即可用</td></tr><tr><td>網路存取（對外）</td><td>連線你自己新增的 SSH 伺服器</td><td>僅在你點擊連線時</td></tr></tbody></table>
+<p>上表與應用程式套件內實際的沙盒權限一一對應（<code>app-sandbox</code>、<code>files.user-selected</code>、<code>files.downloads</code>、<code>assets.music</code> / <code>assets.pictures</code> / <code>assets.movies</code>、<code>network.client</code>），沒有多申請任何一項。</p>
+<p>應用程式<strong>不申請</strong>：通訊錄、行事曆、提醒事項、照片圖庫、相機、麥克風、螢幕錄製、完全磁碟存取、輔助使用。若你在「系統設定 › 隱私權與安全性」裡看到這些項目下有「文件8」，那不是本應用程式申請的。</p>
+<p>你也可以隨時在「系統設定 › 隱私權與安全性 › 檔案和資料夾」裡撤銷已授予的目錄。</p>
+
+<h2>五、檔案校驗和功能</h2>
+
+<p>應用程式提供「計算校驗和」（SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64），用於核對檔案完整性。</p>
+<p>這項功能<strong>只讀取你明確選取的檔案</strong>，在記憶體中計算摘要並顯示給你，不儲存、不上傳。摘要值不會離開你的機器，也不會進入任何記錄。</p>
+
+<h2>六、刪除你的資料</h2>
+
+<table><thead><tr><th>想刪什麼</th><th>怎麼做</th></tr></thead><tbody><tr><td>某條 SSH 連線的密碼</td><td>應用程式內刪除該連線，鑰匙圈裡的密碼與通行碼隨之刪除</td></tr><tr><td>全部偏好與工作階段</td><td>應用程式內「重置」功能，或刪除 <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code></td></tr><tr><td>全部資料</td><td>解除安裝應用程式，再刪除上面那個目錄</td></tr></tbody></table>
+<p>我們這邊沒有你的任何資料，因此不存在「向我們申請刪除」的流程——也無需註銷帳號，本應用程式沒有帳號。</p>
+
+<h2>七、第三方元件</h2>
+
+<p>應用程式只包含兩個開源相依項目：</p>
+<table><thead><tr><th>元件</th><th>用途</th><th>說明</th></tr></thead><tbody><tr><td><a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a></td><td>SSH / SFTP 協定實作</td><td>內嵌 libssh2 與 OpenSSL 原始碼，純本機執行，不含任何統計或聯網回報程式碼</td></tr><tr><td><a href="https://github.com/apple/swift-crypto">swift-crypto</a></td><td>加密原語（Apple 官方）</td><td>AES-256-GCM、SHA-2、HMAC 等標準演算法；用於本機設定加密、SSH 主機指紋驗證與檔案校驗和計算，純本機運算，不聯網</td></tr></tbody></table>
+<p>應用程式內<strong>沒有</strong>廣告 SDK、統計分析 SDK、當機蒐集 SDK、社交登入 SDK。</p>
+
+<h2>八、兒童隱私</h2>
+
+<p>本應用程式不針對兒童蒐集任何資訊，也不蒐集任何人的資訊。App Store 年齡分級為 4+。</p>
+
+<h2>九、政策變更</h2>
+
+<p>本政策如有修改，會更新本頁頂端的「最後更新」日期，並隨新版本發佈。由於本應用程式不蒐集資料，實質變更的可能性很低。</p>
+
+<h2>十、聯絡我們</h2>
+
+<ul><li>問題與回報：<a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a></li><li>支援頁面：<a href="index.html">文件8 支援</a></li></ul>
+<details>
+<summary>English summary (for App Review reference)</summary>
+
+<p><strong>FileExplorer8 does not collect, transmit, or share any user data.</strong></p>
+<ul><li>No analytics, no ads, no crash reporting, no accounts.</li><li>All settings and credentials stay on the user's Mac. Passwords live in the macOS Keychain; server endpoints in a local file encrypted with AES-256-GCM (the key ships inside the app, so this obfuscates endpoints rather than protecting against local attackers).</li><li>The only network capability is an SSH/SFTP client that connects <strong>only</strong> to servers the user adds. We operate no servers and receive nothing.</li><li>The app runs in the App Sandbox and requests only user-selected file access, standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound network access.</li><li>Two open-source dependencies: <a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a> (embedded libssh2 + OpenSSL) and Apple's <a href="https://github.com/apple/swift-crypto">swift-crypto</a>; both run fully locally with no telemetry.</li></ul>
+
+</details>
+
+<footer>
+  <p>文件8 · <a href="index.zh-Hant.html">支援</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">回報問題</a></p>
+</footer>
+</div>
+</body>
+</html>

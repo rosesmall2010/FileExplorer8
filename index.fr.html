@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FileExplorer8 — Assistance et confidentialité</title>
+<meta name="description" content="FileExplorer8 est un gestionnaire de fichiers natif pour macOS, avec trois modes : gestionnaire de fichiers, deux volets et quatre volets. Assistance et politique de confidentialité ici.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>FileExplorer8</h1>
+  <p class="lead">Gestionnaire de fichiers natif macOS · Gestionnaire / deux volets / quatre volets dans une seule fenêtre</p>
+</header>
+
+<div class="lang"><a href="index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="index.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="index.en.html" hreflang="en" lang="en">English</a><a href="index.ja.html" hreflang="ja" lang="ja">日本語</a><a href="index.ko.html" hreflang="ko" lang="ko">한국어</a><a href="index.de.html" hreflang="de" lang="de">Deutsch</a><span aria-current="page">Français</span><a href="index.es.html" hreflang="es" lang="es">Español</a><a href="index.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="index.ru.html" hreflang="ru" lang="ru">Русский</a><a href="index.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="index.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="index.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="index.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main">
+  <a href="#support">Assistance</a>
+  <a href="#features">Fonctions</a>
+  <a href="privacy.fr.html">Confidentialité</a>
+  <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Signaler un problème</a>
+</nav>
+
+<h2 id="support">Assistance</h2>
+
+<div class="card">
+<p><strong>Un blocage, une idée, un bug ?</strong></p>
+  <p>Ouvrez un ticket sur <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a> en précisant votre version de macOS, votre version de FileExplorer8 et les étapes pour reproduire le problème. Une capture d'écran aide beaucoup.</p>
+  <p>La version se lit dans « FileExplorer8 › À propos de FileExplorer8 ».</p>
+</div>
+
+<h3>Questions fréquentes</h3>
+
+<p><strong>Pourquoi une autorisation est-elle demandée à l'ouverture de certains dossiers ?</strong><br>L'app tourne dans le bac à sable (App Sandbox). Le Bureau, Téléchargements, Documents et les disques externes sont hors du bac à sable : macOS demande donc votre accord la première fois que vous entrez dans un tel dossier. C'est un choix de sécurité du système, pas un défaut. Choisissez « Autoriser l'accès à ce dossier » et le dossier est mémorisé — une seule demande par chemin et par session.</p>
+<p><strong>L'app lit-elle mes contacts, ma caméra ou mon écran ?</strong><br>Non. FileExplorer8 ne demande que l'accès aux fichiers que vous sélectionnez, aux dossiers standard (Téléchargements / Documents / Musique / Images / Vidéos) et à l'accès réseau sortant. Aucun accès aux contacts, à la caméra, au micro, à l'enregistrement d'écran ni au disque entier.</p>
+<p><strong>Où sont stockés les mots de passe SSH ?</strong><br>Dans le trousseau macOS. Les points de connexion des serveurs sont dans le conteneur local du bac à sable, chiffrés en AES-256-GCM. Vous pouvez aussi ne pas enregistrer le mot de passe et obtenir une demande de connexion unique à chaque fois. Voir la <a href="privacy.html">politique de confidentialité</a>.</p>
+<p><strong>L'app fonctionne-t-elle sur Apple Silicon et Intel ?</strong><br>Oui, sur les deux. L'installateur est un binaire universel. macOS 15.0 ou ultérieur est requis.</p>
+<p><strong>Comment nettoyer les résidus après désinstallation ?</strong><br>Supprimez l'app, puis supprimez <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> pour effacer préférences, état de session et points de connexion (les apps en bac à sable stockent leurs données dans ce conteneur, pas dans des emplacements système partagés). Les mots de passe SSH sont dans le trousseau et disparaissent avec la connexion correspondante.</p>
+
+<h2 id="features">Fonctions</h2>
+
+<p>FileExplorer8 réunit trois modèles d'interaction dans une seule fenêtre. <code>⇧⌘D</code> les fait défiler ; chaque mode conserve son état — chemin, onglets, tri, largeurs de colonnes, sélection.</p>
+
+<ul>
+  <li><strong>Gestionnaire de fichiers</strong>: Explorer et ranger. Arborescence latérale, barre de chemin, onglets complets, six dispositions d'affichage.</li>
+  <li><strong>Deux volets</strong>: Modèle source / destination, neuf boutons de barre d'action pour les transferts en masse.</li>
+  <li><strong>Quatre volets</strong>: Une grille 2×2 pour suivre quatre dossiers et répartir vers plusieurs cibles.</li>
+  <li><strong>Essai à blanc avant écriture</strong>: Copie, déplacement et écrasement commencent par un verdict d'essai. Cette étape n'écrit pas un octet.</li>
+  <li><strong>Annulation à trois niveaux</strong>: Déplacements sur le même volume, renommages, mises à la corbeille et création ou extraction de ZIP sont garantis annulables.</li>
+  <li><strong>Aperçu</strong>: <code>Espace</code> pour Coup d'œil, code source coloré, PDF via PDFKit, fichiers distants SSH jusqu'à 10 Mo.</li>
+  <li><strong>Dossiers distants SSH</strong>: Connexion par mot de passe ou clé privée ; les dossiers distants se manipulent comme les locaux.</li>
+  <li><strong>14 langues</strong>: Chinois simplifié et traditionnel, anglais, japonais, coréen, allemand, français, espagnol, portugais du Brésil, russe, vietnamien, indonésien, malais, thaï.</li>
+</ul>
+
+<div class="shots">
+  <a href="images/01-explorer.png" target="_blank" rel="noopener">
+    <img src="images/readme/01-explorer.png" alt="Gestionnaire de fichiers : vue grille avec panneau de détails" loading="lazy">
+  </a>
+  <a href="images/02-dual-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/02-dual-pane.png" alt="Deux volets : source et destination" loading="lazy">
+  </a>
+  <a href="images/03-quad-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/03-quad-pane.png" alt="Quatre volets : disposition 2×2" loading="lazy">
+  </a>
+</div>
+<p class="caption">Cliquez une image pour la voir en taille réelle (2560×1600)</p>
+
+<footer>
+  <p>FileExplorer8 · <a href="privacy.fr.html">Confidentialité</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Signaler un problème</a></p>
+  <p>macOS est une marque d'Apple Inc. Cette app n'est pas affiliée à Apple Inc.</p>
+</footer>
+</div>
+</body>
+</html>

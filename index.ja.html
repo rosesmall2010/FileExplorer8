@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FileExplorer8 — サポートとプライバシー</title>
+<meta name="description" content="FileExplorer8 は macOS ネイティブのファイルマネージャです。ファイラ／2 ペイン／4 ペインの 3 形態を備えます。サポートとプライバシーポリシーはこちら。">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>FileExplorer8</h1>
+  <p class="lead">macOS ネイティブのファイルマネージャ · ファイラ／2 ペイン／4 ペインを同一ウィンドウで切り替え</p>
+</header>
+
+<div class="lang"><a href="index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="index.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="index.en.html" hreflang="en" lang="en">English</a><span aria-current="page">日本語</span><a href="index.ko.html" hreflang="ko" lang="ko">한국어</a><a href="index.de.html" hreflang="de" lang="de">Deutsch</a><a href="index.fr.html" hreflang="fr" lang="fr">Français</a><a href="index.es.html" hreflang="es" lang="es">Español</a><a href="index.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="index.ru.html" hreflang="ru" lang="ru">Русский</a><a href="index.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="index.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="index.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="index.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main">
+  <a href="#support">サポート</a>
+  <a href="#features">機能</a>
+  <a href="privacy.ja.html">プライバシー</a>
+  <a href="https://github.com/rosesmall2010/FileExplorer8/issues">問題を報告</a>
+</nav>
+
+<h2 id="support">サポート</h2>
+
+<div class="card">
+<p><strong>困ったとき、提案があるとき、バグを見つけたときは</strong></p>
+  <p><a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a> でご報告ください。macOS のバージョン、FileExplorer8 のバージョン、再現手順を添えてください。スクリーンショットがあると助かります。</p>
+  <p>バージョンは「FileExplorer8 › FileExplorer8 について」で確認できます。</p>
+</div>
+
+<h3>よくある質問</h3>
+
+<p><strong>フォルダを開くと許可を求められるのはなぜですか？</strong><br>App Sandbox を有効にしているためです。デスクトップ、ダウンロード、書類、外付けディスクなどはサンドボックスの外にあり、そのフォルダに初めて入るときに macOS が必ず確認します。これはシステムの安全設計であり、不具合ではありません。「このフォルダへのアクセスを許可」を選べば記憶され、同じパスにつき 1 回の起動で 1 度だけ尋ねられます。</p>
+<p><strong>連絡先やカメラ、画面を読み取りますか？</strong><br>いいえ。FileExplorer8 が要求するのは、ユーザが選択したファイルへのアクセス、標準フォルダ（ダウンロード／書類／ミュージック／ピクチャ／ムービー）、および外向きのネットワークアクセスだけです。連絡先、カメラ、マイク、画面収録、フルディスクアクセスの権限はありません。</p>
+<p><strong>SSH のパスワードはどこに保存されますか？</strong><br>macOS のキーチェーンです。サーバーのエンドポイント情報はローカルのサンドボックスコンテナ内に AES-256-GCM で暗号化して保存されます。パスワードを保存せず、接続のたびに一度だけログインを尋ねる設定にもできます。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+<p><strong>Apple Silicon と Intel の両方に対応していますか？</strong><br>はい。インストーラはユニバーサルバイナリです。macOS 15.0 以降が必要です。</p>
+<p><strong>アンインストール後の残りデータはどう消しますか？</strong><br>アプリを削除したあと、<code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> を削除すると、環境設定・セッション状態・サーバーのエンドポイント情報が消えます（サンドボックスアプリのデータはこのコンテナ内にあり、システムの共有領域には置かれません）。SSH のパスワードはキーチェーンにあり、該当する接続を削除すると一緒に削除されます。</p>
+
+<h2 id="features">機能</h2>
+
+<p>FileExplorer8 は 3 つの操作形態を 1 つのウィンドウに収め、<code>⇧⌘D</code> で順に切り替えます。各形態はパス、タブ、並び順、列幅、選択項目をそれぞれ保持します。</p>
+
+<ul>
+  <li><strong>ファイラ</strong>: 閲覧と整理。サイドバーのツリー、パスバー、フルタブ、6 種類の表示レイアウト。</li>
+  <li><strong>2 ペイン</strong>: コピー元／コピー先の方式。アクションバーの 9 個のボタンでまとめて転送。</li>
+  <li><strong>4 ペイン</strong>: 2×2 の田の字で 4 つのフォルダを同時に表示し、複数の転送先へ振り分け。</li>
+  <li><strong>書き込み前のドライラン</strong>: コピー・移動・上書きの前に判定を提示します。この段階では 1 バイトも書き込みません。</li>
+  <li><strong>3 段階の取り消し</strong>: 同一ボリューム内の移動、名前変更、ゴミ箱への削除、ZIP の圧縮・解凍は取り消し可能です。</li>
+  <li><strong>プレビュー</strong>: <code>Space</code> でクイックルック。ソースコードは色分け表示、PDF は PDFKit、SSH のリモートファイルも 10 MB まで表示できます。</li>
+  <li><strong>SSH リモートフォルダ</strong>: パスワードまたは秘密鍵で接続し、リモートもローカルと同じように操作できます。</li>
+  <li><strong>14 言語</strong>: 簡体中国語、繁体中国語、英語、日本語、韓国語、ドイツ語、フランス語、スペイン語、ブラジルポルトガル語、ロシア語、ベトナム語、インドネシア語、マレー語、タイ語。</li>
+</ul>
+
+<div class="shots">
+  <a href="images/01-explorer.png" target="_blank" rel="noopener">
+    <img src="images/readme/01-explorer.png" alt="ファイラ：グリッド表示と詳細ペイン" loading="lazy">
+  </a>
+  <a href="images/02-dual-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/02-dual-pane.png" alt="2 ペイン：コピー元とコピー先" loading="lazy">
+  </a>
+  <a href="images/03-quad-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/03-quad-pane.png" alt="4 ペイン：2×2 レイアウト" loading="lazy">
+  </a>
+</div>
+<p class="caption">画像をクリックすると原寸（2560×1600）で表示します</p>
+
+<footer>
+  <p>FileExplorer8 · <a href="privacy.ja.html">プライバシー</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">問題を報告</a></p>
+  <p>macOS は Apple Inc. の商標です。本アプリは Apple Inc. とは関係ありません。</p>
+</footer>
+</div>
+</body>
+</html>

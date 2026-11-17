@@ -1,0 +1,276 @@
+{
+  "htmlLang": "de",
+  "appName": "FileExplorer8",
+
+  "index": {
+    "title": "FileExplorer8 — Support und Datenschutz",
+    "desc": "FileExplorer8 ist ein nativer Dateimanager für macOS mit drei Modi: Dateimanager, Zwei-Bereiche- und Vier-Bereiche-Ansicht. Hier finden Sie Support und Datenschutzerklärung.",
+    "lead": "Nativer Dateimanager für macOS · Dateimanager / Zwei Bereiche / Vier Bereiche in einem Fenster",
+    "nav": ["Support", "Funktionen", "Datenschutz", "Problem melden"],
+    "supportH": "Support",
+    "supportCard": "<p><strong>Hängt etwas, haben Sie eine Idee oder einen Fehler gefunden?</strong></p>\n  <p>Öffnen Sie ein Issue auf <a href=\"https://github.com/rosesmall2010/FileExplorer8/issues\">GitHub Issues</a> und nennen Sie Ihre macOS-Version, Ihre FileExplorer8-Version und die Schritte zum Nachstellen. Ein Screenshot hilft sehr.</p>\n  <p>Die Versionsnummer steht unter „FileExplorer8 › Über FileExplorer8“.</p>",
+    "faqH": "Häufige Fragen",
+    "faq": [
+      ["Warum fragt die App beim Öffnen mancher Ordner nach einer Freigabe?", "Die App läuft in der App Sandbox. Schreibtisch, Downloads, Dokumente und externe Laufwerke liegen außerhalb der Sandbox, deshalb fragt macOS beim ersten Betreten eines solchen Ordners nach. Das ist so von macOS vorgesehen und kein Fehler. Mit „Zugriff auf diesen Ordner erlauben“ wird der Ordner gemerkt – pro Pfad und Sitzung wird nur einmal gefragt."],
+      ["Liest die App meine Kontakte, die Kamera oder den Bildschirm?", "Nein. FileExplorer8 fordert nur Zugriff auf vom Benutzer gewählte Dateien, auf die Standardordner (Downloads / Dokumente / Musik / Bilder / Filme) und auf ausgehende Netzwerkverbindungen an. Es gibt keinen Zugriff auf Kontakte, Kamera, Mikrofon, Bildschirmaufnahme oder das gesamte Laufwerk."],
+      ["Wo werden SSH-Passwörter gespeichert?", "Im macOS-Schlüsselbund. Server-Endpunkte liegen im lokalen Sandbox-Container, verschlüsselt mit AES-256-GCM. Sie können das Passwort auch nicht speichern und stattdessen bei jeder Verbindung einmal abfragen lassen. Details in der <a href=\"privacy.html\">Datenschutzerklärung</a>."],
+      ["Läuft die App auf Apple Silicon und Intel?", "Auf beiden. Das Installationspaket ist ein Universal Binary. Erforderlich ist macOS 15.0 oder neuer."],
+      ["Wie entferne ich Reste nach dem Deinstallieren?", "Löschen Sie die App und danach <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code>, um Einstellungen, Sitzungsdaten und Server-Endpunkte zu entfernen (Sandbox-Apps speichern ihre Daten in diesem Container, nicht an gemeinsamen Systemorten). SSH-Passwörter liegen im Schlüsselbund und werden mit der jeweiligen Verbindung gelöscht."]
+    ],
+    "featuresH": "Funktionen",
+    "featuresIntro": "FileExplorer8 bringt drei Bedienmodelle in ein Fenster. Mit <code>⇧⌘D</code> wechseln Sie zyklisch; jeder Modus behält seinen Zustand – Pfad, Tabs, Sortierung, Spaltenbreiten, Auswahl.",
+    "features": [
+      ["Dateimanager", "Sichten und aufräumen. Seitenleiste, Pfadleiste, echte Tabs, sechs Ansichtsarten."],
+      ["Zwei Bereiche", "Quelle / Ziel mit neun Schaltflächen in der Aktionsleiste für Massentransfers."],
+      ["Vier Bereiche", "Ein 2×2-Raster für vier Ordner gleichzeitig und mehrere Ziele."],
+      ["Probelauf vor jedem Schreiben", "Kopieren, Verschieben und Überschreiben beginnen mit einem Probelauf. Dieser Schritt schreibt kein einziges Byte."],
+      ["Dreistufiges Rückgängig", "Verschieben im selben Volume, Umbenennen, Löschen in den Papierkorb sowie ZIP-Packen und -Entpacken lassen sich garantiert rückgängig machen."],
+      ["Vorschau", "<code>Space</code> für Quick Look, Quelltext mit Syntaxhervorhebung, PDFs über PDFKit, entfernte SSH-Dateien bis 10 MB."],
+      ["Entfernte SSH-Ordner", "Verbindung per Passwort oder privatem Schlüssel; entfernte Ordner verhalten sich wie lokale."],
+      ["14 Sprachen", "Chinesisch (vereinfacht und traditionell), Englisch, Japanisch, Koreanisch, Deutsch, Französisch, Spanisch, brasilianisches Portugiesisch, Russisch, Vietnamesisch, Indonesisch, Malaiisch, Thailändisch."]
+    ],
+    "shots": [
+      ["01-explorer.png", "Dateimanager: Rasteransicht mit Detailbereich"],
+      ["02-dual-pane.png", "Zwei Bereiche: Quelle und Ziel"],
+      ["03-quad-pane.png", "Vier Bereiche: 2×2-Raster"]
+    ],
+    "shotHint": "Klicken Sie ein Bild an, um es in Originalgröße zu sehen (2560×1600)",
+    "trademark": "macOS ist eine Marke von Apple Inc. Diese App steht in keiner Verbindung zu Apple Inc."
+  },
+
+  "privacy": {
+    "title": "Datenschutzerklärung — FileExplorer8",
+    "desc": "FileExplorer8 erhebt, überträgt und teilt keine Benutzerdaten.",
+    "h1": "Datenschutzerklärung",
+    "updated": "Zuletzt aktualisiert: 17.11.2026",
+    "version": "Gilt für: 1.1.6 und neuer",
+    "platform": "Plattform: macOS",
+    "back": "← Zurück zum Support",
+    "tldr": "<strong>FileExplorer8 erhebt, überträgt und teilt keine Benutzerdaten.</strong> Keine Konten, keine Analyse, kein Werbe-SDK, keine Absturzberichte. Alles, was Sie in der App sehen, bleibt auf Ihrem Mac.",
+    "sections": [
+      {
+        "h2": "1. Was wir nicht erheben",
+        "blocks": [
+          { "p": "Nichts davon wird erhoben – <strong>nicht ein einziger Punkt</strong>:" },
+          { "ul": [
+            "Ihre Dateien und Ordner (Inhalte, Namen, Größen, Änderungsdaten)",
+            "Ihr Verlauf, Ihre Suchanfragen, Zwischenablageinhalte",
+            "Serveradressen, Konten, Passwörter und private Schlüssel, zu denen Sie sich verbinden",
+            "Gerätekennungen (Seriennummer, Hardware-UUID, Werbe-ID)",
+            "Nutzungsstatistiken, Absturzprotokolle, Leistungsdaten",
+            "Ihren Standort, Kontakte, Kalender, Fotomediathek, Mikrofon, Kamera, Bildschirminhalt"
+          ] },
+          { "p": "Es gibt <strong>keine</strong> Netzwerkanfrage in der App, die Daten meldet. Außer von Ihnen gestarteten SSH/SFTP-Verbindungen sendet die App kein Byte an einen Server." }
+        ]
+      },
+      {
+        "h2": "2. Wo Daten liegen",
+        "blocks": [
+          { "p": "Alle Einstellungen und Zugangsdaten existieren nur auf <strong>diesem Mac</strong>, an drei Orten:" },
+          { "table": {
+            "head": ["Ort", "Inhalt", "Schutz"],
+            "rows": [
+              ["Sandbox-Container der App<br><code>~/Library/Containers/<wbr>com.donghuazhu.FileExplorer8/</code>", "Einstellungen, Sitzungszustand (Fensterposition, Pfade der Bereiche), Schnellzugriff-Lesezeichen", "Im App-Sandbox-Container, nur für diese App erreichbar"],
+              ["Ebenda, <code>servers.json</code>", "SSH-Server-Endpunkte (Host, Port, Benutzername, Anzeigename)", "<strong>AES-256-GCM</strong> (swift-crypto)"],
+              ["Systemschlüsselbund", "SSH-Passwörter und Passphrasen privater Schlüssel", "Durch den macOS-Schlüsselbund geschützt"]
+            ]
+          } },
+          { "p": "<strong>Passwörter landen nie in einer Datei.</strong> <code>servers.json</code> enthält nur Endpunkte, keine Geheimnisse. Passwörter und Passphrasen liegen im Schlüsselbund und werden mit ihrer Verbindung gelöscht." },
+          { "p": "Zur Klarstellung: Der Schlüssel für die <code>servers.json</code>-Verschlüsselung wird mit der App ausgeliefert (in die Binärdatei kompiliert – weder separat auf der Platte noch im Schlüsselbund). Diese Verschlüsselung verhindert nur flüchtiges Mitlesen der Endpunkte; sie ist <strong>kein Schutz gegen einen lokalen Angreifer</strong>, denn wer Ihre Platte lesen kann, kann auch die App selbst lesen. Was wirklich geheim bleiben muss – Passwörter und Passphrasen – liegt ausschließlich im Schlüsselbund." },
+          { "p": "Ihre Dateien mit privaten Schlüsseln <strong>bleiben genau dort, wo Sie sie ablegen</strong>. Die App speichert nur ein Datei-Lesezeichen zum Lesen; sie kopiert oder verschiebt sie nie." }
+        ]
+      },
+      {
+        "h2": "3. Netzwerkzugriff",
+        "blocks": [
+          { "p": "Die App hat genau eine Netzwerkfähigkeit: einen <strong>SSH/SFTP-Client</strong>." },
+          { "ul": [
+            "Eine Verbindung entsteht erst, wenn Sie einen Server hinzufügen und auf Verbinden klicken – Ziel ist <strong>die von Ihnen eingegebene Adresse</strong>",
+            "Sie dient dem Durchsuchen und Übertragen von Dateien über SSH (SFTP-Subsystem)",
+            "Host-Schlüssel werden known_hosts-konform geprüft; ein geänderter Fingerabdruck verlangt Ihre Bestätigung",
+            "Übertragene Daten verschlüsselt SSH selbst (OpenSSL, wie in libssh2 eingebettet)"
+          ] },
+          { "p": "<strong>Wir betreiben keine Server</strong>, es gibt keinen Relay- und keinen Cloud-Synchronisierungsdienst. Ihre Dateien laufen nie über uns." },
+          { "p": "Die App prüft keine Updates, lädt keine Werbung aus dem Netz und ruft keine Schnittstellen Dritter auf." }
+        ]
+      },
+      {
+        "h2": "4. Systemberechtigungen",
+        "blocks": [
+          { "p": "Die App läuft in der <strong>App Sandbox</strong> und liest oder schreibt nur im Rahmen Ihrer Freigaben:" },
+          { "table": {
+            "head": ["Berechtigung", "Zweck", "Wann sie erscheint"],
+            "rows": [
+              ["Vom Benutzer gewählte Dateien", "Von Ihnen bestimmte Ordner durchsuchen und bearbeiten", "Systemabfrage beim ersten Betreten eines Ordners außerhalb der Sandbox"],
+              ["Downloads / Dokumente / Musik / Bilder / Filme", "Ohne Abfrage auf diese Standardorte zugreifen", "Direkt nach der Installation verfügbar"],
+              ["Netzwerkzugriff (ausgehend)", "Verbindung zu von Ihnen hinzugefügten SSH-Servern", "Nur wenn Sie auf Verbinden klicken"]
+            ]
+          } },
+          { "p": "Die Tabelle entspricht eins zu eins den Sandbox-Berechtigungen im App-Paket (<code>app-sandbox</code>, <code>files.user-selected</code>, <code>files.downloads</code>, <code>assets.music</code> / <code>assets.pictures</code> / <code>assets.movies</code>, <code>network.client</code>). Es wird nichts darüber hinaus verlangt." },
+          { "p": "Die App fordert <strong>nicht</strong> an: Kontakte, Kalender, Erinnerungen, Fotomediathek, Kamera, Mikrofon, Bildschirmaufnahme, vollständiger Festplattenzugriff oder Bedienungshilfen. Wenn Sie FileExplorer8 in einem dieser Bereiche unter Systemeinstellungen › Datenschutz & Sicherheit sehen, stammt das nicht von dieser App." },
+          { "p": "Sie können freigegebene Ordner jederzeit unter Systemeinstellungen › Datenschutz & Sicherheit › Dateien und Ordner entziehen." }
+        ]
+      },
+      {
+        "h2": "5. Prüfsummen",
+        "blocks": [
+          { "p": "Die App berechnet Prüfsummen (SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64), damit Sie die Integrität von Dateien prüfen können." },
+          { "p": "Diese Funktion <strong>liest nur die von Ihnen ausdrücklich gewählten Dateien</strong>, berechnet den Hash im Speicher und zeigt ihn an. Nichts wird gespeichert oder hochgeladen. Hashes verlassen Ihren Mac nie und landen in keinem Protokoll." }
+        ]
+      },
+      {
+        "h2": "6. Ihre Daten löschen",
+        "blocks": [
+          { "table": {
+            "head": ["Zu löschen", "So geht es"],
+            "rows": [
+              ["Das Passwort einer SSH-Verbindung", "Löschen Sie die Verbindung in der App; Passwort und Passphrase im Schlüsselbund verschwinden mit"],
+              ["Alle Einstellungen und Sitzungen", "„Zurücksetzen“ in der App nutzen oder <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> löschen"],
+              ["Alles", "App deinstallieren und danach den genannten Ordner löschen"]
+            ]
+          } },
+          { "p": "Wir haben keine Daten über Sie, deshalb gibt es kein Verfahren „Löschung bei uns beantragen“ – und kein Konto zu schließen, denn die App hat keine Konten." }
+        ]
+      },
+      {
+        "h2": "7. Komponenten Dritter",
+        "blocks": [
+          { "p": "Die App enthält genau zwei Open-Source-Abhängigkeiten:" },
+          { "table": {
+            "head": ["Komponente", "Zweck", "Hinweise"],
+            "rows": [
+              ["<a href=\"https://github.com/RuiNelson/SwiftSFTP\">SwiftSFTP</a>", "SSH/SFTP-Protokollimplementierung", "Bettet libssh2 und OpenSSL als Quelltext ein; läuft vollständig lokal, ohne Analyse- oder Meldecode"],
+              ["<a href=\"https://github.com/apple/swift-crypto\">swift-crypto</a>", "Kryptografische Primitive (von Apple)", "AES-256-GCM, SHA-2, HMAC und weitere Standardalgorithmen; genutzt für lokale Verschlüsselung der Einstellungen, Prüfung von SSH-Host-Fingerabdrücken und Prüfsummen. Rein lokal, nie im Netz"]
+            ]
+          } },
+          { "p": "Es gibt <strong>kein</strong> Werbe-SDK, Analyse-SDK, Absturz-SDK oder Social-Login-SDK in der App." }
+        ]
+      },
+      {
+        "h2": "8. Datenschutz für Kinder",
+        "blocks": [
+          { "p": "Diese App erhebt keine Daten von Kindern und von niemandem sonst. Die Altersfreigabe im App Store ist 4+." }
+        ]
+      },
+      {
+        "h2": "9. Änderungen dieser Erklärung",
+        "blocks": [
+          { "p": "Ändert sich diese Erklärung, wird das Datum „Zuletzt aktualisiert“ oben angepasst und die Änderung mit einer neuen Version ausgeliefert. Da die App keine Daten erhebt, sind inhaltliche Änderungen unwahrscheinlich." }
+        ]
+      },
+      {
+        "h2": "10. Kontakt",
+        "blocks": [
+          { "ul": [
+            "Fragen und Meldungen: <a href=\"https://github.com/rosesmall2010/FileExplorer8/issues\">GitHub Issues</a>",
+            "Support-Seite: <a href=\"index.html\">FileExplorer8 Support</a>"
+          ] }
+        ]
+      }
+    ],
+    "summary": {
+      "h": "English summary (for App Review reference)",
+      "blocks": [
+        { "p": "<strong>FileExplorer8 does not collect, transmit, or share any user data.</strong>" },
+        { "ul": [
+          "No analytics, no ads, no crash reporting, no accounts.",
+          "All settings and credentials stay on the user's Mac. Passwords live in the macOS Keychain; server endpoints in a local file encrypted with AES-256-GCM (the key ships inside the app, so this obfuscates endpoints rather than protecting against local attackers).",
+          "The only network capability is an SSH/SFTP client that connects <strong>only</strong> to servers the user adds. We operate no servers and receive nothing.",
+          "The app runs in the App Sandbox and requests only user-selected file access, standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound network access.",
+          "Two open-source dependencies: <a href=\"https://github.com/RuiNelson/SwiftSFTP\">SwiftSFTP</a> (embedded libssh2 + OpenSSL) and Apple's <a href=\"https://github.com/apple/swift-crypto\">swift-crypto</a>; both run fully locally with no telemetry."
+        ] }
+      ]
+    }
+  },
+
+  "readme": {
+    "tagline": "Nativer Dateimanager für macOS · Dateimanager / Zwei Bereiche / Vier Bereiche in einem Fenster",
+    "subtitle": "Ein Datei-Kern, drei Bedienmodelle · Probelauf vor jedem Schreiben · Dreistufiges Rückgängig · Auch bei zehntausenden Einträgen flüssig",
+    "badgeSite": "Support",
+    "badgePrivacy": "Datenschutz",
+    "aboutH": "Was ist das",
+    "about": [
+      "FileExplorer8 ist ein **Dateimanager**, der nativ unter macOS läuft. Er bringt drei Bedienmodelle – Dateimanager, Zwei Bereiche und Vier Bereiche – in ein einziges Fenster, zyklisch umschaltbar mit `⇧⌘D`. Jeder Modus behält seinen Zustand: Pfad, Tabs, Sortierung, Spaltenbreiten, Auswahl. Hin und her wechseln verliert nichts.",
+      "Er ist kein Finder-Ersatz und kein weiterer Finder-Anstrich. Er füllt die Lücke, die der Finder lässt: **Massenverschiebungen mit beiden Händen auf der Tastatur**.",
+      "Vorbild ist der klassische Dateimanager mit zwei Bereichen: kein Standardprogramm wird gesetzt, keine Finder-Erweiterung installiert, keine Finder-Einstellungen gelesen oder geschrieben. Geteilt wird nur das Dateisystem selbst – deshalb kann er dauerhaft neben dem Finder bestehen, ohne dass sich beide in die Quere kommen."
+    ],
+    "shotsH": "Ansichten",
+    "featuresH": "Funktionen",
+    "featureGroups": [
+      {
+        "h3": "Probelauf vor jedem Schreiben",
+        "p": [
+          "Vor Kopieren, Verschieben oder Überschreiben läuft ein Probelauf: Ist das Ziel beschreibbar, reicht der Platz, welche Namen kollidieren – alles vorab sichtbar. **Dieser Schritt schreibt kein einziges Byte.**",
+          "Vier Konfliktstrategien: ersetzen (vorher sichern, rückgängig möglich), beide behalten, überspringen, einzeln fragen. Bei höchstens fünf Konflikten entscheiden Sie Stück für Stück.",
+          "Der Fortschritt zeigt Live-Geschwindigkeit, übertragen / gesamt / verbleibend und endet mit einer vollständigen Bilanz: wie viele erfolgreich, übersprungen, fehlgeschlagen – jeder Fehlschlag mit Dateiname und Grund."
+        ]
+      },
+      {
+        "h3": "Dreistufiges Rückgängig",
+        "p": [
+          "Verschieben im selben Volume, Umbenennen, Löschen in den Papierkorb sowie ZIP-Packen und -Entpacken sind **zu 100 % rückgängig zu machen**. Kopieren und volumeübergreifendes Verschieben sind Best-Effort. Was sich nicht rückgängig machen lässt, verlangt vorher eine Bestätigung."
+        ]
+      },
+      {
+        "h3": "Sechs Ansichten und echte Vorschauen",
+        "p": [
+          "Sehr große / große / mittlere / kleine Symbole, Liste und Details. Symbole werden in echten Pixelgrößen (256 / 128 / 64 / 32) gewählt und bleiben so auf Retina-Displays scharf.",
+          "`Space` öffnet die Vorschau, `←` / `→` oder `PgUp` / `PgDn` blättern weiter:"
+        ],
+        "ul": [
+          "Text und Quelltext erhalten eine schreibgeschützte Monospace-Ansicht mit Syntaxhervorhebung für über 50 Sprachen und Zeilennummern",
+          "PDFs rendert PDFKit",
+          "Bilder werden seitenverhältnistreu so skaliert, dass sie ganz in den Bereich passen",
+          "Reichhaltige Formate übernimmt Quick Look des Systems",
+          "Was sich nicht darstellen lässt, bekommt eine schlichte Info-Karte"
+        ]
+      },
+      {
+        "h3": "Packen und Entpacken",
+        "p": [
+          "**ZIP erstellen**: ZIP64, einstellbare Kompressionsstufe, bereits komprimierte Formate werden übersprungen, optional Symbolischen Links folgen – das Ergebnis ist rückgängig zu machen.",
+          "**Doppelklick zum Entpacken**, im Verhalten wie der Finder: ein einzelner oberster Ordner wird nicht verschachtelt, bei Kollision wird das ganze Archiv umbenannt, nur `__MACOSX` wird entfernt, Unix-Rechtebits werden wiederhergestellt."
+        ]
+      },
+      {
+        "h3": "Entfernte SSH-Ordner",
+        "p": [
+          "SSH/SFTP eingebaut: Verbindung per Passwort oder privatem Schlüssel von beliebigem Pfad aus. Entfernte Ordner lassen sich durchsuchen, kopieren, löschen, umbenennen und rückgängig machen wie lokale – über dieselbe Schreibpipeline.",
+          "Die Tabelleiste kennzeichnet Verbindungen mit einem Netzlaufwerk-Symbol und rotem bzw. grünem Status und verbindet nach einem Abbruch mit einem Klick neu. **Das Passwort kann ungespeichert bleiben**, dann fragt jede Verbindung einmalig nach der Anmeldung. Entfernte Dateien bis 10 MB lassen sich sofort ansehen."
+        ]
+      },
+      {
+        "h3": "Die Details",
+        "ul": [
+          "Die sieben Farbmarkierungen des Finders, stapelbar; werden alle entfernt, bleibt eine eigene Textmarkierung",
+          "Befehlspalette `⌘K`, sortiert nach Trefferqualität → letzte Verwendung → alphabetisch",
+          "Pfad-Trio: Pfad kopieren, Pfad des übergeordneten Ordners kopieren, Dateinamen kopieren – plus „Im Terminal öffnen“",
+          "Prüfsummen: SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64",
+          "Volumes erscheinen automatisch: USB-Sticks, externe Laufwerke, eingebundene Disk-Images – mit einem Klick auswerfen",
+          "Sitzungswiederherstellung: Fensterposition, Tabs, Spaltenbreiten, Sortierung und Bereichsverhältnis werden gemerkt; anstehende Schreibvorgänge laufen nach einem Absturz weiter",
+          "Kopieren und Einsetzen in beide Richtungen mit dem Finder, Ziehen und Ablegen in alle drei Richtungen",
+          "Sprachwechsel liegt im Sprachmenü oberster Ebene – ein Schritt, sofort wirksam"
+        ]
+      },
+      {
+        "h3": "14 Sprachen",
+        "p": [
+          "Chinesisch vereinfacht und traditionell, Englisch, Japanisch, Koreanisch, Deutsch, Französisch, Spanisch, brasilianisches Portugiesisch, Russisch, Vietnamesisch, Indonesisch, Malaiisch, Thailändisch.",
+          "Thailändisch hat eine eigene Sortierregel bekommen – vorangestellte Vokale, Tonzeichen und Schriftreihenfolge folgen nicht der Codepoint-Reihenfolge, nach Codepoints sortiert käme es durcheinander."
+        ]
+      }
+    ],
+    "privacyH": "Datenschutz",
+    "privacyP": "**Es werden keine Daten erhoben.** Keine Konten, keine Analyse, kein Werbe-SDK, keine Absturzberichte.\n\nAußer von Ihnen gestarteten SSH-Verbindungen sendet die App kein Byte an einen Server. Ihre Dateien, Ihr Verlauf und Ihre Server-Zugangsdaten bleiben auf Ihrem Mac: Passwörter und Passphrasen liegen im Systemschlüsselbund, Dateien mit privaten Schlüsseln bleiben, wo Sie sie ablegen.\n\nDie App läuft in der App Sandbox und liest oder schreibt nur in Ordnern, die Sie freigeben. Kontakte, Kamera, Mikrofon, Bildschirmaufnahme oder vollständiger Festplattenzugriff werden nicht verlangt.",
+    "seePrivacy": "Vollständige Datenschutzerklärung lesen",
+    "supportH": "Support",
+    "supportP": "Hängt etwas, haben Sie eine Idee oder einen Fehler gefunden?\n\n- Auf der [Support-Seite](https://rosesmall2010.github.io/FileExplorer8/) finden Sie häufige Fragen\n- Oder öffnen Sie ein [Issue](https://github.com/rosesmall2010/FileExplorer8/issues) mit macOS-Version, FileExplorer8-Version und Schritten zum Nachstellen\n\nDie Versionsnummer steht unter „FileExplorer8 › Über FileExplorer8“.",
+    "faqH": "Häufige Fragen",
+    "reqH": "Systemanforderungen",
+    "req": [
+      "macOS 15.0 oder neuer",
+      "Apple Silicon oder Intel (Universal Binary)"
+    ],
+    "trademark": "macOS ist eine Marke von Apple Inc. Diese App steht in keiner Verbindung zu Apple Inc."
+  }
+}

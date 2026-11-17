@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité — FileExplorer8</title>
+<meta name="description" content="FileExplorer8 ne collecte, ne transmet et ne partage aucune donnée utilisateur.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<h1>Politique de confidentialité</h1>
+<p class="meta">
+  FileExplorer8<br>
+  Dernière mise à jour : 17/11/2026 · S'applique à : 1.1.6 et versions ultérieures · Plateforme : macOS
+</p>
+
+<div class="lang"><a href="privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="privacy.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="privacy.en.html" hreflang="en" lang="en">English</a><a href="privacy.ja.html" hreflang="ja" lang="ja">日本語</a><a href="privacy.ko.html" hreflang="ko" lang="ko">한국어</a><a href="privacy.de.html" hreflang="de" lang="de">Deutsch</a><span aria-current="page">Français</span><a href="privacy.es.html" hreflang="es" lang="es">Español</a><a href="privacy.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="privacy.ru.html" hreflang="ru" lang="ru">Русский</a><a href="privacy.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="privacy.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="privacy.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="privacy.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main"><a href="index.fr.html">← Retour à l'assistance</a></nav>
+
+<div class="tldr">
+  <p><strong>FileExplorer8 ne collecte, ne transmet et ne partage aucune donnée utilisateur.</strong> Pas de comptes, pas de statistiques, pas de SDK publicitaire, pas de rapport de plantage. Tout ce que vous voyez dans l'app reste sur votre Mac.</p>
+</div>
+
+<h2>1. Ce que nous ne collectons pas</h2>
+
+<p>Aucun des éléments suivants n'est collecté — <strong>pas un seul</strong> :</p>
+<ul><li>Vos fichiers et dossiers (contenus, noms, tailles, dates de modification)</li><li>Votre historique de navigation et de recherche, le contenu du presse-papiers</li><li>Les adresses de serveurs, comptes, mots de passe et clés privées auxquels vous vous connectez</li><li>Les identifiants d'appareil (numéro de série, UUID matériel, identifiant publicitaire)</li><li>Les statistiques d'usage, journaux de plantage, données de performance</li><li>Votre position, vos contacts, votre calendrier, votre photothèque, le micro, la caméra, le contenu de l'écran</li></ul>
+<p>Il n'existe <strong>aucune</strong> requête réseau de remontée de données dans l'app. Hormis les connexions SSH/SFTP que vous lancez vous-même, l'app n'envoie pas un octet à un serveur.</p>
+
+<h2>2. Où vivent les données</h2>
+
+<p>Tous les réglages et identifiants n'existent que sur <strong>ce Mac</strong>, en trois endroits :</p>
+<table><thead><tr><th>Emplacement</th><th>Contenu</th><th>Protection</th></tr></thead><tbody><tr><td>Conteneur du bac à sable<br><code>~/Library/Containers/<wbr>com.donghuazhu.FileExplorer8/</code></td><td>Préférences, état de session (position de fenêtre, chemins des volets), signets d'accès rapide</td><td>Dans le conteneur App Sandbox, accessible à cette seule app</td></tr><tr><td>Idem, <code>servers.json</code></td><td>Points de connexion SSH (hôte, port, nom d'utilisateur, nom affiché)</td><td><strong>AES-256-GCM</strong> (swift-crypto)</td></tr><tr><td>Trousseau du système</td><td>Mots de passe SSH et phrases secrètes des clés privées</td><td>Protégés par le trousseau macOS</td></tr></tbody></table>
+<p><strong>Les mots de passe n'entrent jamais dans un fichier.</strong> <code>servers.json</code> ne contient que des points de connexion, aucun secret. Les mots de passe et phrases secrètes vivent dans le trousseau et sont supprimés avec leur connexion.</p>
+<p>Soyons clairs : la clé de chiffrement de <code>servers.json</code> est livrée avec l'app (compilée dans le binaire — ni écrite séparément sur le disque, ni dans le trousseau). Ce chiffrement empêche seulement de lire les points de connexion à la légère ; il ne <strong>protège pas contre un attaquant local</strong>, car qui peut lire votre disque peut aussi lire le binaire de l'app. Ce qui doit réellement rester secret — mots de passe et phrases secrètes — ne vit que dans le trousseau.</p>
+<p>Vos fichiers de clé privée <strong>restent exactement là où vous les placez</strong>. L'app enregistre seulement un signet de lecture ; elle ne les copie ni ne les déplace jamais.</p>
+
+<h2>3. Accès réseau</h2>
+
+<p>L'app possède exactement une capacité réseau : un <strong>client SSH / SFTP</strong>.</p>
+<ul><li>Une connexion n'est établie qu'après que vous avez ajouté un serveur et cliqué sur connecter, vers <strong>l'adresse que vous avez saisie</strong></li><li>Elle sert à parcourir et transférer des fichiers via SSH (sous-système SFTP)</li><li>Les clés d'hôte sont vérifiées à la manière de <code>known_hosts</code> ; une empreinte qui change vous demande confirmation</li><li>Les données transférées sont chiffrées par SSH lui-même (OpenSSL, tel qu'intégré à libssh2)</li></ul>
+<p><strong>Nous n'exploitons aucun serveur</strong>, et il n'y a ni relais ni synchronisation cloud. Vos fichiers ne passent jamais par nous.</p>
+<p>L'app ne cherche pas de mises à jour, ne charge pas de publicité distante et n'appelle aucune API tierce.</p>
+
+<h2>4. Autorisations système</h2>
+
+<p>L'app tourne dans le <strong>bac à sable</strong> et ne lit ou n'écrit que dans ce que vous accordez :</p>
+<table><thead><tr><th>Autorisation</th><th>Objet</th><th>Quand elle apparaît</th></tr></thead><tbody><tr><td>Fichiers choisis par l'utilisateur</td><td>Parcourir et agir sur les dossiers que vous désignez</td><td>Invite du système à la première entrée dans un dossier hors du bac à sable</td></tr><tr><td>Dossiers Téléchargements / Documents / Musique / Images / Vidéos</td><td>Accéder à ces emplacements standard sans invite</td><td>Disponible dès l'installation</td></tr><tr><td>Accès réseau (sortant)</td><td>Se connecter aux serveurs SSH que vous ajoutez</td><td>Uniquement quand vous cliquez sur connecter</td></tr></tbody></table>
+<p>Le tableau correspond une à une aux autorisations du bac à sable dans le paquet de l'app (<code>app-sandbox</code>, <code>files.user-selected</code>, <code>files.downloads</code>, <code>assets.music</code> / <code>assets.pictures</code> / <code>assets.movies</code>, <code>network.client</code>). Rien de plus n'est demandé.</p>
+<p>L'app ne demande <strong>pas</strong> : contacts, calendrier, rappels, photothèque, caméra, micro, enregistrement d'écran, accès complet au disque ni accessibilité. Si vous voyez FileExplorer8 sous l'un de ces éléments dans Réglages Système › Confidentialité et sécurité, cela ne vient pas de cette app.</p>
+<p>Vous pouvez révoquer un dossier accordé à tout moment dans Réglages Système › Confidentialité et sécurité › Fichiers et dossiers.</p>
+
+<h2>5. Sommes de contrôle</h2>
+
+<p>L'app calcule des sommes de contrôle (SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64) pour vérifier l'intégrité de vos fichiers.</p>
+<p>Cette fonction <strong>ne lit que les fichiers que vous sélectionnez explicitement</strong>, calcule l'empreinte en mémoire et vous l'affiche. Rien n'est enregistré, rien n'est envoyé. Les empreintes ne quittent jamais votre Mac et n'entrent dans aucun journal.</p>
+
+<h2>6. Supprimer vos données</h2>
+
+<table><thead><tr><th>À supprimer</th><th>Comment</th></tr></thead><tbody><tr><td>Le mot de passe d'une connexion SSH</td><td>Supprimez cette connexion dans l'app ; le mot de passe et la phrase secrète du trousseau partent avec</td></tr><tr><td>Toutes les préférences et sessions</td><td>Utilisez Réinitialiser dans l'app, ou supprimez <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code></td></tr><tr><td>Tout</td><td>Désinstallez l'app, puis supprimez ce dossier</td></tr></tbody></table>
+<p>Nous ne détenons aucune donnée vous concernant : il n'existe donc pas de procédure « demander la suppression chez nous » — et aucun compte à fermer, car l'app n'a pas de comptes.</p>
+
+<h2>7. Composants tiers</h2>
+
+<p>L'app contient exactement deux dépendances open source :</p>
+<table><thead><tr><th>Composant</th><th>Objet</th><th>Remarques</th></tr></thead><tbody><tr><td><a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a></td><td>Implémentation du protocole SSH / SFTP</td><td>Intègre les sources de libssh2 et d'OpenSSL ; fonctionne entièrement en local, sans code de statistiques ni de remontée</td></tr><tr><td><a href="https://github.com/apple/swift-crypto">swift-crypto</a></td><td>Primitives cryptographiques (par Apple)</td><td>AES-256-GCM, SHA-2, HMAC et autres algorithmes standard ; utilisé pour le chiffrement local des réglages, la vérification des empreintes d'hôte SSH et les sommes de contrôle. Purement local, jamais en réseau</td></tr></tbody></table>
+<p>Il n'y a <strong>aucun</strong> SDK publicitaire, de statistiques, de collecte de plantages ou de connexion sociale dans l'app.</p>
+
+<h2>8. Confidentialité des enfants</h2>
+
+<p>Cette app ne collecte aucune information auprès des enfants, ni de quiconque. La classification d'âge sur l'App Store est 4+.</p>
+
+<h2>9. Modifications de cette politique</h2>
+
+<p>En cas de modification, la date de « Dernière mise à jour » en haut de la page est révisée et le changement accompagne une nouvelle version. Comme l'app ne collecte aucune donnée, des changements substantiels sont peu probables.</p>
+
+<h2>10. Contact</h2>
+
+<ul><li>Questions et signalements : <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a></li><li>Page d'assistance : <a href="index.html">assistance FileExplorer8</a></li></ul>
+<details>
+<summary>English summary (for App Review reference)</summary>
+
+<p><strong>FileExplorer8 does not collect, transmit, or share any user data.</strong></p>
+<ul><li>No analytics, no ads, no crash reporting, no accounts.</li><li>All settings and credentials stay on the user's Mac. Passwords live in the macOS Keychain; server endpoints in a local file encrypted with AES-256-GCM (the key ships inside the app, so this obfuscates endpoints rather than protecting against local attackers).</li><li>The only network capability is an SSH/SFTP client that connects <strong>only</strong> to servers the user adds. We operate no servers and receive nothing.</li><li>The app runs in the App Sandbox and requests only user-selected file access, standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound network access.</li><li>Two open-source dependencies: <a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a> (embedded libssh2 + OpenSSL) and Apple's <a href="https://github.com/apple/swift-crypto">swift-crypto</a>; both run fully locally with no telemetry.</li></ul>
+
+</details>
+
+<footer>
+  <p>FileExplorer8 · <a href="index.fr.html">Assistance</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Signaler un problème</a></p>
+</footer>
+</div>
+</body>
+</html>

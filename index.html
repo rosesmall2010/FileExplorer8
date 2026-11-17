@@ -5,73 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>文件8 — 支持与隐私</title>
 <meta name="description" content="文件8（FileExplorer8）是 macOS 原生文件管理器，支持文件管理器 / 双栏 / 四栏三种形态。这里是支持页面与隐私政策。">
-<style>
-  :root {
-    --bg: #ffffff;
-    --fg: #1d1d1f;
-    --muted: #6e6e73;
-    --line: #e5e5e7;
-    --accent: #0071e3;
-    --card: #f5f5f7;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #000000;
-      --fg: #f5f5f7;
-      --muted: #a1a1a6;
-      --line: #2c2c2e;
-      --accent: #2997ff;
-      --card: #1c1c1e;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
-  header h1 { font-size: 40px; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 12px; }
-  header p.lead { color: var(--muted); font-size: 19px; margin: 0 0 32px; }
-  nav { display: flex; gap: 20px; padding-bottom: 28px; border-bottom: 1px solid var(--line); margin-bottom: 40px; flex-wrap: wrap; }
-  nav a { color: var(--accent); text-decoration: none; font-weight: 500; }
-  nav a:hover { text-decoration: underline; }
-  h2 { font-size: 26px; letter-spacing: -0.01em; margin: 48px 0 16px; }
-  h3 { font-size: 18px; margin: 28px 0 8px; }
-  p, li { color: var(--fg); }
-  ul { padding-left: 22px; }
-  li { margin: 6px 0; }
-  code {
-    font: 0.9em/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
-    background: var(--card); padding: 2px 6px; border-radius: 5px;
-  }
-  .card { background: var(--card); border-radius: 14px; padding: 20px 24px; margin: 20px 0; }
-  .card p:first-child { margin-top: 0; }
-  .card p:last-child { margin-bottom: 0; }
-  table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 15px; }
-  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  th { color: var(--muted); font-weight: 600; }
-  a { color: var(--accent); }
-  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
-  .shots { display: grid; gap: 16px; margin: 24px 0; }
-  .shots a { display: block; }
-  .shots img { width: 100%; border-radius: 12px; border: 1px solid var(--line); display: block; transition: opacity .15s; }
-  .shots a:hover img { opacity: .85; }
-  @media (min-width: 720px) { .shots { grid-template-columns: 1fr; } }
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <div class="wrap">
-
 <header>
   <h1>文件8</h1>
   <p class="lead">macOS 原生文件管理器 · 文件管理器 / 双栏 / 四栏三种形态同窗切换</p>
 </header>
 
-<nav>
+<div class="lang"><span aria-current="page">简体中文</span><a href="index.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="index.en.html" hreflang="en" lang="en">English</a><a href="index.ja.html" hreflang="ja" lang="ja">日本語</a><a href="index.ko.html" hreflang="ko" lang="ko">한국어</a><a href="index.de.html" hreflang="de" lang="de">Deutsch</a><a href="index.fr.html" hreflang="fr" lang="fr">Français</a><a href="index.es.html" hreflang="es" lang="es">Español</a><a href="index.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="index.ru.html" hreflang="ru" lang="ru">Русский</a><a href="index.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="index.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="index.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="index.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main">
   <a href="#support">支持</a>
   <a href="#features">功能</a>
   <a href="privacy.html">隐私政策</a>
@@ -81,49 +26,32 @@
 <h2 id="support">支持</h2>
 
 <div class="card">
-  <p><strong>遇到问题、想提建议、或者发现 bug？</strong></p>
-  <p>请到 <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a> 提交，
-     附上你的 macOS 版本、文件8 版本号，以及能复现问题的步骤。能附截图更好。</p>
+<p><strong>遇到问题、想提建议、或者发现 bug？</strong></p>
+  <p>请到 <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a> 提交，附上你的 macOS 版本、文件8 版本号，以及能复现问题的步骤。能附截图更好。</p>
   <p>版本号在「文件8 › 关于文件8」里可以看到。</p>
 </div>
 
 <h3>常见问题</h3>
 
-<p><strong>为什么进入某些目录会弹窗要求授权？</strong><br>
-应用开启了 App Sandbox。桌面、下载、文稿、外接磁盘等位置在沙盒之外，
-首次进入某个目录时 macOS 会强制弹窗询问，这是系统的安全设计，不是缺陷。
-选择「授权此文件夹」后，该目录会被记住，同一路径一次运行只问一次。</p>
-
-<p><strong>会不会读取我的通讯录、摄像头或屏幕？</strong><br>
-不会。文件8 只申请了用户选择的文件访问、标准文件夹（下载 / 文稿 / 音乐 / 图片 / 影片）
-与出站网络访问，没有通讯录、摄像头、麦克风、屏幕录制或完全磁盘访问权限。</p>
-
-<p><strong>SSH 密码存在哪里？</strong><br>
-存在 macOS 系统钥匙串里。服务器端点信息存在本机沙盒容器内（AES-256-GCM 加密）。
-密码可以不保存，改为每次连接时弹一次性登录框。详见<a href="privacy.html">隐私政策</a>。</p>
-
-<p><strong>支持 Apple Silicon 和 Intel 吗？</strong><br>
-两者都支持，安装包是通用二进制。系统要求 macOS 15.0 或更高版本。</p>
-
-<p><strong>卸载后残留数据怎么清理？</strong><br>
-删除应用后，再删除 <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code>
-即可清空偏好、会话记录与服务器端点信息（沙盒应用的数据都在你自己的容器里，
-不在系统共享位置）。SSH 密码存在系统钥匙串，删除对应连接时会一并删除。</p>
+<p><strong>为什么进入某些目录会弹窗要求授权？</strong><br>应用开启了 App Sandbox。桌面、下载、文稿、外接磁盘等位置在沙盒之外，首次进入某个目录时 macOS 会强制弹窗询问，这是系统的安全设计，不是缺陷。选择「授权此文件夹」后，该目录会被记住，同一路径一次运行只问一次。</p>
+<p><strong>会不会读取我的通讯录、摄像头或屏幕？</strong><br>不会。文件8 只申请了用户选择的文件访问、标准文件夹（下载 / 文稿 / 音乐 / 图片 / 影片）与出站网络访问，没有通讯录、摄像头、麦克风、屏幕录制或完全磁盘访问权限。</p>
+<p><strong>SSH 密码存在哪里？</strong><br>存在 macOS 系统钥匙串里。服务器端点信息存在本机沙盒容器内（AES-256-GCM 加密）。密码可以不保存，改为每次连接时弹一次性登录框。详见<a href="privacy.html">隐私政策</a>。</p>
+<p><strong>支持 Apple Silicon 和 Intel 吗？</strong><br>两者都支持，安装包是通用二进制。系统要求 macOS 15.0 或更高版本。</p>
+<p><strong>卸载后残留数据怎么清理？</strong><br>删除应用后，再删除 <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> 即可清空偏好、会话记录与服务器端点信息（沙盒应用的数据都在你自己的容器里，不在系统共享位置）。SSH 密码存在系统钥匙串，删除对应连接时会一并删除。</p>
 
 <h2 id="features">功能</h2>
 
-<p>文件8 把三种交互范式装进同一个窗口，按 <code>⇧⌘D</code> 一步循环切换，
-三种形态各自保存现场（路径、标签、排序、列宽、选中项）。</p>
+<p>文件8 把三种交互范式装进同一个窗口，按 <code>⇧⌘D</code> 一步循环切换，三种形态各自保存现场（路径、标签、排序、列宽、选中项）。</p>
 
 <ul>
-  <li><strong>文件管理器</strong>：探索与整理。侧边栏目录树、地址栏、完整标签页、六种视图布局。</li>
-  <li><strong>双栏管理器</strong>：源 / 目标范式，九个操作栏按钮，批量搬运。</li>
-  <li><strong>四栏管理器</strong>：田字 2×2，同时看四个目录，多目标分流。</li>
-  <li><strong>写操作先预检</strong>：复制、移动、覆盖前先给 dry-run 结论，这一步不写任何字节。</li>
-  <li><strong>三级撤销</strong>：同卷移动、重命名、删除到废纸篓、打包解压 ZIP 保证可撤销。</li>
-  <li><strong>预览</strong>：<code>Space</code> 快速预览，源码带语法着色，PDF 走 PDFKit，SSH 远端文件 10 MB 内也能看。</li>
-  <li><strong>SSH 远端目录</strong>：用密码或私钥连服务器，远端目录和本地一样操作。</li>
-  <li><strong>14 种语言</strong>：简中、繁中、英、日、韩、德、法、西、巴西葡、俄、越、印尼、马来、泰。</li>
+  <li><strong>文件管理器</strong>: 探索与整理。侧边栏目录树、地址栏、完整标签页、六种视图布局。</li>
+  <li><strong>双栏管理器</strong>: 源 / 目标范式，九个操作栏按钮，批量搬运。</li>
+  <li><strong>四栏管理器</strong>: 田字 2×2，同时看四个目录，多目标分流。</li>
+  <li><strong>写操作先预检</strong>: 复制、移动、覆盖前先给 dry-run 结论，这一步不写任何字节。</li>
+  <li><strong>三级撤销</strong>: 同卷移动、重命名、删除到废纸篓、打包解压 ZIP 保证可撤销。</li>
+  <li><strong>预览</strong>: <code>Space</code> 快速预览，源码带语法着色，PDF 走 PDFKit，SSH 远端文件 10 MB 内也能看。</li>
+  <li><strong>SSH 远端目录</strong>: 用密码或私钥连服务器，远端目录和本地一样操作。</li>
+  <li><strong>14 种语言</strong>: 简中、繁中、英、日、韩、德、法、西、巴西葡、俄、越、印尼、马来、泰。</li>
 </ul>
 
 <div class="shots">
@@ -137,16 +65,13 @@
     <img src="images/readme/03-quad-pane.png" alt="四栏管理器：田字 2×2 布局" loading="lazy">
   </a>
 </div>
-<p style="color: var(--muted); font-size: 14px; text-align: center; margin-top: -8px;">
-  点击图片看原图（2560×1600）
-</p>
+<p class="caption">点击图片看原图（2560×1600）</p>
 
 <footer>
-  <p>文件8 / FileExplorer8 · <a href="privacy.html">隐私政策</a> ·
-     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">反馈</a></p>
+  <p>文件8 · <a href="privacy.html">隐私政策</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">反馈问题</a></p>
   <p>macOS 是 Apple Inc. 的商标。本应用与 Apple Inc. 无关联。</p>
 </footer>
-
 </div>
 </body>
 </html>

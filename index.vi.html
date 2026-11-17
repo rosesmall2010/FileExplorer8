@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FileExplorer8 — Hỗ trợ và quyền riêng tư</title>
+<meta name="description" content="FileExplorer8 là trình quản lý tệp gốc của macOS với ba chế độ: quản lý tệp, hai khung và bốn khung. Trang này có hỗ trợ và chính sách quyền riêng tư.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>FileExplorer8</h1>
+  <p class="lead">Trình quản lý tệp gốc macOS · Quản lý tệp / hai khung / bốn khung trong một cửa sổ</p>
+</header>
+
+<div class="lang"><a href="index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="index.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="index.en.html" hreflang="en" lang="en">English</a><a href="index.ja.html" hreflang="ja" lang="ja">日本語</a><a href="index.ko.html" hreflang="ko" lang="ko">한국어</a><a href="index.de.html" hreflang="de" lang="de">Deutsch</a><a href="index.fr.html" hreflang="fr" lang="fr">Français</a><a href="index.es.html" hreflang="es" lang="es">Español</a><a href="index.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="index.ru.html" hreflang="ru" lang="ru">Русский</a><span aria-current="page">Tiếng Việt</span><a href="index.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="index.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="index.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main">
+  <a href="#support">Hỗ trợ</a>
+  <a href="#features">Tính năng</a>
+  <a href="privacy.vi.html">Quyền riêng tư</a>
+  <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Báo lỗi</a>
+</nav>
+
+<h2 id="support">Hỗ trợ</h2>
+
+<div class="card">
+<p><strong>Gặp vướng mắc, có ý tưởng, hay tìm thấy lỗi?</strong></p>
+  <p>Hãy mở một issue tại <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a> và ghi rõ phiên bản macOS, phiên bản FileExplorer8 cùng các bước tái hiện. Ảnh chụp màn hình sẽ rất hữu ích.</p>
+  <p>Số phiên bản nằm trong “FileExplorer8 › Giới thiệu FileExplorer8”.</p>
+</div>
+
+<h3>Câu hỏi thường gặp</h3>
+
+<p><strong>Vì sao mở một số thư mục lại bị hỏi quyền?</strong><br>Ứng dụng chạy trong App Sandbox. Màn hình chính, Tải về, Tài liệu và ổ đĩa ngoài nằm ngoài hộp cát, nên macOS sẽ hỏi khi bạn vào những thư mục đó lần đầu. Đó là thiết kế an toàn của hệ thống, không phải lỗi. Chọn “Cho phép truy cập thư mục này” thì thư mục sẽ được ghi nhớ — mỗi đường dẫn chỉ hỏi một lần trong một lần chạy.</p>
+<p><strong>Ứng dụng có đọc danh bạ, camera hay màn hình của tôi không?</strong><br>Không. FileExplorer8 chỉ yêu cầu truy cập tệp do người dùng chọn, các thư mục chuẩn (Tải về / Tài liệu / Nhạc / Ảnh / Phim) và truy cập mạng ra ngoài. Không có quyền với danh bạ, camera, micro, ghi màn hình hay toàn bộ ổ đĩa.</p>
+<p><strong>Mật khẩu SSH được lưu ở đâu?</strong><br>Trong Chuỗi khoá của macOS. Thông tin điểm kết nối máy chủ nằm trong vùng chứa cục bộ của hộp cát, mã hoá bằng AES-256-GCM. Bạn cũng có thể không lưu mật khẩu và nhận hộp đăng nhập một lần cho mỗi lần kết nối. Xem <a href="privacy.html">chính sách quyền riêng tư</a>.</p>
+<p><strong>Có chạy trên Apple Silicon và Intel không?</strong><br>Có cả hai. Bộ cài là tệp nhị phân phổ dụng. Yêu cầu macOS 15.0 trở lên.</p>
+<p><strong>Làm sao dọn dữ liệu còn lại sau khi gỡ cài đặt?</strong><br>Xoá ứng dụng, sau đó xoá <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> để xoá tuỳ chọn, trạng thái phiên và điểm kết nối máy chủ (ứng dụng trong hộp cát lưu dữ liệu trong vùng chứa này, không ở vị trí chia sẻ của hệ thống). Mật khẩu SSH nằm trong Chuỗi khoá và sẽ mất cùng kết nối tương ứng.</p>
+
+<h2 id="features">Tính năng</h2>
+
+<p>FileExplorer8 gom ba mô hình tương tác vào một cửa sổ. Nhấn <code>⇧⌘D</code> để chuyển vòng; mỗi chế độ giữ trạng thái riêng — đường dẫn, thẻ, cách sắp xếp, độ rộng cột, mục đang chọn.</p>
+
+<ul>
+  <li><strong>Quản lý tệp</strong>: Xem và sắp xếp. Cây bên trái, thanh đường dẫn, thẻ đầy đủ, sáu kiểu bố cục.</li>
+  <li><strong>Hai khung</strong>: Mô hình nguồn / đích với chín nút trên thanh thao tác để chuyển hàng loạt.</li>
+  <li><strong>Bốn khung</strong>: Lưới 2×2 để xem bốn thư mục cùng lúc và chia ra nhiều đích.</li>
+  <li><strong>Chạy thử trước khi ghi</strong>: Sao chép, di chuyển và ghi đè đều bắt đầu bằng kết quả chạy thử. Bước này không ghi một byte nào.</li>
+  <li><strong>Hoàn tác ba mức</strong>: Di chuyển trong cùng ổ, đổi tên, xoá vào Thùng rác và nén/giải nén ZIP được bảo đảm hoàn tác được.</li>
+  <li><strong>Xem trước</strong>: <code>Dấu cách</code> để xem nhanh, mã nguồn có tô sáng cú pháp, PDF qua PDFKit, tệp SSH từ xa tới 10 MB.</li>
+  <li><strong>Thư mục SSH từ xa</strong>: Kết nối bằng mật khẩu hoặc khoá riêng tư; thư mục từ xa dùng như thư mục cục bộ.</li>
+  <li><strong>14 ngôn ngữ</strong>: Trung giản thể và phồn thể, Anh, Nhật, Hàn, Đức, Pháp, Tây Ban Nha, Bồ Đào Nha (Brazil), Nga, Việt, Indonesia, Mã Lai, Thái.</li>
+</ul>
+
+<div class="shots">
+  <a href="images/01-explorer.png" target="_blank" rel="noopener">
+    <img src="images/readme/01-explorer.png" alt="Quản lý tệp: dạng lưới kèm bảng chi tiết" loading="lazy">
+  </a>
+  <a href="images/02-dual-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/02-dual-pane.png" alt="Hai khung: nguồn và đích" loading="lazy">
+  </a>
+  <a href="images/03-quad-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/03-quad-pane.png" alt="Bốn khung: bố cục 2×2" loading="lazy">
+  </a>
+</div>
+<p class="caption">Nhấn vào ảnh để xem kích thước gốc (2560×1600)</p>
+
+<footer>
+  <p>FileExplorer8 · <a href="privacy.vi.html">Quyền riêng tư</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Báo lỗi</a></p>
+  <p>macOS là nhãn hiệu của Apple Inc. Ứng dụng này không liên kết với Apple Inc.</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,440 @@
+{
+  "htmlLang": "zh-Hant",
+  "appName": "文件8",
+  "index": {
+    "title": "文件8 — 支援與隱私",
+    "desc": "文件8 是 macOS 原生檔案管理器，支援檔案管理器 / 雙欄 / 四欄三種形態。這裡是支援頁面與隱私政策。",
+    "lead": "macOS 原生檔案管理器 · 檔案管理器 / 雙欄 / 四欄三種形態同窗切換",
+    "nav": [
+      "支援",
+      "功能",
+      "隱私政策",
+      "回報問題"
+    ],
+    "supportH": "支援",
+    "supportCard": "<p><strong>遇到問題、想提建議、或發現 bug？</strong></p>\n  <p>請到 <a href=\"https://github.com/rosesmall2010/FileExplorer8/issues\">GitHub Issues</a> 提交，附上你的 macOS 版本、文件8 版本號，以及能重現問題的步驟。能附截圖更好。</p>\n  <p>版本號在「文件8 › 關於文件8」裡可以看到。</p>",
+    "faqH": "常見問題",
+    "faq": [
+      [
+        "為什麼進入某些目錄會彈窗要求授權？",
+        "應用程式開啟了 App Sandbox。桌面、下載、文件、外接磁碟等位置在沙盒之外，首次進入某個目錄時 macOS 會強制彈窗詢問，這是系統的安全設計，不是缺陷。選擇「授權此資料夾」後，該目錄會被記住，同一路徑一次執行只問一次。"
+      ],
+      [
+        "會不會讀取我的通訊錄、相機或螢幕？",
+        "不會。文件8 只申請了使用者選擇的檔案存取、標準資料夾（下載 / 文件 / 音樂 / 圖片 / 影片）與對外網路存取，沒有通訊錄、相機、麥克風、螢幕錄製或完全磁碟存取權限。"
+      ],
+      [
+        "SSH 密碼存在哪裡？",
+        "存在 macOS 系統鑰匙圈裡。伺服器端點資訊存在本機沙盒容器內（AES-256-GCM 加密）。密碼可以不儲存，改為每次連線時彈出一次性登入框。詳見<a href=\"privacy.html\">隱私政策</a>。"
+      ],
+      [
+        "支援 Apple Silicon 和 Intel 嗎？",
+        "兩者都支援，安裝包是通用二進位。系統要求 macOS 15.0 或更高版本。"
+      ],
+      [
+        "解除安裝後殘留資料怎麼清理？",
+        "刪除應用程式後，再刪除 <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> 即可清空偏好、工作階段記錄與伺服器端點資訊（沙盒應用程式的資料都在你自己的容器裡，不在系統共用位置）。SSH 密碼存在系統鑰匙圈，刪除對應連線時會一併刪除。"
+      ]
+    ],
+    "featuresH": "功能",
+    "featuresIntro": "文件8 把三種互動範式裝進同一個視窗，按 <code>⇧⌘D</code> 一步循環切換，三種形態各自儲存現場（路徑、標籤、排序、欄寬、選取項目）。",
+    "features": [
+      [
+        "檔案管理器",
+        "探索與整理。側邊欄目錄樹、位址列、完整標籤頁、六種檢視佈局。"
+      ],
+      [
+        "雙欄管理器",
+        "來源 / 目標範式，九個操作列按鈕，批次搬移。"
+      ],
+      [
+        "四欄管理器",
+        "田字 2×2，同時看四個目錄，多目標分流。"
+      ],
+      [
+        "寫入操作先預檢",
+        "複製、搬移、覆蓋前先給 dry-run 結論，這一步不寫任何位元組。"
+      ],
+      [
+        "三級復原",
+        "同卷宗搬移、重新命名、刪除到垃圾桶、打包解壓 ZIP 保證可復原。"
+      ],
+      [
+        "預覽",
+        "<code>Space</code> 快速預覽，原始碼帶語法著色，PDF 走 PDFKit，SSH 遠端檔案 10 MB 內也能看。"
+      ],
+      [
+        "SSH 遠端目錄",
+        "用密碼或私鑰連伺服器，遠端目錄和本機一樣操作。"
+      ],
+      [
+        "14 種語言",
+        "簡中、繁中、英、日、韓、德、法、西、巴西葡、俄、越、印尼、馬來、泰。"
+      ]
+    ],
+    "shots": [
+      [
+        "01-explorer.png",
+        "檔案管理器：網格檢視與詳細面板"
+      ],
+      [
+        "02-dual-pane.png",
+        "雙欄管理器：來源與目標兩欄"
+      ],
+      [
+        "03-quad-pane.png",
+        "四欄管理器：田字 2×2 佈局"
+      ]
+    ],
+    "shotHint": "點擊圖片看原圖（2560×1600）",
+    "trademark": "macOS 是 Apple Inc. 的商標。本應用程式與 Apple Inc. 無關聯。"
+  },
+  "privacy": {
+    "title": "隱私政策 — 文件8",
+    "desc": "文件8 不蒐集、不上傳、不分享任何使用者資料。",
+    "h1": "隱私政策",
+    "updated": "最後更新：2026-11-17",
+    "version": "適用版本：1.1.6 及以後",
+    "platform": "適用平台：macOS",
+    "back": "← 返回支援頁",
+    "tldr": "<strong>文件8 不蒐集、不上傳、不分享任何使用者資料。</strong>沒有帳號系統，沒有統計分析，沒有廣告 SDK，沒有當機回報。你在應用程式裡看到的一切檔案都留在你自己的機器上。",
+    "sections": [
+      {
+        "h2": "一、我們不蒐集什麼",
+        "blocks": [
+          {
+            "p": "以下資料<strong>一項都不蒐集</strong>："
+          },
+          {
+            "ul": [
+              "你的檔案與資料夾（內容、名稱、大小、修改時間）",
+              "你的瀏覽歷史、搜尋記錄、剪貼簿內容",
+              "你連線的伺服器位址、帳號、密碼、私鑰",
+              "裝置識別碼（序號、硬體 UUID、廣告識別碼）",
+              "使用統計、當機記錄、效能資料",
+              "你的位置、通訊錄、行事曆、相簿、麥克風、相機、螢幕內容"
+            ]
+          },
+          {
+            "p": "應用程式內<strong>沒有任何</strong>用於資料回報的網路請求。除你主動發起的 SSH/SFTP 連線外，應用程式不會向任何伺服器傳送任何位元組。"
+          }
+        ]
+      },
+      {
+        "h2": "二、資料存在哪裡",
+        "blocks": [
+          {
+            "p": "所有設定與憑證都只存在於<strong>這台 Mac 上</strong>，分三處："
+          },
+          {
+            "table": {
+              "head": [
+                "位置",
+                "存什麼",
+                "保護方式"
+              ],
+              "rows": [
+                [
+                  "應用程式沙盒容器<br><code>~/Library/Containers/<wbr>com.donghuazhu.FileExplorer8/</code>",
+                  "偏好設定、工作階段現場（視窗位置、各欄路徑等）、快速存取書籤",
+                  "App Sandbox 容器內，僅本應用程式可存取"
+                ],
+                [
+                  "同上，<code>servers.json</code>",
+                  "SSH 伺服器端點（主機、連接埠、使用者名稱、顯示名稱）",
+                  "<strong>AES-256-GCM 加密</strong>（swift-crypto）"
+                ],
+                [
+                  "系統鑰匙圈（Keychain）",
+                  "SSH 密碼、私鑰通行碼",
+                  "由 macOS 鑰匙圈保護"
+                ]
+              ]
+            }
+          },
+          {
+            "p": "<strong>密碼與通行碼不進檔案。</strong> <code>servers.json</code> 裡只有端點資訊，沒有秘密；密碼與私鑰通行碼存在系統鑰匙圈，刪除某條連線時一併刪除。"
+          },
+          {
+            "p": "需要說明的是，<code>servers.json</code> 的加密金鑰隨應用程式一同散佈（編譯進程式內，不單獨落盤、也不在鑰匙圈裡）。這道加密只是防止端點資訊被隨意翻看，<strong>不構成針對本機攻擊者的保護</strong>——能讀你磁碟的人也能讀應用程式本體。真正需要保密的內容（密碼、通行碼）始終只在鑰匙圈裡。"
+          },
+          {
+            "p": "私鑰檔案本身<strong>永遠留在你自己放的位置</strong>，應用程式只儲存一個檔案書籤用於讀取，不複製、不搬移到別處。"
+          }
+        ]
+      },
+      {
+        "h2": "三、網路存取",
+        "blocks": [
+          {
+            "p": "應用程式只有一個網路能力：<strong>SSH / SFTP 用戶端</strong>。"
+          },
+          {
+            "ul": [
+              "只在你主動新增伺服器並點擊連線時才發起連線，目標是<strong>你自己填的位址</strong>",
+              "連線用途是瀏覽與傳輸檔案，協定為 SSH（SFTP 子系統）",
+              "主機金鑰按 <code>known_hosts</code> 方式驗證，指紋變化會提示你確認",
+              "傳輸內容經過 SSH 協定本身的加密（libssh2 內建 OpenSSL 實作）"
+            ]
+          },
+          {
+            "p": "<strong>我們不營運任何伺服器</strong>，也沒有任何中轉或雲端同步服務。你的檔案不經過我們。"
+          },
+          {
+            "p": "應用程式不檢查更新、不載入遠端廣告、不請求任何第三方介面。"
+          }
+        ]
+      },
+      {
+        "h2": "四、系統權限",
+        "blocks": [
+          {
+            "p": "應用程式開啟 <strong>App Sandbox</strong>，只在你授予的範圍內讀寫檔案："
+          },
+          {
+            "table": {
+              "head": [
+                "權限",
+                "用途",
+                "何時出現"
+              ],
+              "rows": [
+                [
+                  "使用者選擇的檔案",
+                  "瀏覽與操作你指定的目錄",
+                  "首次進入沙盒外的目錄時由系統彈窗"
+                ],
+                [
+                  "下載 / 文件 / 音樂 / 圖片 / 影片資料夾",
+                  "免彈窗直接存取這幾個標準位置",
+                  "安裝後即可用"
+                ],
+                [
+                  "網路存取（對外）",
+                  "連線你自己新增的 SSH 伺服器",
+                  "僅在你點擊連線時"
+                ]
+              ]
+            }
+          },
+          {
+            "p": "上表與應用程式套件內實際的沙盒權限一一對應（<code>app-sandbox</code>、<code>files.user-selected</code>、<code>files.downloads</code>、<code>assets.music</code> / <code>assets.pictures</code> / <code>assets.movies</code>、<code>network.client</code>），沒有多申請任何一項。"
+          },
+          {
+            "p": "應用程式<strong>不申請</strong>：通訊錄、行事曆、提醒事項、照片圖庫、相機、麥克風、螢幕錄製、完全磁碟存取、輔助使用。若你在「系統設定 › 隱私權與安全性」裡看到這些項目下有「文件8」，那不是本應用程式申請的。"
+          },
+          {
+            "p": "你也可以隨時在「系統設定 › 隱私權與安全性 › 檔案和資料夾」裡撤銷已授予的目錄。"
+          }
+        ]
+      },
+      {
+        "h2": "五、檔案校驗和功能",
+        "blocks": [
+          {
+            "p": "應用程式提供「計算校驗和」（SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64），用於核對檔案完整性。"
+          },
+          {
+            "p": "這項功能<strong>只讀取你明確選取的檔案</strong>，在記憶體中計算摘要並顯示給你，不儲存、不上傳。摘要值不會離開你的機器，也不會進入任何記錄。"
+          }
+        ]
+      },
+      {
+        "h2": "六、刪除你的資料",
+        "blocks": [
+          {
+            "table": {
+              "head": [
+                "想刪什麼",
+                "怎麼做"
+              ],
+              "rows": [
+                [
+                  "某條 SSH 連線的密碼",
+                  "應用程式內刪除該連線，鑰匙圈裡的密碼與通行碼隨之刪除"
+                ],
+                [
+                  "全部偏好與工作階段",
+                  "應用程式內「重置」功能，或刪除 <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code>"
+                ],
+                [
+                  "全部資料",
+                  "解除安裝應用程式，再刪除上面那個目錄"
+                ]
+              ]
+            }
+          },
+          {
+            "p": "我們這邊沒有你的任何資料，因此不存在「向我們申請刪除」的流程——也無需註銷帳號，本應用程式沒有帳號。"
+          }
+        ]
+      },
+      {
+        "h2": "七、第三方元件",
+        "blocks": [
+          {
+            "p": "應用程式只包含兩個開源相依項目："
+          },
+          {
+            "table": {
+              "head": [
+                "元件",
+                "用途",
+                "說明"
+              ],
+              "rows": [
+                [
+                  "<a href=\"https://github.com/RuiNelson/SwiftSFTP\">SwiftSFTP</a>",
+                  "SSH / SFTP 協定實作",
+                  "內嵌 libssh2 與 OpenSSL 原始碼，純本機執行，不含任何統計或聯網回報程式碼"
+                ],
+                [
+                  "<a href=\"https://github.com/apple/swift-crypto\">swift-crypto</a>",
+                  "加密原語（Apple 官方）",
+                  "AES-256-GCM、SHA-2、HMAC 等標準演算法；用於本機設定加密、SSH 主機指紋驗證與檔案校驗和計算，純本機運算，不聯網"
+                ]
+              ]
+            }
+          },
+          {
+            "p": "應用程式內<strong>沒有</strong>廣告 SDK、統計分析 SDK、當機蒐集 SDK、社交登入 SDK。"
+          }
+        ]
+      },
+      {
+        "h2": "八、兒童隱私",
+        "blocks": [
+          {
+            "p": "本應用程式不針對兒童蒐集任何資訊，也不蒐集任何人的資訊。App Store 年齡分級為 4+。"
+          }
+        ]
+      },
+      {
+        "h2": "九、政策變更",
+        "blocks": [
+          {
+            "p": "本政策如有修改，會更新本頁頂端的「最後更新」日期，並隨新版本發佈。由於本應用程式不蒐集資料，實質變更的可能性很低。"
+          }
+        ]
+      },
+      {
+        "h2": "十、聯絡我們",
+        "blocks": [
+          {
+            "ul": [
+              "問題與回報：<a href=\"https://github.com/rosesmall2010/FileExplorer8/issues\">GitHub Issues</a>",
+              "支援頁面：<a href=\"index.html\">文件8 支援</a>"
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "h": "English summary (for App Review reference)",
+      "blocks": [
+        {
+          "p": "<strong>FileExplorer8 does not collect, transmit, or share any user data.</strong>"
+        },
+        {
+          "ul": [
+            "No analytics, no ads, no crash reporting, no accounts.",
+            "All settings and credentials stay on the user's Mac. Passwords live in the macOS Keychain; server endpoints in a local file encrypted with AES-256-GCM (the key ships inside the app, so this obfuscates endpoints rather than protecting against local attackers).",
+            "The only network capability is an SSH/SFTP client that connects <strong>only</strong> to servers the user adds. We operate no servers and receive nothing.",
+            "The app runs in the App Sandbox and requests only user-selected file access, standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound network access.",
+            "Two open-source dependencies: <a href=\"https://github.com/RuiNelson/SwiftSFTP\">SwiftSFTP</a> (embedded libssh2 + OpenSSL) and Apple's <a href=\"https://github.com/apple/swift-crypto\">swift-crypto</a>; both run fully locally with no telemetry."
+          ]
+        }
+      ]
+    }
+  },
+  "readme": {
+    "tagline": "macOS 原生檔案管理器 · 檔案管理器 / 雙欄 / 四欄三種形態同窗切換",
+    "subtitle": "一套檔案操作核心，三種互動範式 · 寫入操作先預檢 · 三級復原 · 萬項目錄也不卡",
+    "badgeSite": "支援頁",
+    "badgePrivacy": "隱私政策",
+    "aboutH": "這是什麼",
+    "about": [
+      "文件8 是一個在 macOS 上獨立執行的**檔案管理器**，把「檔案管理器」「雙欄管理器」「四欄管理器」三種互動範式裝進同一個視窗，按 `⇧⌘D` 一步循環切換。三種形態各自儲存現場——路徑、標籤、排序方式、欄寬、選取項目，來回切都不會遺失。",
+      "它不是 Finder 的替代品，也不是另一個 Finder 面板。它補的是 Finder 缺的那一塊：**雙手在鍵盤上的批次搬移**。",
+      "參照的是經典雙欄檔案管理器範式：不設定預設開啟程式、不做 Finder 延伸功能、不讀寫 Finder 偏好設定。唯一共用的是檔案系統本身。所以它可以和 Finder 長期並存，不會互相干擾。"
+    ],
+    "shotsH": "介面",
+    "featuresH": "特色",
+    "featureGroups": [
+      {
+        "h3": "寫入操作先預檢，絕不亂寫",
+        "p": [
+          "複製、搬移、覆蓋之前先做一次 dry-run：目標是否可寫、磁碟空間夠不夠、有哪些檔名衝突，全部先攤給你看。**這一步不寫任何位元組。**",
+          "四種衝突策略任選：取代（先備份，支援復原）、兩者都保留、跳過、逐條詢問。衝突不超過 5 條時可以逐條決定。",
+          "進度有即時速度、已傳 / 總量 / 剩餘；結束後給一份完整的帳——成功幾項、跳過幾項、失敗幾項，失敗清單逐個列出檔名與原因。"
+        ]
+      },
+      {
+        "h3": "三級復原",
+        "p": [
+          "同卷宗搬移、重新命名、刪除到垃圾桶、打包與解壓 ZIP **保證 100% 可復原**。複製與跨卷宗搬移盡力而為。不可復原的操作執行前二次確認。"
+        ]
+      },
+      {
+        "h3": "六種檢視與專業預覽",
+        "p": [
+          "特大 / 大 / 中 / 小圖示、列表、詳細資訊。圖示按真實像素分級（256 / 128 / 64 / 32），高解析度螢幕上不模糊。",
+          "按 `Space` 快速預覽，`←` / `→` 與 `PgUp` / `PgDn` 連續翻頁："
+        ],
+        "ul": [
+          "文字與原始碼走唯讀等寬檢視，帶 50 多種語言的語法著色與行號",
+          "PDF 走 PDFKit",
+          "圖片等比縮放整張裝進面板",
+          "富格式交給系統 Quick Look",
+          "預覽不了的，直接給簡介"
+        ]
+      },
+      {
+        "h3": "打包與解壓",
+        "p": [
+          "**打包為 ZIP**：ZIP64、可調壓縮等級、已壓縮格式自動跳過、可選擇是否跟隨符號連結，打包結果可復原。",
+          "**按兩下即解壓**，行為與 Finder 一致：單一頂層目錄不套殼、衝突整包改名、只清理 `__MACOSX`，還原 Unix 權限位。"
+        ]
+      },
+      {
+        "h3": "SSH 遠端目錄",
+        "p": [
+          "內建 SSH / SFTP：用密碼或任意路徑的私鑰連伺服器，遠端目錄和本機目錄一樣瀏覽、複製、刪除、改名、復原，走同一條寫入管線。",
+          "標籤列用網路磁碟圖示加紅綠狀態表示連線狀況，斷線可一鍵重連。**密碼可以不儲存**，改為每次連線彈出一次性登入框。遠端檔案 10 MB 以內也能快速預覽。"
+        ]
+      },
+      {
+        "h3": "細節",
+        "ul": [
+          "Finder 七色標籤，支援多標籤疊加，取消全部標籤時保留自訂文字標籤",
+          "命令面板 `⌘K`，按符合度 → 最近使用 → 字母序排序",
+          "路徑三件套：複製路徑、複製所在目錄路徑、複製檔名，外加「在終端機中開啟」",
+          "計算校驗和：SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64",
+          "卷宗自動探索：USB 隨身碟、外接硬碟、已掛載的磁碟映像自動出現，可一鍵退出",
+          "工作階段恢復：視窗位置、標籤、欄寬、排序、兩欄比例都記住；當機後能恢復排隊中的寫入任務",
+          "與 Finder 雙向複製貼上，三個方向拖放打通",
+          "語言切換在選單列一級「語言」選單，一步可到，切換立即生效"
+        ]
+      },
+      {
+        "h3": "14 種語言",
+        "p": [
+          "簡體中文、繁體中文、英文、日文、韓文、德文、法文、西班牙文、巴西葡萄牙文、俄文、越南文、印尼文、馬來文、泰文。",
+          "泰文單獨實作了一套排序規則——前置母音、聲調符號、腳本順序都不是碼位序，按碼位排會亂。"
+        ]
+      }
+    ],
+    "privacyH": "隱私",
+    "privacyP": "**不蒐集任何資料。** 沒有帳號，沒有統計分析，沒有廣告 SDK，沒有當機回報。\n\n除你主動發起的 SSH 連線外，應用程式不向任何伺服器傳送任何位元組。你的檔案、瀏覽記錄、伺服器憑證都只留在你自己的 Mac 上：密碼與私鑰通行碼存在系統鑰匙圈，私鑰檔案始終留在你放它的地方。\n\n應用程式開啟 App Sandbox，只在你授予的目錄範圍內讀寫，不申請通訊錄、相機、麥克風、螢幕錄製或完全磁碟存取。",
+    "seePrivacy": "詳見隱私政策",
+    "supportH": "支援",
+    "supportP": "遇到問題、想提建議、或發現 bug？\n\n- 開啟[支援頁面](https://rosesmall2010.github.io/FileExplorer8/)查看常見問題\n- 在 [Issues](https://github.com/rosesmall2010/FileExplorer8/issues) 裡提交，附上 macOS 版本、文件8 版本號與重現步驟\n\n版本號在「文件8 › 關於文件8」裡可以看到。",
+    "faqH": "常見問題",
+    "reqH": "系統需求",
+    "req": [
+      "macOS 15.0 或更高版本",
+      "Apple Silicon 或 Intel 晶片（通用二進位）"
+    ],
+    "trademark": "macOS 是 Apple Inc. 的商標。本應用程式與 Apple Inc. 無關聯。"
+  }
+}

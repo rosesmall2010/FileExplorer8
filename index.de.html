@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FileExplorer8 — Support und Datenschutz</title>
+<meta name="description" content="FileExplorer8 ist ein nativer Dateimanager für macOS mit drei Modi: Dateimanager, Zwei-Bereiche- und Vier-Bereiche-Ansicht. Hier finden Sie Support und Datenschutzerklärung.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>FileExplorer8</h1>
+  <p class="lead">Nativer Dateimanager für macOS · Dateimanager / Zwei Bereiche / Vier Bereiche in einem Fenster</p>
+</header>
+
+<div class="lang"><a href="index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="index.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="index.en.html" hreflang="en" lang="en">English</a><a href="index.ja.html" hreflang="ja" lang="ja">日本語</a><a href="index.ko.html" hreflang="ko" lang="ko">한국어</a><span aria-current="page">Deutsch</span><a href="index.fr.html" hreflang="fr" lang="fr">Français</a><a href="index.es.html" hreflang="es" lang="es">Español</a><a href="index.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="index.ru.html" hreflang="ru" lang="ru">Русский</a><a href="index.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="index.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="index.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="index.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main">
+  <a href="#support">Support</a>
+  <a href="#features">Funktionen</a>
+  <a href="privacy.de.html">Datenschutz</a>
+  <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Problem melden</a>
+</nav>
+
+<h2 id="support">Support</h2>
+
+<div class="card">
+<p><strong>Hängt etwas, haben Sie eine Idee oder einen Fehler gefunden?</strong></p>
+  <p>Öffnen Sie ein Issue auf <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a> und nennen Sie Ihre macOS-Version, Ihre FileExplorer8-Version und die Schritte zum Nachstellen. Ein Screenshot hilft sehr.</p>
+  <p>Die Versionsnummer steht unter „FileExplorer8 › Über FileExplorer8“.</p>
+</div>
+
+<h3>Häufige Fragen</h3>
+
+<p><strong>Warum fragt die App beim Öffnen mancher Ordner nach einer Freigabe?</strong><br>Die App läuft in der App Sandbox. Schreibtisch, Downloads, Dokumente und externe Laufwerke liegen außerhalb der Sandbox, deshalb fragt macOS beim ersten Betreten eines solchen Ordners nach. Das ist so von macOS vorgesehen und kein Fehler. Mit „Zugriff auf diesen Ordner erlauben“ wird der Ordner gemerkt – pro Pfad und Sitzung wird nur einmal gefragt.</p>
+<p><strong>Liest die App meine Kontakte, die Kamera oder den Bildschirm?</strong><br>Nein. FileExplorer8 fordert nur Zugriff auf vom Benutzer gewählte Dateien, auf die Standardordner (Downloads / Dokumente / Musik / Bilder / Filme) und auf ausgehende Netzwerkverbindungen an. Es gibt keinen Zugriff auf Kontakte, Kamera, Mikrofon, Bildschirmaufnahme oder das gesamte Laufwerk.</p>
+<p><strong>Wo werden SSH-Passwörter gespeichert?</strong><br>Im macOS-Schlüsselbund. Server-Endpunkte liegen im lokalen Sandbox-Container, verschlüsselt mit AES-256-GCM. Sie können das Passwort auch nicht speichern und stattdessen bei jeder Verbindung einmal abfragen lassen. Details in der <a href="privacy.html">Datenschutzerklärung</a>.</p>
+<p><strong>Läuft die App auf Apple Silicon und Intel?</strong><br>Auf beiden. Das Installationspaket ist ein Universal Binary. Erforderlich ist macOS 15.0 oder neuer.</p>
+<p><strong>Wie entferne ich Reste nach dem Deinstallieren?</strong><br>Löschen Sie die App und danach <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code>, um Einstellungen, Sitzungsdaten und Server-Endpunkte zu entfernen (Sandbox-Apps speichern ihre Daten in diesem Container, nicht an gemeinsamen Systemorten). SSH-Passwörter liegen im Schlüsselbund und werden mit der jeweiligen Verbindung gelöscht.</p>
+
+<h2 id="features">Funktionen</h2>
+
+<p>FileExplorer8 bringt drei Bedienmodelle in ein Fenster. Mit <code>⇧⌘D</code> wechseln Sie zyklisch; jeder Modus behält seinen Zustand – Pfad, Tabs, Sortierung, Spaltenbreiten, Auswahl.</p>
+
+<ul>
+  <li><strong>Dateimanager</strong>: Sichten und aufräumen. Seitenleiste, Pfadleiste, echte Tabs, sechs Ansichtsarten.</li>
+  <li><strong>Zwei Bereiche</strong>: Quelle / Ziel mit neun Schaltflächen in der Aktionsleiste für Massentransfers.</li>
+  <li><strong>Vier Bereiche</strong>: Ein 2×2-Raster für vier Ordner gleichzeitig und mehrere Ziele.</li>
+  <li><strong>Probelauf vor jedem Schreiben</strong>: Kopieren, Verschieben und Überschreiben beginnen mit einem Probelauf. Dieser Schritt schreibt kein einziges Byte.</li>
+  <li><strong>Dreistufiges Rückgängig</strong>: Verschieben im selben Volume, Umbenennen, Löschen in den Papierkorb sowie ZIP-Packen und -Entpacken lassen sich garantiert rückgängig machen.</li>
+  <li><strong>Vorschau</strong>: <code>Space</code> für Quick Look, Quelltext mit Syntaxhervorhebung, PDFs über PDFKit, entfernte SSH-Dateien bis 10 MB.</li>
+  <li><strong>Entfernte SSH-Ordner</strong>: Verbindung per Passwort oder privatem Schlüssel; entfernte Ordner verhalten sich wie lokale.</li>
+  <li><strong>14 Sprachen</strong>: Chinesisch (vereinfacht und traditionell), Englisch, Japanisch, Koreanisch, Deutsch, Französisch, Spanisch, brasilianisches Portugiesisch, Russisch, Vietnamesisch, Indonesisch, Malaiisch, Thailändisch.</li>
+</ul>
+
+<div class="shots">
+  <a href="images/01-explorer.png" target="_blank" rel="noopener">
+    <img src="images/readme/01-explorer.png" alt="Dateimanager: Rasteransicht mit Detailbereich" loading="lazy">
+  </a>
+  <a href="images/02-dual-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/02-dual-pane.png" alt="Zwei Bereiche: Quelle und Ziel" loading="lazy">
+  </a>
+  <a href="images/03-quad-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/03-quad-pane.png" alt="Vier Bereiche: 2×2-Raster" loading="lazy">
+  </a>
+</div>
+<p class="caption">Klicken Sie ein Bild an, um es in Originalgröße zu sehen (2560×1600)</p>
+
+<footer>
+  <p>FileExplorer8 · <a href="privacy.de.html">Datenschutz</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Problem melden</a></p>
+  <p>macOS ist eine Marke von Apple Inc. Diese App steht in keiner Verbindung zu Apple Inc.</p>
+</footer>
+</div>
+</body>
+</html>

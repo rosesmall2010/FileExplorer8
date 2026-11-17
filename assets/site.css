@@ -1,0 +1,154 @@
+/* 文件8 / FileExplorer8 支持站点的共享样式。
+   所有页面共用这一份，改版式只动这里。
+   保持零外部依赖：不引用任何 CDN 字体或图标。 */
+
+:root {
+  --bg: #ffffff;
+  --fg: #1d1d1f;
+  --muted: #6e6e73;
+  --line: #e5e5e7;
+  --accent: #0071e3;
+  --card: #f5f5f7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --fg: #f5f5f7;
+    --muted: #a1a1a6;
+    --line: #2c2c2e;
+    --accent: #2997ff;
+    --card: #1c1c1e;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+        "Hiragino Sans", "Apple SD Gothic Neo", "Noto Sans Thai", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+
+h1 { font-size: 36px; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 10px; }
+h2 { font-size: 24px; letter-spacing: -0.01em; margin: 44px 0 14px; }
+h3 { font-size: 17px; margin: 28px 0 8px; }
+p { margin: 14px 0; }
+ul, ol { padding-left: 22px; }
+li { margin: 6px 0; }
+
+a { color: var(--accent); }
+
+code {
+  font: 0.88em/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--card);
+  padding: 2px 6px;
+  border-radius: 5px;
+  word-break: break-all;
+}
+
+/* 页面顶部元信息（版本、更新日期、适用平台） */
+.meta { color: var(--muted); font-size: 14px; margin: 0 0 36px; line-height: 1.9; }
+
+/* 主导航（支持页 / 隐私页之间的跳转） */
+nav.main {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 36px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+nav.main a { text-decoration: none; font-weight: 500; }
+nav.main a:hover { text-decoration: underline; }
+
+/* 语言切换条。当前语言用 span 表示，不可点。
+   language bar: current language is a non-clickable <span> */
+.lang {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  padding: 0 0 20px;
+  margin: 0 0 28px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.lang a { text-decoration: none; color: var(--muted); }
+.lang a:hover { color: var(--accent); text-decoration: underline; }
+.lang span[aria-current="page"] { color: var(--fg); font-weight: 600; }
+
+/* 摘要卡片 */
+.tldr {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+.tldr p { margin: 0; }
+
+.card { background: var(--card); border-radius: 14px; padding: 20px 24px; margin: 20px 0; }
+.card p:first-child { margin-top: 0; }
+.card p:last-child { margin-bottom: 0; }
+
+table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 15px; }
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+th { color: var(--muted); font-weight: 600; }
+
+footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+details { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); }
+summary { cursor: pointer; color: var(--accent); font-weight: 500; }
+
+/* 应用截图。缩图在 images/readme/，点开看原图 */
+.shots { display: grid; gap: 16px; margin: 24px 0; }
+.shots a { display: block; }
+.shots img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  display: block;
+  transition: opacity .15s;
+}
+.shots a:hover img { opacity: .85; }
+.caption { color: var(--muted); font-size: 14px; text-align: center; margin-top: -8px; }
+
+/* 窄屏：表格转卡片式，否则三列挤成一团、容器路径被压断。
+   表头行在这个布局下没有意义，藏掉。 */
+@media (max-width: 640px) {
+  .wrap { padding: 40px 18px 72px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 21px; }
+  table, thead, tbody, tr, th, td { display: block; width: 100%; }
+  tr { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  tr:last-child { border-bottom: none; }
+  th {
+    padding: 0 0 4px;
+    border: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  td { padding: 3px 0; border: none; }
+  thead { display: none; }
+  code { display: inline-block; padding: 3px 7px; margin: 2px 0; }
+}

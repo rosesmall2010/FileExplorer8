@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Политика конфиденциальности — FileExplorer8</title>
+<meta name="description" content="FileExplorer8 не собирает, не передаёт и не раскрывает данные пользователей.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<h1>Политика конфиденциальности</h1>
+<p class="meta">
+  FileExplorer8<br>
+  Последнее обновление: 17.11.2026 · Применяется к: 1.1.6 и новее · Платформа: macOS
+</p>
+
+<div class="lang"><a href="privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="privacy.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="privacy.en.html" hreflang="en" lang="en">English</a><a href="privacy.ja.html" hreflang="ja" lang="ja">日本語</a><a href="privacy.ko.html" hreflang="ko" lang="ko">한국어</a><a href="privacy.de.html" hreflang="de" lang="de">Deutsch</a><a href="privacy.fr.html" hreflang="fr" lang="fr">Français</a><a href="privacy.es.html" hreflang="es" lang="es">Español</a><a href="privacy.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><span aria-current="page">Русский</span><a href="privacy.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="privacy.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="privacy.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="privacy.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main"><a href="index.ru.html">← Назад к поддержке</a></nav>
+
+<div class="tldr">
+  <p><strong>FileExplorer8 не собирает, не передаёт и не раскрывает данные пользователей.</strong> Нет учётных записей, аналитики, рекламных SDK и отчётов о сбоях. Всё, что вы видите в приложении, остаётся на вашем Mac.</p>
+</div>
+
+<h2>1. Что мы не собираем</h2>
+
+<p>Ничего из перечисленного не собирается — <strong>ни одного пункта</strong>:</p>
+<ul><li>Ваши файлы и папки (содержимое, имена, размеры, даты изменения)</li><li>История просмотров и поиска, содержимое буфера обмена</li><li>Адреса серверов, учётные записи, пароли и приватные ключи, к которым вы подключаетесь</li><li>Идентификаторы устройства (серийный номер, аппаратный UUID, рекламный идентификатор)</li><li>Статистика использования, журналы сбоев, данные о производительности</li><li>Ваше местоположение, контакты, календарь, медиатека, микрофон, камера, содержимое экрана</li></ul>
+<p>В приложении <strong>нет ни одного</strong> сетевого запроса для отправки данных. Кроме SSH/SFTP-подключений, которые вы запускаете сами, приложение не отправляет ни одного байта на какой-либо сервер.</p>
+
+<h2>2. Где хранятся данные</h2>
+
+<p>Все настройки и учётные данные существуют только <strong>на этом Mac</strong>, в трёх местах:</p>
+<table><thead><tr><th>Расположение</th><th>Что хранится</th><th>Защита</th></tr></thead><tbody><tr><td>Контейнер песочницы<br><code>~/Library/Containers/<wbr>com.donghuazhu.FileExplorer8/</code></td><td>Настройки, состояние сеанса (положение окна, пути разделов), закладки быстрого доступа</td><td>Внутри контейнера App Sandbox, доступно только этому приложению</td></tr><tr><td>Там же, <code>servers.json</code></td><td>Конечные точки серверов SSH (хост, порт, имя пользователя, отображаемое имя)</td><td><strong>AES-256-GCM</strong> (swift-crypto)</td></tr><tr><td>Связка ключей системы</td><td>Пароли SSH и парольные фразы приватных ключей</td><td>Защищены связкой ключей macOS</td></tr></tbody></table>
+<p><strong>Пароли никогда не попадают в файл.</strong> В <code>servers.json</code> только конечные точки, без секретов. Пароли и парольные фразы хранятся в связке ключей и удаляются вместе со своим подключением.</p>
+<p>Чтобы не было неясностей: ключ шифрования <code>servers.json</code> поставляется вместе с приложением (вкомпилирован в двоичный файл — не лежит отдельно на диске и не хранится в связке ключей). Это шифрование лишь мешает читать конечные точки между делом; оно <strong>не является защитой от локального злоумышленника</strong>, ведь тот, кто может читать ваш диск, прочитает и сам двоичный файл приложения. То, что действительно надо скрывать — пароли и парольные фразы — хранится только в связке ключей.</p>
+<p>Файлы приватных ключей <strong>остаются там, где вы их положили</strong>. Приложение сохраняет лишь закладку для чтения; оно никогда их не копирует и не перемещает.</p>
+
+<h2>3. Доступ в сеть</h2>
+
+<p>У приложения ровно одна сетевая возможность: <strong>клиент SSH / SFTP</strong>.</p>
+<ul><li>Подключение возникает только после того, как вы добавите сервер и нажмёте «подключиться», и ведёт к <strong>адресу, который вы ввели</strong></li><li>Оно служит для просмотра и передачи файлов по SSH (подсистема SFTP)</li><li>Ключи хоста проверяются по образцу <code>known_hosts</code>; при изменении отпечатка приложение просит подтверждение</li><li>Передаваемые данные шифруются самим SSH (OpenSSL в составе libssh2)</li></ul>
+<p><strong>Мы не обслуживаем никаких серверов</strong>, нет ни ретрансляции, ни облачной синхронизации. Ваши файлы никогда не проходят через нас.</p>
+<p>Приложение не проверяет обновления, не загружает удалённую рекламу и не обращается к сторонним API.</p>
+
+<h2>4. Системные разрешения</h2>
+
+<p>Приложение работает в <strong>App Sandbox</strong> и читает или записывает только в пределах выданных вами разрешений:</p>
+<table><thead><tr><th>Разрешение</th><th>Назначение</th><th>Когда появляется</th></tr></thead><tbody><tr><td>Файлы, выбранные пользователем</td><td>Просмотр и действия в указанных вами папках</td><td>Системный запрос при первом входе в папку вне песочницы</td></tr><tr><td>Папки Загрузки / Документы / Музыка / Изображения / Фильмы</td><td>Доступ к этим стандартным местам без запросов</td><td>Доступно сразу после установки</td></tr><tr><td>Доступ в сеть (исходящий)</td><td>Подключение к добавленным вами серверам SSH</td><td>Только при нажатии «подключиться»</td></tr></tbody></table>
+<p>Таблица один к одному соответствует разрешениям песочницы в пакете приложения (<code>app-sandbox</code>, <code>files.user-selected</code>, <code>files.downloads</code>, <code>assets.music</code> / <code>assets.pictures</code> / <code>assets.movies</code>, <code>network.client</code>). Сверх этого ничего не запрашивается.</p>
+<p>Приложение <strong>не запрашивает</strong>: контакты, календарь, напоминания, медиатеку, камеру, микрофон, запись экрана, полный доступ к диску и универсальный доступ. Если вы видите FileExplorer8 в каком-либо из этих пунктов в «Системных настройках › Конфиденциальность и безопасность», это не от нашего приложения.</p>
+<p>Выдать и отозвать доступ к папкам можно в «Системных настройках › Конфиденциальность и безопасность › Файлы и папки».</p>
+
+<h2>5. Контрольные суммы</h2>
+
+<p>Приложение считает контрольные суммы (SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64), чтобы проверять целостность файлов.</p>
+<p>Эта функция <strong>читает только явно выбранные вами файлы</strong>, вычисляет дайджест в памяти и показывает его. Ничего не сохраняется и не отправляется. Дайджесты не покидают ваш Mac и не попадают в журналы.</p>
+
+<h2>6. Удаление ваших данных</h2>
+
+<table><thead><tr><th>Что удалить</th><th>Как</th></tr></thead><tbody><tr><td>Пароль одного подключения SSH</td><td>Удалите это подключение в приложении — пароль и парольная фраза из связки ключей уйдут вместе с ним</td></tr><tr><td>Все настройки и сеансы</td><td>Используйте «Сброс» в приложении или удалите <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code></td></tr><tr><td>Всё</td><td>Удалите приложение, затем удалите указанную папку</td></tr></tbody></table>
+<p>У нас нет никаких ваших данных, поэтому нет и процедуры «запросить удаление у нас» — как нет и учётной записи, которую можно закрыть: у приложения нет учётных записей.</p>
+
+<h2>7. Сторонние компоненты</h2>
+
+<p>В приложении ровно две зависимости с открытым кодом:</p>
+<table><thead><tr><th>Компонент</th><th>Назначение</th><th>Примечания</th></tr></thead><tbody><tr><td><a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a></td><td>Реализация протокола SSH / SFTP</td><td>Включает исходный код libssh2 и OpenSSL; работает полностью локально, без кода аналитики и отправки данных</td></tr><tr><td><a href="https://github.com/apple/swift-crypto">swift-crypto</a></td><td>Криптографические примитивы (от Apple)</td><td>AES-256-GCM, SHA-2, HMAC и другие стандартные алгоритмы; используется для локального шифрования настроек, проверки отпечатков хостов SSH и контрольных сумм. Только локальные вычисления, без сети</td></tr></tbody></table>
+<p>В приложении <strong>нет</strong> рекламных SDK, SDK аналитики, сбора сбоев и социального входа.</p>
+
+<h2>8. Конфиденциальность детей</h2>
+
+<p>Приложение не собирает сведения ни от детей, ни от кого-либо ещё. Возрастной рейтинг в App Store — 4+.</p>
+
+<h2>9. Изменения политики</h2>
+
+<p>При изменении политики обновляется дата «Последнее обновление» вверху страницы, а изменение выходит с новой версией. Поскольку приложение не собирает данные, существенные изменения маловероятны.</p>
+
+<h2>10. Связаться с нами</h2>
+
+<ul><li>Вопросы и сообщения: <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a></li><li>Страница поддержки: <a href="index.html">поддержка FileExplorer8</a></li></ul>
+<details>
+<summary>English summary (for App Review reference)</summary>
+
+<p><strong>FileExplorer8 does not collect, transmit, or share any user data.</strong></p>
+<ul><li>No analytics, no ads, no crash reporting, no accounts.</li><li>All settings and credentials stay on the user's Mac. Passwords live in the macOS Keychain; server endpoints in a local file encrypted with AES-256-GCM (the key ships inside the app, so this obfuscates endpoints rather than protecting against local attackers).</li><li>The only network capability is an SSH/SFTP client that connects <strong>only</strong> to servers the user adds. We operate no servers and receive nothing.</li><li>The app runs in the App Sandbox and requests only user-selected file access, standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound network access.</li><li>Two open-source dependencies: <a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a> (embedded libssh2 + OpenSSL) and Apple's <a href="https://github.com/apple/swift-crypto">swift-crypto</a>; both run fully locally with no telemetry.</li></ul>
+
+</details>
+
+<footer>
+  <p>FileExplorer8 · <a href="index.ru.html">Поддержка</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Сообщить о проблеме</a></p>
+</footer>
+</div>
+</body>
+</html>

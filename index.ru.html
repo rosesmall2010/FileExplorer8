@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FileExplorer8 — поддержка и конфиденциальность</title>
+<meta name="description" content="FileExplorer8 — нативный файловый менеджер для macOS с тремя режимами: файловый менеджер, два раздела и четыре раздела. Здесь поддержка и политика конфиденциальности.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>FileExplorer8</h1>
+  <p class="lead">Нативный файловый менеджер для macOS · Файловый менеджер / два раздела / четыре раздела в одном окне</p>
+</header>
+
+<div class="lang"><a href="index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="index.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="index.en.html" hreflang="en" lang="en">English</a><a href="index.ja.html" hreflang="ja" lang="ja">日本語</a><a href="index.ko.html" hreflang="ko" lang="ko">한국어</a><a href="index.de.html" hreflang="de" lang="de">Deutsch</a><a href="index.fr.html" hreflang="fr" lang="fr">Français</a><a href="index.es.html" hreflang="es" lang="es">Español</a><a href="index.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><span aria-current="page">Русский</span><a href="index.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="index.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="index.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="index.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main">
+  <a href="#support">Поддержка</a>
+  <a href="#features">Возможности</a>
+  <a href="privacy.ru.html">Конфиденциальность</a>
+  <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Сообщить о проблеме</a>
+</nav>
+
+<h2 id="support">Поддержка</h2>
+
+<div class="card">
+<p><strong>Что-то не работает, есть идея или нашли ошибку?</strong></p>
+  <p>Создайте обращение в <a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a>, указав версию macOS, версию FileExplorer8 и шаги для воспроизведения. Скриншот очень помогает.</p>
+  <p>Версия указана в «FileExplorer8 › О программе FileExplorer8».</p>
+</div>
+
+<h3>Частые вопросы</h3>
+
+<p><strong>Почему при открытии некоторых папок запрашивается разрешение?</strong><br>Приложение работает в App Sandbox. Рабочий стол, Загрузки, Документы и внешние диски находятся вне песочницы, поэтому macOS спрашивает при первом входе в такую папку. Это задуманная система безопасности, а не дефект. Выберите «Разрешить доступ к этой папке» — папка запомнится, и для одного пути в рамках одного запуска вопрос задаётся один раз.</p>
+<p><strong>Приложение читает мои контакты, камеру или экран?</strong><br>Нет. FileExplorer8 запрашивает только доступ к выбранным вами файлам, стандартным папкам (Загрузки / Документы / Музыка / Изображения / Фильмы) и исходящий доступ в сеть. Доступа к контактам, камере, микрофону, записи экрана и всему диску нет.</p>
+<p><strong>Где хранятся пароли SSH?</strong><br>В связке ключей macOS. Конечные точки серверов лежат в локальном контейнере песочницы и зашифрованы AES-256-GCM. Пароль можно не сохранять и вместо этого получать одноразовый запрос входа при каждом подключении. Подробнее в <a href="privacy.html">политике конфиденциальности</a>.</p>
+<p><strong>Работает ли на Apple Silicon и Intel?</strong><br>На обоих. Установщик — универсальный двоичный файл. Требуется macOS 15.0 или новее.</p>
+<p><strong>Как убрать остатки после удаления?</strong><br>Удалите приложение, затем удалите <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code>, чтобы очистить настройки, состояние сеанса и конечные точки серверов (данные приложений в песочнице хранятся в этом контейнере, а не в общих местах системы). Пароли SSH находятся в связке ключей и исчезают вместе с подключением.</p>
+
+<h2 id="features">Возможности</h2>
+
+<p>FileExplorer8 объединяет три модели взаимодействия в одном окне. Нажмите <code>⇧⌘D</code>, чтобы переключаться; каждый режим хранит своё состояние — путь, вкладки, сортировку, ширину столбцов, выделение.</p>
+
+<ul>
+  <li><strong>Файловый менеджер</strong>: Просмотр и порядок. Дерево в боковой панели, строка пути, полноценные вкладки, шесть вариантов вида.</li>
+  <li><strong>Два раздела</strong>: Модель источник / назначение с девятью кнопками панели действий для массовых переносов.</li>
+  <li><strong>Четыре раздела</strong>: Сетка 2×2 для четырёх папок одновременно и раздачи по нескольким целям.</li>
+  <li><strong>Пробный запуск перед записью</strong>: Копирование, перемещение и перезапись начинаются с пробного вердикта. На этом шаге не записывается ни один байт.</li>
+  <li><strong>Три уровня отмены</strong>: Перемещение в пределах тома, переименование, удаление в Корзину, а также упаковка и распаковка ZIP гарантированно отменяемы.</li>
+  <li><strong>Просмотр</strong>: <code>Пробел</code> для быстрого просмотра, исходный код с подсветкой синтаксиса, PDF через PDFKit, удалённые файлы SSH до 10 МБ.</li>
+  <li><strong>Удалённые папки SSH</strong>: Подключение по паролю или приватному ключу; удалённые папки ведут себя как локальные.</li>
+  <li><strong>14 языков</strong>: Китайский упрощённый и традиционный, английский, японский, корейский, немецкий, французский, испанский, бразильский португальский, русский, вьетнамский, индонезийский, малайский, тайский.</li>
+</ul>
+
+<div class="shots">
+  <a href="images/01-explorer.png" target="_blank" rel="noopener">
+    <img src="images/readme/01-explorer.png" alt="Файловый менеджер: сетка с панелью сведений" loading="lazy">
+  </a>
+  <a href="images/02-dual-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/02-dual-pane.png" alt="Два раздела: источник и назначение" loading="lazy">
+  </a>
+  <a href="images/03-quad-pane.png" target="_blank" rel="noopener">
+    <img src="images/readme/03-quad-pane.png" alt="Четыре раздела: сетка 2×2" loading="lazy">
+  </a>
+</div>
+<p class="caption">Щёлкните изображение, чтобы открыть его в полном размере (2560×1600)</p>
+
+<footer>
+  <p>FileExplorer8 · <a href="privacy.ru.html">Конфиденциальность</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">Сообщить о проблеме</a></p>
+  <p>macOS — товарный знак Apple Inc. Приложение не связано с Apple Inc.</p>
+</footer>
+</div>
+</body>
+</html>

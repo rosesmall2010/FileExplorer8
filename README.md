@@ -1,21 +1,20 @@
 <p align="center">
-  <img src="images/icon-1024.png" width="128" alt="文件8 应用图标" />
+  <img src="images/icon-1024.png" width="128" alt="文件8">
 </p>
 
 <h1 align="center">文件8</h1>
 
-<p align="center">
-  <strong>macOS 原生文件管理器 · 文件管理器 / 双栏 / 四栏三种形态同窗切换</strong>
-</p>
+<p align="center"><strong>macOS 原生文件管理器 · 文件管理器 / 双栏 / 四栏三种形态同窗切换</strong></p>
 
 <p align="center">一套文件操作内核，三种交互范式 · 写操作先预检 · 三级撤销 · 万项目录也不卡</p>
 
 <p align="center">
-  <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/%E6%94%AF%E6%8C%81%E9%A1%B5-blue" alt="Support" /></a>
-  <a href="privacy.html"><img src="https://img.shields.io/badge/%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96-green" alt="Privacy" /></a>
-  <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version" />
-  <img src="https://img.shields.io/badge/platform-macOS%2015.0%2B%20arm64%20%7C%20x86__64-lightgrey" alt="Platform" />
+  <a href="https://rosesmall2010.github.io/FileExplorer8/"><img src="https://img.shields.io/badge/%E6%94%AF%E6%8C%81%E9%A1%B5-blue" alt="Site"></a>
+  <a href="privacy.html"><img src="https://img.shields.io/badge/%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96-green" alt="Privacy"></a>
+  <img src="https://img.shields.io/badge/version-1.1.6-lightgrey" alt="Version">
 </p>
+
+<p align="center"><strong>简体中文</strong> · <a href="README.zh-Hant.md" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a> · <a href="README.en.md" hreflang="en" lang="en">English</a> · <a href="README.ja.md" hreflang="ja" lang="ja">日本語</a> · <a href="README.ko.md" hreflang="ko" lang="ko">한국어</a> · <a href="README.de.md" hreflang="de" lang="de">Deutsch</a> · <a href="README.fr.md" hreflang="fr" lang="fr">Français</a> · <a href="README.es.md" hreflang="es" lang="es">Español</a> · <a href="README.pt-BR.md" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a> · <a href="README.ru.md" hreflang="ru" lang="ru">Русский</a> · <a href="README.vi.md" hreflang="vi" lang="vi">Tiếng Việt</a> · <a href="README.id.md" hreflang="id" lang="id">Bahasa Indonesia</a> · <a href="README.ms.md" hreflang="ms" lang="ms">Bahasa Melayu</a> · <a href="README.th.md" hreflang="th" lang="th">ไทย</a></p>
 
 ---
 
@@ -31,21 +30,15 @@
 
 ## 界面
 
-### 文件管理器
-
-探索与整理。侧边栏目录树、地址栏、完整标签页，六种视图布局按目录记忆——同一个目录下次进来还是上次那档查看方式。
+### 文件管理器：网格视图与详情面板
 
 ![文件管理器：网格视图与详情面板](images/readme/01-explorer.png)
 
-### 双栏管理器
-
-源 / 目标范式。左栏活动栏是源，右栏是目标，中间分隔条可拖动，`⌃U` 交换两栏。九个操作栏按钮把「复制到对栏」「移动到对栏」串成一条流水线。
+### 双栏管理器：源与目标两栏
 
 ![双栏管理器：源与目标两栏](images/readme/02-dual-pane.png)
 
-### 四栏管理器
-
-同一范式的田字扩展。四栏 2×2，同时看四个目录，用于多目标分流。没有操作栏，方向键选目标栏。
+### 四栏管理器：田字 2×2 布局
 
 ![四栏管理器：田字 2×2 布局](images/readme/03-quad-pane.png)
 
@@ -116,7 +109,7 @@
 
 应用开启 App Sandbox，只在你授予的目录范围内读写，不申请通讯录、摄像头、麦克风、屏幕录制或完全磁盘访问。
 
-详见 [隐私政策](privacy.html)。
+[详见隐私政策](privacy.html)
 
 ---
 
@@ -132,19 +125,19 @@
 ### 常见问题
 
 **为什么进入某些目录会弹窗要求授权？**
-应用开启了 App Sandbox。桌面、下载、文稿、外接磁盘等位置在沙盒之外，首次进入某个目录时 macOS 会强制弹窗询问，这是系统的安全设计。选择「授权此文件夹」后该目录会被记住，同一路径一次运行只问一次。
+应用开启了 App Sandbox。桌面、下载、文稿、外接磁盘等位置在沙盒之外，首次进入某个目录时 macOS 会强制弹窗询问，这是系统的安全设计，不是缺陷。选择「授权此文件夹」后，该目录会被记住，同一路径一次运行只问一次。
 
 **会不会读取我的通讯录、摄像头或屏幕？**
-不会。只申请了用户选择的文件访问、标准文件夹（下载 / 文稿 / 音乐 / 图片 / 影片）与出站网络访问。
+不会。文件8 只申请了用户选择的文件访问、标准文件夹（下载 / 文稿 / 音乐 / 图片 / 影片）与出站网络访问，没有通讯录、摄像头、麦克风、屏幕录制或完全磁盘访问权限。
 
 **SSH 密码存在哪里？**
-存在 macOS 系统钥匙串里。服务器端点信息存在本机沙盒容器内（AES-256-GCM 加密）。密码也可以选择不保存，改为每次连接时弹一次性登录框。
+存在 macOS 系统钥匙串里。服务器端点信息存在本机沙盒容器内（AES-256-GCM 加密）。密码可以不保存，改为每次连接时弹一次性登录框。详见<a href="privacy.html">隐私政策</a>。
 
 **支持 Apple Silicon 和 Intel 吗？**
 两者都支持，安装包是通用二进制。系统要求 macOS 15.0 或更高版本。
 
 **卸载后残留数据怎么清理？**
-删除应用后，再删除 `~/Library/Containers/com.donghuazhu.FileExplorer8/` 即可清空偏好、会话记录与服务器端点信息。SSH 密码存在系统钥匙串，删除对应连接时会一并删除。
+删除应用后，再删除 <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> 即可清空偏好、会话记录与服务器端点信息（沙盒应用的数据都在你自己的容器里，不在系统共享位置）。SSH 密码存在系统钥匙串，删除对应连接时会一并删除。
 
 ---
 
@@ -155,6 +148,4 @@
 
 ---
 
-<p align="center">
-  <sub>macOS 是 Apple Inc. 的商标。本应用与 Apple Inc. 无关联。</sub>
-</p>
+<p align="center"><sub>macOS 是 Apple Inc. 的商标。本应用与 Apple Inc. 无关联。</sub></p>

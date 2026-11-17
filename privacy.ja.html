@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー — FileExplorer8</title>
+<meta name="description" content="FileExplorer8 はユーザーデータを収集、送信、共有しません。">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<h1>プライバシーポリシー</h1>
+<p class="meta">
+  FileExplorer8<br>
+  最終更新：2026-11-17 · 対象バージョン：1.1.6 以降 · 対象プラットフォーム：macOS
+</p>
+
+<div class="lang"><a href="privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="privacy.zh-Hant.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="privacy.en.html" hreflang="en" lang="en">English</a><span aria-current="page">日本語</span><a href="privacy.ko.html" hreflang="ko" lang="ko">한국어</a><a href="privacy.de.html" hreflang="de" lang="de">Deutsch</a><a href="privacy.fr.html" hreflang="fr" lang="fr">Français</a><a href="privacy.es.html" hreflang="es" lang="es">Español</a><a href="privacy.pt-BR.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="privacy.ru.html" hreflang="ru" lang="ru">Русский</a><a href="privacy.vi.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="privacy.id.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="privacy.ms.html" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="privacy.th.html" hreflang="th" lang="th">ไทย</a></div>
+
+<nav class="main"><a href="index.ja.html">← サポートに戻る</a></nav>
+
+<div class="tldr">
+  <p><strong>FileExplorer8 はユーザーデータを収集、送信、共有しません。</strong>アカウントも統計も広告 SDK もクラッシュ報告もありません。アプリ内で扱うファイルはすべてお使いの Mac に留まります。</p>
+</div>
+
+<h2>1. 収集しないもの</h2>
+
+<p>次のデータは<strong>ひとつも収集しません</strong>：</p>
+<ul><li>ファイルとフォルダ（内容、名前、サイズ、更新日時）</li><li>閲覧履歴、検索履歴、クリップボードの内容</li><li>接続先のサーバーアドレス、アカウント、パスワード、秘密鍵</li><li>デバイス識別子（シリアル番号、ハードウェア UUID、広告識別子）</li><li>利用統計、クラッシュログ、性能データ</li><li>位置情報、連絡先、カレンダー、写真ライブラリ、マイク、カメラ、画面の内容</li></ul>
+<p>データ送信のためのネットワーク要求はアプリ内に<strong>一切ありません</strong>。ご自身で開始した SSH/SFTP 接続を除き、アプリはいかなるサーバーにも 1 バイトも送信しません。</p>
+
+<h2>2. データの保存場所</h2>
+
+<p>設定と認証情報はすべて<strong>この Mac の上だけ</strong>に、次の 3 か所に保存されます：</p>
+<table><thead><tr><th>場所</th><th>保存内容</th><th>保護方法</th></tr></thead><tbody><tr><td>アプリのサンドボックスコンテナ<br><code>~/Library/Containers/<wbr>com.donghuazhu.FileExplorer8/</code></td><td>環境設定、セッション状態（ウィンドウ位置、各ペインのパスなど）、クイックアクセスのブックマーク</td><td>App Sandbox コンテナ内。本アプリのみアクセス可能</td></tr><tr><td>同上、<code>servers.json</code></td><td>SSH サーバーのエンドポイント（ホスト、ポート、ユーザー名、表示名）</td><td><strong>AES-256-GCM で暗号化</strong>（swift-crypto）</td></tr><tr><td>システムキーチェーン</td><td>SSH のパスワード、秘密鍵のパスフレーズ</td><td>macOS のキーチェーンで保護</td></tr></tbody></table>
+<p><strong>パスワードがファイルに入ることはありません。</strong> <code>servers.json</code> にあるのはエンドポイント情報だけで秘密は含みません。パスワードとパスフレーズはシステムキーチェーンに保存され、接続を削除すると一緒に削除されます。</p>
+<p>補足します。<code>servers.json</code> の暗号鍵はアプリと一緒に配布されます（バイナリに組み込まれ、別ファイルとしてもキーチェーンにも保存されません）。この暗号化はエンドポイント情報を気軽に覗かれないようにするためのもので、<strong>ローカルの攻撃者に対する保護にはなりません</strong>。ディスクを読める人はアプリ本体も読めるからです。本当に秘匿すべきもの（パスワード、パスフレーズ）は常にキーチェーンにのみ存在します。</p>
+<p>秘密鍵ファイルそのものは<strong>あなたが置いた場所に留まります</strong>。アプリは読み取り用のファイルブックマークを保存するだけで、コピーも移動もしません。</p>
+
+<h2>3. ネットワークアクセス</h2>
+
+<p>アプリのネットワーク機能は<strong>SSH / SFTP クライアント</strong>の 1 つだけです。</p>
+<ul><li>ご自身でサーバーを追加し接続をクリックしたときにだけ接続し、接続先は<strong>入力したアドレス</strong>です</li><li>用途はファイルの閲覧と転送で、プロトコルは SSH（SFTP サブシステム）です</li><li>ホスト鍵は <code>known_hosts</code> 方式で検証し、指紋が変わると確認を求めます</li><li>転送内容は SSH 自体の暗号化（libssh2 に組み込まれた OpenSSL）で保護されます</li></ul>
+<p><strong>当社はサーバーを運用していません</strong>。中継もクラウド同期もありません。あなたのファイルが当社を経由することはありません。</p>
+<p>アプリはアップデート確認も、リモート広告の読み込みも、第三者の API 呼び出しも行いません。</p>
+
+<h2>4. システム権限</h2>
+
+<p>アプリは <strong>App Sandbox</strong> を有効にし、許可された範囲内でのみファイルを読み書きします：</p>
+<table><thead><tr><th>権限</th><th>用途</th><th>表示されるタイミング</th></tr></thead><tbody><tr><td>ユーザが選択したファイル</td><td>指定したフォルダの閲覧と操作</td><td>サンドボックス外のフォルダに初めて入るときにシステムが確認</td></tr><tr><td>ダウンロード／書類／ミュージック／ピクチャ／ムービー</td><td>確認なしでこれらの標準的な場所にアクセス</td><td>インストール直後から利用可能</td></tr><tr><td>ネットワークアクセス（外向き）</td><td>ご自身で追加した SSH サーバーへの接続</td><td>接続をクリックしたときのみ</td></tr></tbody></table>
+<p>上表はアプリバンドル内のサンドボックス権限と 1 対 1 で対応します（<code>app-sandbox</code>、<code>files.user-selected</code>、<code>files.downloads</code>、<code>assets.music</code> / <code>assets.pictures</code> / <code>assets.movies</code>、<code>network.client</code>）。余分な権限は要求していません。</p>
+<p>アプリは次を<strong>要求しません</strong>：連絡先、カレンダー、リマインダー、写真ライブラリ、カメラ、マイク、画面収録、フルディスクアクセス、アクセシビリティ。システム設定 › プライバシーとセキュリティ のこれらの項目に FileExplorer8 が表示されていても、本アプリが要求したものではありません。</p>
+<p>許可したフォルダは、システム設定 › プライバシーとセキュリティ › ファイルとフォルダ でいつでも取り消せます。</p>
+
+<h2>5. チェックサム機能</h2>
+
+<p>アプリはファイルの整合性確認のためにチェックサム（SHA-256 / SHA-512 / SHA-1 / MD5 / BLAKE3 / CRC32 / CRC64）を計算できます。</p>
+<p>この機能は<strong>明示的に選択したファイルだけを読み取り</strong>、メモリ上でダイジェストを計算して表示します。保存も送信もしません。ダイジェストが Mac の外に出ることも、ログに残ることもありません。</p>
+
+<h2>6. データの削除</h2>
+
+<table><thead><tr><th>削除したいもの</th><th>方法</th></tr></thead><tbody><tr><td>特定の SSH 接続のパスワード</td><td>アプリ内でその接続を削除すると、キーチェーン内のパスワードとパスフレーズも削除されます</td></tr><tr><td>すべての環境設定とセッション</td><td>アプリ内の「リセット」、または <code>~/Library/Containers/com.donghuazhu.FileExplorer8/</code> を削除</td></tr><tr><td>すべてのデータ</td><td>アプリをアンインストールし、上記のフォルダを削除</td></tr></tbody></table>
+<p>当社はあなたに関するデータを一切持っていないため、「当社に削除を申請する」手続きはありません。アカウントも存在しないため、退会も不要です。</p>
+
+<h2>7. 第三者コンポーネント</h2>
+
+<p>アプリに含まれるオープンソースの依存は 2 つだけです：</p>
+<table><thead><tr><th>コンポーネント</th><th>用途</th><th>説明</th></tr></thead><tbody><tr><td><a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a></td><td>SSH / SFTP プロトコルの実装</td><td>libssh2 と OpenSSL のソースを内包。完全にローカルで動作し、統計や送信のコードを含みません</td></tr><tr><td><a href="https://github.com/apple/swift-crypto">swift-crypto</a></td><td>暗号プリミティブ（Apple 製）</td><td>AES-256-GCM、SHA-2、HMAC などの標準アルゴリズム。ローカル設定の暗号化、SSH ホスト指紋の検証、チェックサム計算に使用。すべてローカル演算でネットワークを使いません</td></tr></tbody></table>
+<p>アプリ内に広告 SDK、統計 SDK、クラッシュ収集 SDK、ソーシャルログイン SDK は<strong>ありません</strong>。</p>
+
+<h2>8. 子どものプライバシー</h2>
+
+<p>本アプリは子どもからも、誰からも情報を収集しません。App Store の年齢制限は 4+ です。</p>
+
+<h2>9. ポリシーの変更</h2>
+
+<p>本ポリシーを変更する場合は、ページ上部の「最終更新」日を更新し、新しいバージョンとともに公開します。データを収集しないため、実質的な変更はほとんどない見込みです。</p>
+
+<h2>10. お問い合わせ</h2>
+
+<ul><li>質問とご報告：<a href="https://github.com/rosesmall2010/FileExplorer8/issues">GitHub Issues</a></li><li>サポートページ：<a href="index.html">FileExplorer8 サポート</a></li></ul>
+<details>
+<summary>English summary (for App Review reference)</summary>
+
+<p><strong>FileExplorer8 does not collect, transmit, or share any user data.</strong></p>
+<ul><li>No analytics, no ads, no crash reporting, no accounts.</li><li>All settings and credentials stay on the user's Mac. Passwords live in the macOS Keychain; server endpoints in a local file encrypted with AES-256-GCM (the key ships inside the app, so this obfuscates endpoints rather than protecting against local attackers).</li><li>The only network capability is an SSH/SFTP client that connects <strong>only</strong> to servers the user adds. We operate no servers and receive nothing.</li><li>The app runs in the App Sandbox and requests only user-selected file access, standard folders (Downloads / Documents / Music / Pictures / Movies), and outbound network access.</li><li>Two open-source dependencies: <a href="https://github.com/RuiNelson/SwiftSFTP">SwiftSFTP</a> (embedded libssh2 + OpenSSL) and Apple's <a href="https://github.com/apple/swift-crypto">swift-crypto</a>; both run fully locally with no telemetry.</li></ul>
+
+</details>
+
+<footer>
+  <p>FileExplorer8 · <a href="index.ja.html">サポート</a> ·
+     <a href="https://github.com/rosesmall2010/FileExplorer8/issues">問題を報告</a></p>
+</footer>
+</div>
+</body>
+</html>
