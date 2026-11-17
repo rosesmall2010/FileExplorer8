@@ -1,0 +1,7 @@
+#!/bin/sh
+# Strip AI/tool co-author trailers that editors may append.
+msg="$1"
+tmp="$(mktemp)"
+grep -Eiv '^[[:space:]]*(co-authored-by:|signed-off-by[[:space:]]*:.*(cursor|claude|gpt|copilot|codex|anthropic|openai|bot)|generated[[:space:]-]*with|made[[:space:]-]*with)' "$msg" \
+  | sed -e :a -e '/^[[:space:]]*$/{$d;N;ba' -e '}' > "$tmp"
+mv "$tmp" "$msg"
